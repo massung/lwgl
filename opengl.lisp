@@ -1443,8 +1443,8 @@
 
 ;;; register the dynamic library
 (eval-when (:load-toplevel :execute)
-  (let ((dll #+cocoa #p"/System/Library/Frameworks/OpenGL.FrameWork/OpenGL"
-             #+windows #p"opengl32.dll"))
+  (let ((dll #+darwin #p"/System/Library/Frameworks/OpenGL.FrameWork/OpenGL"
+             #+mswindows #p"c:/Windows/System32/opengl32.dll"))
     (register-module :gl :real-name dll :connection-style :immediate)))
 
 ;;; plain old data
@@ -1471,7 +1471,6 @@
 (define-c-typedef gl-sizeiptr (:pointer gl-sizei))
 
 ;;; constants
-
 (defconstant +GL_2D+ #X0600)
 (defconstant +GL_2_BYTES+ #X1407)
 (defconstant +GL_3D+ #X0601)
