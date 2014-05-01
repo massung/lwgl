@@ -10,4 +10,7 @@
   :license "Apache 2.0"
   :description "OpenGL 2.0 FLI for LispWorks."
   :serial t
-  :components ((:file "opengl")))
+  :components ((:file "opengl")
+               (:file "context")
+               (:file "win32")
+               (:file "pane")))
