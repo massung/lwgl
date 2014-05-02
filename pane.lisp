@@ -26,14 +26,19 @@
 (in-package :opengl-pane)
 
 (defclass opengl-pane (output-pane)
-  ((render-callback :initform 'render-opengl-pane :accessor opengl-pane-render-callback :initarg :render-callback)
-   (context         :initform nil                 :accessor opengl-pane-context))
+  ((render-callback
+    :initarg :render-callback
+    :initform 'render-opengl-pane
+    :accessor opengl-pane-render-callback)
+   (context
+    :initform nil
+    :accessor opengl-pane-context))
   (:default-initargs
-   :draw-with-buffer t
-   :drawing-mode :compatible
+   :visible-border nil
    :create-callback 'create-opengl-pane
    :destroy-callback 'destroy-opengl-pane
-   :display-callback 'display-opengl-pane))
+   :display-callback 'display-opengl-pane
+   :resize-callback 'gp:invalidate-rectangle))
 
 (defmethod create-opengl-pane ((pane opengl-pane))
   "Create the render context."
@@ -59,10 +64,10 @@
 
 (defmethod opengl-pane-prepare ((pane opengl-pane))
   "Make this pane's context current."
-  (let ((ctx (opengl-pane-context pane)))
+  (lw:when-let (context (opengl-pane-context pane))
     #+mswindows (lw:when-let (hdc (opengl-win32::get-dc (simple-pane-handle pane)))
                   (unwind-protect
-                      (opengl-win32::wgl-make-current hdc ctx)
+                      (opengl-win32::wgl-make-current hdc context)
                     (opengl-win32::release-dc (simple-pane-handle pane) hdc)))))
 
 (defmethod opengl-pane-present ((pane opengl-pane))
