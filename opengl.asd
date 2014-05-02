@@ -11,6 +11,6 @@
   :description "OpenGL 2.0 FLI for LispWorks."
   :serial t
   :components ((:file "opengl")
-               (:file "context")
-               (:file "win32")
+               #+mswindows (:file "win32")
+               #+cocoa (:file "mac")
                (:file "pane")))

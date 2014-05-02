@@ -18,56 +18,18 @@
 ;;;;
 
 (defpackage :opengl-win32
-  (:use :cl :fli :opengl-context)
+  (:use :cl :fli)
   (:export
-   #:make-opengl-context
-   #:present-opengl-context))
+   #:make-opengl-context))
 
 (in-package :opengl-win32)
 
-(define-c-typedef HANDLE :unsigned-long)
+(define-c-typedef HGLRC :unsigned-long)
+(define-c-typedef HWND :unsigned-long)
 (define-c-typedef HDC :unsigned-long)
 (define-c-typedef BOOL :boolean)
 (define-c-typedef WORD :unsigned-short)
 (define-c-typedef DWORD :unsigned-long)
-
-(defun make-opengl-context (pane &key (color-bits 24) (depth-bits 16))
-  "Use the HDC of an output-pane to create an OpenGL context."
-  (let* ((rep (gp:port-representation pane))
-         (hdc (slot-value rep 'capi-win32-lib::hdc)))
-    (with-dynamic-foreign-objects ((pfd pixel-format-descriptor))
-
-      ;; setup the pixel format descriptor
-      (setf (foreign-slot-value pfd 'nsize) (size-of 'pixel-format-descriptor)
-            (foreign-slot-value pfd 'nversion) 1
-            (foreign-slot-value pfd 'ipixeltype) 0
-            (foreign-slot-value pfd 'ilayertype) 0
-            (foreign-slot-value pfd 'dwflags) 37
-            (foreign-slot-value pfd 'ccolorbits) color-bits
-            (foreign-slot-value pfd 'cdepthbits) depth-bits)
-
-      ;; set the pixel format for the device
-      (let ((format (choose-pixel-format hdc pfd)))
-        (when (set-pixel-format hdc format pfd)
-          (make-instance 'win32-opengl-context :hglrc (wgl-create-context hdc)))))))
-
-(defun present-opengl-context (pane)
-  "Swap the backbuffer and display what was rendered."
-  (let* ((rep (gp:port-representation pane))
-         (hdc (slot-value rep 'capi-win32-lib::hdc)))
-    (swap-buffers hdc)))
-
-(defclass win32-opengl-context (opengl-context::opengl-context)
-  ((hglrc :initarg :hglrc :reader win32-opengl-context-hglrc))
-  (:documentation "Win32 OpenGL render context handle."))
-
-(defmethod opengl-context:prepare-context ((context win32-opengl-context) pane)
-  "Make this context the current render context."
-  (let ((hrc (win32-opengl-context-hglrc context)))
-    (when hrc
-      (let* ((rep (gp:port-representation pane))
-             (hdc (slot-value rep 'capi-win32-lib::hdc)))
-        (wgl-make-current hdc hrc)))))
 
 ;;; pixel types
 (defconstant +PFD_TYPE_RGBA+ #x00000000)
@@ -109,6 +71,14 @@
   (dwVisibleMask DWORD) 
   (dwDamageMask DWORD))
 
+(define-foreign-function (get-dc "GetDC")
+    ((hwnd HWND))
+  :result-type HDC)
+
+(define-foreign-function (release-dc "ReleaseDC")
+    ((hwnd HWND) (hdc HDC))
+  :result-type :int)
+
 (define-foreign-function (choose-pixel-format "ChoosePixelFormat")
     ((hdc HDC) (pfd (:pointer pixel-format-descriptor)))
   :result-type :int)
@@ -117,18 +87,38 @@
     ((hdc HDC) (format :int) (pfd (:pointer pixel-format-descriptor)))
   :result-type BOOL)
 
-(define-foreign-function (wgl-Create-Context "wglCreateContext")
+(define-foreign-function (wgl-create-Context "wglCreateContext")
     ((hdc HDC))
-  :result-type HANDLE)
+  :result-type HGLRC)
 
 (define-foreign-function (wgl-make-current "wglMakeCurrent")
-    ((hdc HDC) (hglrc HANDLE))
+    ((hdc HDC) (hglrc HGLRC))
   :result-type BOOL)
 
 (define-foreign-function (wgl-delete-context "wglDeleteContext")
-    ((hglrc HANDLE))
+    ((hglrc HGLRC))
   :result-type BOOL)
 
 (define-foreign-function (swap-buffers "SwapBuffers")
     ((hdc HDC))
   :result-type BOOL)
+
+(defun make-opengl-context (pane &key (color-bits 24) (depth-bits 16))
+  "Use the HDC of an output-pane to create an OpenGL context."
+  (let* ((rep (gp:port-representation pane))
+         (hdc (slot-value rep 'capi-win32-lib::hdc)))
+    (with-dynamic-foreign-objects ((pfd pixel-format-descriptor))
+
+      ;; setup the pixel format descriptor
+      (setf (foreign-slot-value pfd 'nsize) (size-of 'pixel-format-descriptor)
+            (foreign-slot-value pfd 'nversion) 1
+            (foreign-slot-value pfd 'ipixeltype) 0
+            (foreign-slot-value pfd 'ilayertype) 0
+            (foreign-slot-value pfd 'dwflags) 37
+            (foreign-slot-value pfd 'ccolorbits) color-bits
+            (foreign-slot-value pfd 'cdepthbits) depth-bits)
+
+      ;; set the pixel format for the device
+      (let ((format (choose-pixel-format hdc pfd)))
+        (when (set-pixel-format hdc format pfd)
+          (wgl-create-context hdc))))))
