@@ -17,19 +17,16 @@
 ;;;; under the License.
 ;;;;
 
-(defpackage :opengl-win32
-  (:use :cl :fli)
-  (:export
-   #:make-opengl-context))
+(in-package :opengl-context)
 
-(in-package :opengl-win32)
+(defclass win32-opengl-context (opengl-context)
+  ((hrc :initform nil :accessor win32-opengl-context))
+  (:documentation "Win32 OpenGL render context."))
 
 (define-c-typedef HGLRC :unsigned-long)
 (define-c-typedef HWND :unsigned-long)
 (define-c-typedef HDC :unsigned-long)
 (define-c-typedef BOOL :boolean)
-(define-c-typedef WORD :unsigned-short)
-(define-c-typedef DWORD :unsigned-long)
 
 ;;; pixel types
 (defconstant +PFD_TYPE_RGBA+ #x00000000)
@@ -44,32 +41,32 @@
 
 ;;; win32 pixel format
 (define-c-struct pixel-format-descriptor
-  (nSize WORD)
-  (nVersion WORD)
-  (dwFlags WORD)
-  (iPixelType BYTE)
-  (cColorBits BYTE) 
-  (cRedBits BYTE) 
-  (cRedShift BYTE) 
-  (cGreenBits BYTE) 
-  (cGreenShift BYTE) 
-  (cBlueBits BYTE) 
-  (cBlueShift BYTE) 
-  (cAlphaBits BYTE) 
-  (cAlphaShift BYTE) 
-  (cAccumBits BYTE) 
-  (cAccumRedBits BYTE) 
-  (cAccumGreenBits BYTE) 
-  (cAccumBlueBits BYTE) 
-  (cAccumAlphaBits BYTE) 
-  (cDepthBits BYTE) 
-  (cStencilBits BYTE) 
-  (cAuxBuffers BYTE) 
-  (iLayerType BYTE) 
-  (bReserved BYTE) 
-  (dwLayerMask DWORD) 
-  (dwVisibleMask DWORD) 
-  (dwDamageMask DWORD))
+  (nSize :unsigned-short)
+  (nVersion :unsigned-short)
+  (dwFlags :unsigned-short)
+  (iPixelType :unsigned-byte)
+  (cColorBits :unsigned-byte) 
+  (cRedBits :unsigned-byte) 
+  (cRedShift :unsigned-byte) 
+  (cGreenBits :unsigned-byte)
+  (cGreenShift :unsigned-byte)
+  (cBlueBits :unsigned-byte)
+  (cBlueShift :unsigned-byte)
+  (cAlphaBits :unsigned-byte)
+  (cAlphaShift :unsigned-byte)
+  (cAccumBits :unsigned-byte)
+  (cAccumRedBits :unsigned-byte)
+  (cAccumGreenBits :unsigned-byte)
+  (cAccumBlueBits :unsigned-byte)
+  (cAccumAlphaBits :unsigned-byte)
+  (cDepthBits :unsigned-byte)
+  (cStencilBits :unsigned-byte)
+  (cAuxBuffers :unsigned-byte)
+  (iLayerType :unsigned-byte)
+  (bReserved :unsigned-byte)
+  (dwLayerMask :unsigned-long)
+  (dwVisibleMask :unsigned-long)
+  (dwDamageMask :unsigned-long))
 
 (define-foreign-function (get-dc "GetDC")
     ((hwnd HWND))
@@ -85,7 +82,7 @@
 
 (define-foreign-function (set-pixel-format "SetPixelFormat") 
     ((hdc HDC) (format :int) (pfd (:pointer pixel-format-descriptor)))
-  :result-type BOOL)
+  :result-type :boolean)
 
 (define-foreign-function (wgl-create-Context "wglCreateContext")
     ((hdc HDC))
@@ -93,17 +90,17 @@
 
 (define-foreign-function (wgl-make-current "wglMakeCurrent")
     ((hdc HDC) (hglrc HGLRC))
-  :result-type BOOL)
+  :result-type :boolean)
 
 (define-foreign-function (wgl-delete-context "wglDeleteContext")
     ((hglrc HGLRC))
-  :result-type BOOL)
+  :result-type :boolean)
 
 (define-foreign-function (swap-buffers "SwapBuffers")
     ((hdc HDC))
-  :result-type BOOL)
+  :result-type :boolean)
 
-(defun make-opengl-context (pane &key (color-bits 24) (depth-bits 16))
+(defmethod initialize-instance :after ((context win32-opengl-context) &key pane color-bits depth-bits)
   "Use the HDC of an output-pane to create an OpenGL context."
   (let* ((rep (gp:port-representation pane))
          (hdc (slot-value rep 'capi-win32-lib::hdc)))
@@ -121,4 +118,22 @@
       ;; set the pixel format for the device
       (let ((format (choose-pixel-format hdc pfd)))
         (when (set-pixel-format hdc format pfd)
-          (wgl-create-context hdc))))))
+          (setf (win32-opengl-context context) (wgl-create-context hdc)))))))
+
+(defmethod opengl-context-prepare ((context win32-opengl-context))
+  "Make this pane's context current."
+  (lw:when-let (hdc (get-dc (simple-pane-handle (openg-context-pane context))))
+    (unwind-protect
+        (wgl-make-current hdc (win32-opengl-context context))
+      (release-dc (simple-pane-handle pane) hdc))))
+
+(defmethod opengl-context-present ((context win32-opengl-context))
+  "Swap the backbuffer and display what was rendered."
+  (lw:when-let (hdc (get-dc (simple-pane-handle (openg-context-pane context))))
+    (unwind-protect
+        (swap-buffers hdc)
+      (release-dc (simple-pane-handle (openg-context-pane context)) hdc))))
+
+(defmethod opengl-context-release ((context win32-opengl-context))
+  "Free memory used by the context."
+  (wgl-delete-context (win32-opengl-context context)))

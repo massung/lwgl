@@ -42,37 +42,25 @@
 
 (defmethod create-opengl-pane ((pane opengl-pane))
   "Create the render context."
-  (setf (opengl-pane-context pane) #+mswindows (opengl-win32:make-opengl-context pane)))
+  (setf (opengl-pane-context pane)
+        #+cocoa (make-instance 'opengl-context::cocoa-opengl-context :pane pane)
+        #+mswindows (make-instance 'opengl-context::win32-opengl-context :pane pane)))
 
 (defmethod destroy-opengl-pane ((pane opengl-pane))
   "Free the render context."
-  #+mswindows (opengl-win32::wgl-delete-context (opengl-pane-context pane)))
+  (opengl-context:opengl-context-release (opengl-pane-context pane)))
 
 (defmethod display-opengl-pane ((pane opengl-pane) &rest bounds)
   "Prepare, render, and present."
   (declare (ignore bounds))
-  (when (opengl-pane-prepare pane)
-    (unwind-protect
-        (lw:when-let (render-callback (opengl-pane-render-callback pane))
-          (funcall render-callback pane)
-          (gl-flush))
-      (opengl-pane-present pane))))
+  (opengl-context:opengl-context-prepare (opengl-pane-context pane))
+  (unwind-protect
+      (lw:when-let (render-callback (opengl-pane-render-callback pane))
+        (unwind-protect
+            (funcall render-callback pane)
+          (gl-flush)))
+    (opengl-context:opengl-context-present (opengl-pane-context pane))))
 
 (defmethod render-opengl-pane ((pane opengl-pane))
   "Clear the render context."
   (gl-clear +gl_color_buffer_bit+))
-
-(defmethod opengl-pane-prepare ((pane opengl-pane))
-  "Make this pane's context current."
-  (lw:when-let (context (opengl-pane-context pane))
-    #+mswindows (lw:when-let (hdc (opengl-win32::get-dc (simple-pane-handle pane)))
-                  (unwind-protect
-                      (opengl-win32::wgl-make-current hdc context)
-                    (opengl-win32::release-dc (simple-pane-handle pane) hdc)))))
-
-(defmethod opengl-pane-present ((pane opengl-pane))
-  "Swap the backbuffer and display what was rendered."
-  #+mswindows (lw:when-let (hdc (opengl-win32::get-dc (simple-pane-handle pane)))
-                (unwind-protect
-                    (opengl-win32::swap-buffers hdc)
-                  (opengl-win32::release-dc (simple-pane-handle pane) hdc))))
