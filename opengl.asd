@@ -14,4 +14,5 @@
                (:file "context")
                #+mswindows (:file "win32")
                #+cocoa (:file "cocoa")
-               (:file "pane")))
+               (:file "pane")
+               (:file "texture")))

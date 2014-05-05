@@ -18,10 +18,19 @@
 ;;;;
 
 (defpackage :opengl-pane
-  (:use :cl :gl :capi)
+  (:use :cl :capi :opengl)
   (:export
    #:opengl-pane
-   #:opengl-pane-context))
+   #:opengl-pane-context
+
+   ;; callbacks
+   #:create-opengl-pane
+   #:destroy-opengl-pane
+   #:prepare-opengl-pane
+   #:render-opengl-pane
+
+   ;; utilities
+   #:load-texture))
 
 (in-package :opengl-pane)
 

@@ -90,28 +90,28 @@
    #:gl-color4us
    #:gl-color4usv
    #:gl-compile-shader
-   #:gl-compressed-tex-image1-D
-   #:gl-compressed-tex-image2-D
-   #:gl-compressed-tex-image3-D
-   #:gl-compressed-tex-sub-image1-D
-   #:gl-compressed-tex-sub-image2-D
-   #:gl-compressed-tex-sub-image3-D
-   #:gl-convolution-filter1-D
-   #:gl-convolution-filter2-D
+   #:gl-compressed-tex-image1d
+   #:gl-compressed-tex-image2d
+   #:gl-compressed-tex-image3d
+   #:gl-compressed-tex-sub-image1d
+   #:gl-compressed-tex-sub-image2d
+   #:gl-compressed-tex-sub-image3d
+   #:gl-convolution-filter1d
+   #:gl-convolution-filter2d
    #:gl-convolution-parameterf
    #:gl-convolution-parameterfv
    #:gl-convolution-parameteri
    #:gl-convolution-parameteriv
    #:gl-copy-color-sub-table
    #:gl-copy-color-table
-   #:gl-copy-convolution-filter1-D
-   #:gl-copy-convolution-filter2-D
+   #:gl-copy-convolution-filter1d
+   #:gl-copy-convolution-filter2d
    #:gl-copy-pixels
-   #:gl-copy-tex-image1-D
-   #:gl-copy-tex-image2-D
-   #:gl-copy-tex-sub-image1-D
-   #:gl-copy-tex-sub-image2-D
-   #:gl-copy-tex-sub-image3-D
+   #:gl-copy-tex-image1d
+   #:gl-copy-tex-image2d
+   #:gl-copy-tex-sub-image1d
+   #:gl-copy-tex-sub-image2d
+   #:gl-copy-tex-sub-image3d
    #:gl-create-program
    #:gl-create-shader
    #:gl-cull-face
@@ -433,7 +433,7 @@
    #:gl-secondary-color3us
    #:gl-secondary-color3usv
    #:gl-select-buffer
-   #:gl-separable-filter2-D
+   #:gl-separable-filter2d
    #:gl-shade-model
    #:gl-shader-source
    #:gl-stencil-func
@@ -485,16 +485,16 @@
    #:gl-tex-genfv
    #:gl-tex-geni
    #:gl-tex-geniv
-   #:gl-tex-image1-D
-   #:gl-tex-image2-D
-   #:gl-tex-image3-D
+   #:gl-tex-image1d
+   #:gl-tex-image2d
+   #:gl-tex-image3d
    #:gl-tex-parameterf
    #:gl-tex-parameterfv
    #:gl-tex-parameteri
    #:gl-tex-parameteriv
-   #:gl-tex-sub-image1-D
-   #:gl-tex-sub-image2-D
-   #:gl-tex-sub-image3-D
+   #:gl-tex-sub-image1d
+   #:gl-tex-sub-image2d
+   #:gl-tex-sub-image3d
    #:gl-translated
    #:gl-translatef
    #:gl-uniform-matrix2fv
@@ -2690,7 +2690,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-convolution-filter1-D "glConvolutionFilter1D")
+(define-foreign-function (gl-convolution-filter1d "glConvolutionFilter1D")
     ((target gl-enum)
      (internalformat gl-enum)
      (width gl-sizei)
@@ -2700,7 +2700,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-convolution-filter2-D "glConvolutionFilter2D")
+(define-foreign-function (gl-convolution-filter2d "glConvolutionFilter2D")
     ((target gl-enum)
      (internalformat gl-enum)
      (width gl-sizei)
@@ -2757,7 +2757,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-convolution-filter1-D "glCopyConvolutionFilter1D")
+(define-foreign-function (gl-copy-convolution-filter1d "glCopyConvolutionFilter1D")
     ((target gl-enum)
      (internalformat gl-enum)
      (x gl-int)
@@ -2766,7 +2766,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-convolution-filter2-D "glCopyConvolutionFilter2D")
+(define-foreign-function (gl-copy-convolution-filter2d "glCopyConvolutionFilter2D")
     ((target gl-enum)
      (internalformat gl-enum)
      (x gl-int)
@@ -2785,7 +2785,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-tex-image1-D "glCopyTexImage1D")
+(define-foreign-function (gl-copy-tex-image1d "glCopyTexImage1D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-enum)
@@ -2796,7 +2796,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-tex-image2-D "glCopyTexImage2D")
+(define-foreign-function (gl-copy-tex-image2d "glCopyTexImage2D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-enum)
@@ -2808,7 +2808,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-tex-sub-image1-D "glCopyTexSubImage1D")
+(define-foreign-function (gl-copy-tex-sub-image1d "glCopyTexSubImage1D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -2818,7 +2818,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-tex-sub-image2-D "glCopyTexSubImage2D")
+(define-foreign-function (gl-copy-tex-sub-image2d "glCopyTexSubImage2D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -2830,7 +2830,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-copy-tex-sub-image3-D "glCopyTexSubImage3D")
+(define-foreign-function (gl-copy-tex-sub-image3d "glCopyTexSubImage3D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -4200,7 +4200,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-separable-filter2-D "glSeparableFilter2D")
+(define-foreign-function (gl-separable-filter2d "glSeparableFilter2D")
     ((target gl-enum)
      (internalformat gl-enum)
      (width gl-sizei)
@@ -4498,7 +4498,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-tex-image1-D "glTexImage1D")
+(define-foreign-function (gl-tex-image1d "glTexImage1D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-int)
@@ -4510,7 +4510,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-tex-image2-D "glTexImage2D")
+(define-foreign-function (gl-tex-image2d "glTexImage2D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-int)
@@ -4523,7 +4523,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-tex-image3-D "glTexImage3D")
+(define-foreign-function (gl-tex-image3d "glTexImage3D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-int)
@@ -4565,7 +4565,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-tex-sub-image1-D "glTexSubImage1D")
+(define-foreign-function (gl-tex-sub-image1d "glTexSubImage1D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -4576,7 +4576,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-tex-sub-image2-D "glTexSubImage2D")
+(define-foreign-function (gl-tex-sub-image2d "glTexSubImage2D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -4589,7 +4589,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-tex-sub-image3-D "glTexSubImage3D")
+(define-foreign-function (gl-tex-sub-image3d "glTexSubImage3D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -4807,7 +4807,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-compressed-tex-image3-D "glCompressedTexImage3D")
+(define-foreign-function (gl-compressed-tex-image3d "glCompressedTexImage3D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-enum)
@@ -4820,7 +4820,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-compressed-tex-image2-D "glCompressedTexImage2D")
+(define-foreign-function (gl-compressed-tex-image2d "glCompressedTexImage2D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-enum)
@@ -4832,7 +4832,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-compressed-tex-image1-D "glCompressedTexImage1D")
+(define-foreign-function (gl-compressed-tex-image1d "glCompressedTexImage1D")
     ((target gl-enum)
      (level gl-int)
      (internalformat gl-enum)
@@ -4843,7 +4843,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-compressed-tex-sub-image3-D "glCompressedTexSubImage3D")
+(define-foreign-function (gl-compressed-tex-sub-image3d "glCompressedTexSubImage3D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -4858,7 +4858,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-compressed-tex-sub-image2-D "glCompressedTexSubImage2D")
+(define-foreign-function (gl-compressed-tex-sub-image2d "glCompressedTexSubImage2D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
@@ -4871,7 +4871,7 @@
   :result-type :void
   :module :gl)
 
-(define-foreign-function (gl-compressed-tex-sub-image1-D "glCompressedTexSubImage1D")
+(define-foreign-function (gl-compressed-tex-sub-image1d "glCompressedTexSubImage1D")
     ((target gl-enum)
      (level gl-int)
      (xoffset gl-int)
