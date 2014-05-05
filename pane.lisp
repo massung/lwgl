@@ -26,14 +26,14 @@
 (in-package :opengl-pane)
 
 (defclass opengl-pane (output-pane)
-  ((prepare-callback
-    :initarg :prepare-callback
-    :initform 'prepare-opengl-pane
-    :accessor opengl-pane-prepare-callback)
-   (render-callback
+  ((render-callback
     :initarg :render-callback
     :initform 'render-opengl-pane
     :accessor opengl-pane-render-callback)
+   (prepare-callback
+    :initarg :prepare-callback
+    :initform 'prepare-opengl-pane
+    :accessor opengl-pane-prepare-callback)
    (context
     :initform nil
     :accessor opengl-pane-context))
@@ -67,7 +67,10 @@
 
 (defmethod prepare-opengl-pane ((pane opengl-pane))
   "Set the clear color."
-  (gl-clear-color 0.0 0.0 0.0 0.0))
+  (let ((w (gp:port-width pane))
+        (h (gp:port-height pane)))
+    (gl-clear-color 0 0 0 0)
+    (gl-viewport 0 0 w h)))
 
 (defmethod render-opengl-pane ((pane opengl-pane))
   "Clear the render context."
