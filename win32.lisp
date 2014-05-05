@@ -124,17 +124,17 @@
 
 (defmethod opengl-context-prepare ((context win32-opengl-context))
   "Make this pane's context current."
-  (lw:when-let (hdc (get-dc (simple-pane-handle (openg-context-pane context))))
+  (lw:when-let (hdc (get-dc (simple-pane-handle (opengl-context-pane context))))
     (unwind-protect
         (wgl-make-current hdc (win32-opengl-context context))
-      (release-dc (simple-pane-handle pane) hdc))))
+      (release-dc (simple-pane-handle (opengl-context-pane context)) hdc))))
 
 (defmethod opengl-context-present ((context win32-opengl-context))
   "Swap the backbuffer and display what was rendered."
-  (lw:when-let (hdc (get-dc (simple-pane-handle (openg-context-pane context))))
+  (lw:when-let (hdc (get-dc (simple-pane-handle (opengl-context-pane context))))
     (unwind-protect
         (swap-buffers hdc)
-      (release-dc (simple-pane-handle (openg-context-pane context)) hdc))))
+      (release-dc (simple-pane-handle (opengl-context-pane context)) hdc))))
 
 (defmethod opengl-context-release ((context win32-opengl-context))
   "Free memory used by the context."
