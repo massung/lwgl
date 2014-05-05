@@ -26,7 +26,11 @@
 (in-package :opengl-pane)
 
 (defclass opengl-pane (output-pane)
-  ((render-callback
+  ((prepare-callback
+    :initarg :prepare-callback
+    :initform 'prepare-opengl-pane
+    :accessor opengl-pane-prepare-callback)
+   (render-callback
     :initarg :render-callback
     :initform 'render-opengl-pane
     :accessor opengl-pane-render-callback)
@@ -37,8 +41,7 @@
    :visible-border nil
    :create-callback 'create-opengl-pane
    :destroy-callback 'destroy-opengl-pane
-   :display-callback 'display-opengl-pane
-   :resize-callback 'gp:invalidate-rectangle))
+   :display-callback 'display-opengl-pane))
 
 (defmethod create-opengl-pane ((pane opengl-pane))
   "Create the render context."
@@ -53,14 +56,19 @@
 (defmethod display-opengl-pane ((pane opengl-pane) &rest bounds)
   "Prepare, render, and present."
   (declare (ignore bounds))
-  (opengl-context:opengl-context-prepare (opengl-pane-context pane))
-  (unwind-protect
-      (lw:when-let (render-callback (opengl-pane-render-callback pane))
-        (unwind-protect
-            (funcall render-callback pane)
-          (gl-flush)))
-    (opengl-context:opengl-context-present (opengl-pane-context pane))))
+  (opengl-context:with-opengl-context (context (opengl-pane-context pane))
+    (unwind-protect
+        (progn
+          (lw:when-let (prepare-callback (opengl-pane-prepare-callback pane))
+            (funcall prepare-callback pane))
+          (lw:when-let (render-callback (opengl-pane-render-callback pane))
+            (funcall render-callback pane)))
+      (gl-flush))))
+
+(defmethod prepare-opengl-pane ((pane opengl-pane))
+  "Set the clear color."
+  (gl-clear-color 0.0 0.0 0.0 0.0))
 
 (defmethod render-opengl-pane ((pane opengl-pane))
   "Clear the render context."
-  (gl-clear +gl_color_buffer_bit+))
+  (gl-clear +gl-color-buffer-bit+))

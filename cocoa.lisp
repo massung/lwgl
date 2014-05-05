@@ -23,23 +23,60 @@
   ((obj :initform nil :accessor cocoa-opengl-context))
   (:documentation "MacOS X Cocoa OpenGL render context."))
 
-(defconstant +NSOpenGLPFADoubleBuffer+ 5)
-(defconstant +NSOpenGLPFAColorSize+ 8)
-(defconstant +NSOpenGLPFADepthSize+ 12)
-(defconstant +NSOpenGLPFAStencilSize+ 13)
-(defconstant +NSOpenGLPFAAccelerated+ 73)
-(defconstant +NSOpenGLPFAWindow+ 80)
-(defconstant +NSOpenGLPFAPixelBuffer+ 90)
+(defconstant +NSOpenGLPFAAllRenderers+          1)
+(defconstant +NSOpenGLPFATripleBuffer+          3)
+(defconstant +NSOpenGLPFADoubleBuffer+          5)
+(defconstant +NSOpenGLPFAStereo+                6)
+(defconstant +NSOpenGLPFAAuxBuffers+            7)
+(defconstant +NSOpenGLPFAColorSize+             8)
+(defconstant +NSOpenGLPFAAlphaSize+             11)
+(defconstant +NSOpenGLPFADepthSize+             12)
+(defconstant +NSOpenGLPFAStencilSize+           13)
+(defconstant +NSOpenGLPFAAccumSize+             14)
+(defconstant +NSOpenGLPFAMinimumPolicy+         51)
+(defconstant +NSOpenGLPFAMaximumPolicy+         52)
+(defconstant +NSOpenGLPFAOffScreen+             53)
+(defconstant +NSOpenGLPFAFullScreen+            54)
+(defconstant +NSOpenGLPFASampleBuffers+         55)
+(defconstant +NSOpenGLPFASamples+               56)
+(defconstant +NSOpenGLPFAAuxDepthStencil+       57)
+(defconstant +NSOpenGLPFAColorFloat+            58)
+(defconstant +NSOpenGLPFAMultisample+           59)
+(defconstant +NSOpenGLPFASupersample+           60)
+(defconstant +NSOpenGLPFASampleAlpha+           61)
+(defconstant +NSOpenGLPFARendererID+            70)
+(defconstant +NSOpenGLPFASingleRenderer+        71)
+(defconstant +NSOpenGLPFANoRecovery+            72)
+(defconstant +NSOpenGLPFAAccelerated+           73)
+(defconstant +NSOpenGLPFAClosestPolicy+         74)
+(defconstant +NSOpenGLPFARobust+                75)
+(defconstant +NSOpenGLPFABackingStore+          76)
+(defconstant +NSOpenGLPFAMPSafe+                78)
+(defconstant +NSOpenGLPFAWindow+                80)
+(defconstant +NSOpenGLPFAMultiScreen+           81)
+(defconstant +NSOpenGLPFACompliant+             83)
+(defconstant +NSOpenGLPFAScreenMask+            84)
+(defconstant +NSOpenGLPFAPixelBuffer+           90)
+(defconstant +NSOpenGLPFARemotePixelBuffer+     91)
+(defconstant +NSOpenGLPFAAllowOfflineRenderers+ 96)
+(defconstant +NSOpenGLPFAAcceleratedCompute+    97)
+(defconstant +NSOpenGLPFAOpenGLProfile+         99)
+(defconstant +NSOpenGLPFAVirtualScreenCount+    128)
+
+(defparameter *default-format-attribs*
+  (list +NSOpenGLPFADoubleBuffer+
+        +NSOpenGLPFAWindow+
+        +NSOpenGLPFAAccelerated+
+        +NSOpenGLPFAColorSize+ 32
+        +NSOpenGLPFADepthSize+ 16
+        +NSOpenGLPFAStencilSize+ 8
+        +NSOpenGLPFAAccumSize+ 8
+        0)
+  "The default list of NSOpenGLPixelFormat attributes.")
 
 (defmethod initialize-instance :after ((context cocoa-opengl-context) &key pane)
   "Create a new OpenGL context for Mac OS X."
-  (with-dynamic-foreign-objects ((attribs :unsigned-int :initial-contents (list +NSOpenGLPFADoubleBuffer+
-                                                                                +NSOpenGLPFAWindow+
-                                                                                +NSOpenGLPFAAccelerated+
-                                                                                +NSOpenGLPFAColorSize+ 32
-                                                                                +NSOpenGLPFADepthSize+ 16
-                                                                                +NSOpenGLPFAStencilSize+ 8
-                                                                                0)))
+  (with-dynamic-foreign-objects ((attribs :unsigned-int :initial-contents *default-format-attribs*))
     (let* ((format (objc:invoke (objc:invoke "NSOpenGLPixelFormat" "alloc") "initWithAttributes:" attribs))
            (nsobj (objc:invoke (objc:invoke "NSOpenGLContext" "alloc") "initWithFormat:shareContext:" format nil))
            (rep (slot-value pane 'capi-internals:representation))
@@ -55,11 +92,10 @@
 
 (defmethod opengl-context-prepare ((context cocoa-opengl-context))
   "Make this pane's context current."
-  (let* ((rep (slot-value (opengl-context-pane context) 'capi-internals:representation))
-         (view (slot-value rep 'capi-cocoa-library::main-view)))
-    (when (objc:null-objc-pointer-p (objc:invoke (cocoa-opengl-context context) "view"))
-      (objc:invoke (cocoa-opengl-context context) "setView:" view))
-    (objc:invoke (cocoa-opengl-context context) "makeCurrentContext")))
+  (when (objc:null-objc-pointer-p (objc:invoke (cocoa-opengl-context context) "view"))
+    (let ((rep (slot-value (opengl-context-pane context) 'capi-internals:representation)))
+      (objc:invoke (cocoa-opengl-context context) "setView:" (slot-value rep 'capi-cocoa-library::main-view))))
+  (objc:invoke (cocoa-opengl-context context) "makeCurrentContext"))
 
 (defmethod opengl-context-present ((context cocoa-opengl-context))
   "Swap the backbuffer and display what was rendered."

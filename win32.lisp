@@ -29,15 +29,15 @@
 (define-c-typedef BOOL :boolean)
 
 ;;; pixel types
-(defconstant +PFD_TYPE_RGBA+ #x00000000)
+(defconstant +pfd-type-rgba+ #x00000000)
 
 ;;; layer types
-(defconstant +PFD_MAIN_PLANE+ #x00000000)
+(defconstant +pfd-main-plane+ #x00000000)
 
 ;;; pixel format flags
-(defconstant +PFD_DOUBLE_BUFFER+ #x00000001)
-(defconstant +PFD_DRAW_TO_WINDOW+ #x00000004)
-(defconstant +PFD_SUPPORT_OPENGL+ #x00000020)
+(defconstant +pfd-double-buffer+ #x00000001)
+(defconstant +pfd-draw-to-window+ #x00000004)
+(defconstant +pfd-support-opengl+ #x00000020)
 
 ;;; win32 pixel format
 (define-c-struct pixel-format-descriptor
@@ -100,7 +100,7 @@
     ((hdc HDC))
   :result-type :boolean)
 
-(defmethod initialize-instance :after ((context win32-opengl-context) &key pane color-bits depth-bits)
+(defmethod initialize-instance :after ((context win32-opengl-context) &key pane)
   "Use the HDC of an output-pane to create an OpenGL context."
   (let* ((rep (gp:port-representation pane))
          (hdc (slot-value rep 'capi-win32-lib::hdc)))
@@ -112,8 +112,10 @@
             (foreign-slot-value pfd 'ipixeltype) 0
             (foreign-slot-value pfd 'ilayertype) 0
             (foreign-slot-value pfd 'dwflags) 37
-            (foreign-slot-value pfd 'ccolorbits) color-bits
-            (foreign-slot-value pfd 'cdepthbits) depth-bits)
+            (foreign-slot-value pfd 'ccolorbits) 32
+            (foreign-slot-value pfd 'cdepthbits) 16
+            (foreign-slot-value pfd 'cstencilbits) 8
+            (foreign-slot-value pfd 'caccumbits) 8)
 
       ;; set the pixel format for the device
       (let ((format (choose-pixel-format hdc pfd)))

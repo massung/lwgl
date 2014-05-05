@@ -606,838 +606,838 @@
    #:gl-window-pos3sv
 
    ;; constants
-   #:+GL_2D+
-   #:+GL_2_BYTES+
-   #:+GL_3D+
-   #:+GL_3D_COLOR+
-   #:+GL_3D_COLOR_TEXTURE+
-   #:+GL_3_BYTES+
-   #:+GL_4D_COLOR_TEXTURE+
-   #:+GL_4_BYTES+
-   #:+GL_ACCUM_ALPHA_BITS+
-   #:+GL_ACCUM_BLUE_BITS+
-   #:+GL_ACCUM_BUFFER_BIT+
-   #:+GL_ACCUM_CLEAR_VALUE+
-   #:+GL_ACCUM_GREEN_BITS+
-   #:+GL_ACCUM_RED_BITS+
-   #:+GL_ACTIVE_ATTRIBUTES+
-   #:+GL_ACTIVE_ATTRIBUTE_MAX_LENGTH+
-   #:+GL_ACTIVE_TEXTURE+
-   #:+GL_ACTIVE_UNIFORMS+
-   #:+GL_ACTIVE_UNIFORM_MAX_LENGTH+
-   #:+GL_ADD_SIGNED+
-   #:+GL_ALIASED_LINE_WIDTH_RANGE+
-   #:+GL_ALIASED_POINT_SIZE_RANGE+
-   #:+GL_ALL_ATTRIB_BITS+
-   #:+GL_ALPHA+
-   #:+GL_ALPHA12+
-   #:+GL_ALPHA16+
-   #:+GL_ALPHA4+
-   #:+GL_ALPHA8+
-   #:+GL_ALPHA_BIAS+
-   #:+GL_ALPHA_BITS+
-   #:+GL_ALPHA_SCALE+
-   #:+GL_ALPHA_TEST+
-   #:+GL_ALPHA_TEST_FUNC+
-   #:+GL_ALPHA_TEST_REF+
-   #:+GL_AMBIENT+
-   #:+GL_AMBIENT_AND_DIFFUSE+
-   #:+GL_AND+
-   #:+GL_AND_INVERTED+
-   #:+GL_AND_REVERSE+
-   #:+GL_ARRAY_BUFFER+
-   #:+GL_ARRAY_BUFFER_BINDING+
-   #:+GL_ATTACHED_SHADERS+
-   #:+GL_ATTRIB_STACK_DEPTH+
-   #:+GL_AUTO_NORMAL+
-   #:+GL_AUX0+
-   #:+GL_AUX1+
-   #:+GL_AUX2+
-   #:+GL_AUX3+
-   #:+GL_AUX_BUFFERS+
-   #:+GL_BACK+
-   #:+GL_BACK_LEFT+
-   #:+GL_BACK_RIGHT+
-   #:+GL_BGR+
-   #:+GL_BGRA+
-   #:+GL_BITMAP+
-   #:+GL_BITMAP_TOKEN+
-   #:+GL_BLEND+
-   #:+GL_BLEND_COLOR+
-   #:+GL_BLEND_DST+
-   #:+GL_BLEND_EQUATION+
-   #:+GL_BLEND_EQUATION_ALPHA+
-   #:+GL_BLEND_EQUATION_RGB+
-   #:+GL_BLEND_SRC+
-   #:+GL_BLUE+
-   #:+GL_BLUE_BIAS+
-   #:+GL_BLUE_BITS+
-   #:+GL_BLUE_SCALE+
-   #:+GL_BOOL+
-   #:+GL_BOOL_VEC2+
-   #:+GL_BOOL_VEC3+
-   #:+GL_BOOL_VEC4+
-   #:+GL_BUFFER_ACCESS+
-   #:+GL_BUFFER_MAPPED+
-   #:+GL_BUFFER_MAP_POINTER+
-   #:+GL_BUFFER_SIZE+
-   #:+GL_BUFFER_USAGE+
-   #:+GL_BYTE+
-   #:+GL_C3F_V3F+
-   #:+GL_C4F_N3F_V3F+
-   #:+GL_C4UB_V2F+
-   #:+GL_C4UB_V3F+
-   #:+GL_CCW+
-   #:+GL_CLAMP+
-   #:+GL_CLAMP_TO_BORDER+
-   #:+GL_CLAMP_TO_EDGE+
-   #:+GL_CLEAR+
-   #:+GL_CLIENT_ACTIVE_TEXTURE+
-   #:+GL_CLIENT_ALL_ATTRIB_BITS+
-   #:+GL_CLIENT_ATTRIB_STACK_DEPTH+
-   #:+GL_CLIENT_PIXEL_STORE_BIT+
-   #:+GL_CLIENT_VERTEX_ARRAY_BIT+
-   #:+GL_CLIP_PLANE0+
-   #:+GL_CLIP_PLANE1+
-   #:+GL_CLIP_PLANE2+
-   #:+GL_CLIP_PLANE3+
-   #:+GL_CLIP_PLANE4+
-   #:+GL_CLIP_PLANE5+
-   #:+GL_COEFF+
-   #:+GL_COLOR+
-   #:+GL_COLOR_ARRAY+
-   #:+GL_COLOR_ARRAY_BUFFER_BINDING+
-   #:+GL_COLOR_ARRAY_POINTER+
-   #:+GL_COLOR_ARRAY_SIZE+
-   #:+GL_COLOR_ARRAY_STRIDE+
-   #:+GL_COLOR_ARRAY_TYPE+
-   #:+GL_COLOR_BUFFER_BIT+
-   #:+GL_COLOR_CLEAR_VALUE+
-   #:+GL_COLOR_INDEX+
-   #:+GL_COLOR_INDEXES+
-   #:+GL_COLOR_LOGIC_OP+
-   #:+GL_COLOR_MATERIAL+
-   #:+GL_COLOR_MATERIAL_FACE+
-   #:+GL_COLOR_MATERIAL_PARAMETER+
-   #:+GL_COLOR_MATRIX+
-   #:+GL_COLOR_MATRIX_STACK_DEPTH+
-   #:+GL_COLOR_TABLE+
-   #:+GL_COLOR_TABLE_ALPHA_SIZE+
-   #:+GL_COLOR_TABLE_BIAS+
-   #:+GL_COLOR_TABLE_BLUE_SIZE+
-   #:+GL_COLOR_TABLE_FORMAT+
-   #:+GL_COLOR_TABLE_GREEN_SIZE+
-   #:+GL_COLOR_TABLE_INTENSITY_SIZE+
-   #:+GL_COLOR_TABLE_LUMINANCE_SIZE+
-   #:+GL_COLOR_TABLE_RED_SIZE+
-   #:+GL_COLOR_TABLE_SCALE+
-   #:+GL_COLOR_TABLE_WIDTH+
-   #:+GL_COLOR_WRITEMASK+
-   #:+GL_COMBINE+
-   #:+GL_COMBINE_ALPHA+
-   #:+GL_COMBINE_RGB+
-   #:+GL_COMPILE+
-   #:+GL_COMPILE_AND_EXECUTE+
-   #:+GL_COMPILE_STATUS+
-   #:+GL_COMPRESSED_SLUMINANCE+
-   #:+GL_COMPRESSED_SLUMINANCE_ALPHA+
-   #:+GL_COMPRESSED_SRGB+
-   #:+GL_COMPRESSED_SRGB_ALPHA+
-   #:+GL_CONSTANT+
-   #:+GL_CONSTANT_ALPHA+
-   #:+GL_CONSTANT_ATTENUATION+
-   #:+GL_CONSTANT_BORDER+
-   #:+GL_CONSTANT_COLOR+
-   #:+GL_CONVOLUTION_1D+
-   #:+GL_CONVOLUTION_2D+
-   #:+GL_CONVOLUTION_BORDER_COLOR+
-   #:+GL_CONVOLUTION_BORDER_MODE+
-   #:+GL_CONVOLUTION_FILTER_BIAS+
-   #:+GL_CONVOLUTION_FILTER_SCALE+
-   #:+GL_CONVOLUTION_FORMAT+
-   #:+GL_CONVOLUTION_HEIGHT+
-   #:+GL_CONVOLUTION_WIDTH+
-   #:+GL_COORD_REPLACE+
-   #:+GL_COPY+
-   #:+GL_COPY_INVERTED+
-   #:+GL_COPY_PIXEL_TOKEN+
-   #:+GL_CULL_FACE+
-   #:+GL_CULL_FACE_MODE+
-   #:+GL_CURRENT_BIT+
-   #:+GL_CURRENT_COLOR+
-   #:+GL_CURRENT_FOG_COORD+
-   #:+GL_CURRENT_INDEX+
-   #:+GL_CURRENT_NORMAL+
-   #:+GL_CURRENT_PROGRAM+
-   #:+GL_CURRENT_QUERY+
-   #:+GL_CURRENT_RASTER_COLOR+
-   #:+GL_CURRENT_RASTER_DISTANCE+
-   #:+GL_CURRENT_RASTER_INDEX+
-   #:+GL_CURRENT_RASTER_POSITION+
-   #:+GL_CURRENT_RASTER_POSITION_VALID+
-   #:+GL_CURRENT_RASTER_SECONDARY_COLOR+
-   #:+GL_CURRENT_RASTER_TEXTURE_COORDS+
-   #:+GL_CURRENT_TEXTURE_COORDS+
-   #:+GL_CURRENT_VERTEX_ATTRIB+
-   #:+GL_CW+
-   #:+GL_DECAL+
-   #:+GL_DECR+
-   #:+GL_DELETE_STATUS+
-   #:+GL_DEPTH+
-   #:+GL_DEPTH_BIAS+
-   #:+GL_DEPTH_BITS+
-   #:+GL_DEPTH_BUFFER_BIT+
-   #:+GL_DEPTH_CLEAR_VALUE+
-   #:+GL_DEPTH_COMPONENT+
-   #:+GL_DEPTH_FUNC+
-   #:+GL_DEPTH_RANGE+
-   #:+GL_DEPTH_SCALE+
-   #:+GL_DEPTH_TEST+
-   #:+GL_DEPTH_WRITEMASK+
-   #:+GL_DIFFUSE+
-   #:+GL_DITHER+
-   #:+GL_DOMAIN+
-   #:+GL_DONT_CARE+
-   #:+GL_DOUBLE+
-   #:+GL_DOUBLEBUFFER+
-   #:+GL_DRAW_BUFFER+
-   #:+GL_DRAW_BUFFER0+
-   #:+GL_DRAW_BUFFER1+
-   #:+GL_DRAW_BUFFER10+
-   #:+GL_DRAW_BUFFER11+
-   #:+GL_DRAW_BUFFER12+
-   #:+GL_DRAW_BUFFER13+
-   #:+GL_DRAW_BUFFER14+
-   #:+GL_DRAW_BUFFER15+
-   #:+GL_DRAW_BUFFER2+
-   #:+GL_DRAW_BUFFER3+
-   #:+GL_DRAW_BUFFER4+
-   #:+GL_DRAW_BUFFER5+
-   #:+GL_DRAW_BUFFER6+
-   #:+GL_DRAW_BUFFER7+
-   #:+GL_DRAW_BUFFER8+
-   #:+GL_DRAW_BUFFER9+
-   #:+GL_DRAW_PIXEL_TOKEN+
-   #:+GL_DST_ALPHA+
-   #:+GL_DST_COLOR+
-   #:+GL_DYNAMIC_COPY+
-   #:+GL_DYNAMIC_DRAW+
-   #:+GL_DYNAMIC_READ+
-   #:+GL_EDGE_FLAG+
-   #:+GL_EDGE_FLAG_ARRAY+
-   #:+GL_EDGE_FLAG_ARRAY_BUFFER_BINDING+
-   #:+GL_EDGE_FLAG_ARRAY_POINTER+
-   #:+GL_EDGE_FLAG_ARRAY_STRIDE+
-   #:+GL_ELEMENT_ARRAY_BUFFER+
-   #:+GL_ELEMENT_ARRAY_BUFFER_BINDING+
-   #:+GL_EMISSION+
-   #:+GL_ENABLE_BIT+
-   #:+GL_EQUIV+
-   #:+GL_EVAL_BIT+
-   #:+GL_EXP+
-   #:+GL_EXP2+
-   #:+GL_EXTENSIONS+
-   #:+GL_EYE_LINEAR+
-   #:+GL_EYE_PLANE+
-   #:+GL_FALSE+
-   #:+GL_FASTEST+
-   #:+GL_FEEDBACK+
-   #:+GL_FEEDBACK_BUFFER_POINTER+
-   #:+GL_FEEDBACK_BUFFER_SIZE+
-   #:+GL_FEEDBACK_BUFFER_TYPE+
-   #:+GL_FILL+
-   #:+GL_FLAT+
-   #:+GL_FLOAT+
-   #:+GL_FLOAT_MAT2+
-   #:+GL_FLOAT_MAT2X3+
-   #:+GL_FLOAT_MAT2X4+
-   #:+GL_FLOAT_MAT3+
-   #:+GL_FLOAT_MAT3X2+
-   #:+GL_FLOAT_MAT3X4+
-   #:+GL_FLOAT_MAT4+
-   #:+GL_FLOAT_MAT4X2+
-   #:+GL_FLOAT_MAT4X3+
-   #:+GL_FLOAT_VEC2+
-   #:+GL_FLOAT_VEC3+
-   #:+GL_FLOAT_VEC4+
-   #:+GL_FOG+
-   #:+GL_FOG_BIT+
-   #:+GL_FOG_COLOR+
-   #:+GL_FOG_COORD+
-   #:+GL_FOG_COORD_ARRAY+
-   #:+GL_FOG_COORD_ARRAY_BUFFER_BINDING+
-   #:+GL_FOG_COORD_ARRAY_POINTER+
-   #:+GL_FOG_COORD_ARRAY_STRIDE+
-   #:+GL_FOG_COORD_ARRAY_TYPE+
-   #:+GL_FOG_COORD_SRC+
-   #:+GL_FOG_DENSITY+
-   #:+GL_FOG_END+
-   #:+GL_FOG_HINT+
-   #:+GL_FOG_INDEX+
-   #:+GL_FOG_MODE+
-   #:+GL_FOG_START+
-   #:+GL_FRAGMENT_DEPTH+
-   #:+GL_FRAGMENT_SHADER+
-   #:+GL_FRAGMENT_SHADER_DERIVATIVE_HINT+
-   #:+GL_FRONT+
-   #:+GL_FRONT_AND_BACK+
-   #:+GL_FRONT_FACE+
-   #:+GL_FRONT_LEFT+
-   #:+GL_FRONT_RIGHT+
-   #:+GL_FUNC_ADD+
-   #:+GL_FUNC_REVERSE_SUBTRACT+
-   #:+GL_FUNC_SUBTRACT+
-   #:+GL_GREEN+
-   #:+GL_GREEN_BIAS+
-   #:+GL_GREEN_BITS+
-   #:+GL_GREEN_SCALE+
-   #:+GL_HINT_BIT+
-   #:+GL_HISTOGRAM+
-   #:+GL_HISTOGRAM_ALPHA_SIZE+
-   #:+GL_HISTOGRAM_BLUE_SIZE+
-   #:+GL_HISTOGRAM_FORMAT+
-   #:+GL_HISTOGRAM_GREEN_SIZE+
-   #:+GL_HISTOGRAM_LUMINANCE_SIZE+
-   #:+GL_HISTOGRAM_RED_SIZE+
-   #:+GL_HISTOGRAM_SINK+
-   #:+GL_HISTOGRAM_WIDTH+
-   #:+GL_INCR+
-   #:+GL_INDEX_ARRAY+
-   #:+GL_INDEX_ARRAY_BUFFER_BINDING+
-   #:+GL_INDEX_ARRAY_POINTER+
-   #:+GL_INDEX_ARRAY_STRIDE+
-   #:+GL_INDEX_ARRAY_TYPE+
-   #:+GL_INDEX_BITS+
-   #:+GL_INDEX_CLEAR_VALUE+
-   #:+GL_INDEX_LOGIC_OP+
-   #:+GL_INDEX_MODE+
-   #:+GL_INDEX_OFFSET+
-   #:+GL_INDEX_SHIFT+
-   #:+GL_INDEX_WRITEMASK+
-   #:+GL_INFO_LOG_LENGTH+
-   #:+GL_INT+
-   #:+GL_INTENSITY+
-   #:+GL_INTENSITY12+
-   #:+GL_INTENSITY16+
-   #:+GL_INTENSITY4+
-   #:+GL_INTENSITY8+
-   #:+GL_INTERPOLATE+
-   #:+GL_INT_VEC2+
-   #:+GL_INT_VEC3+
-   #:+GL_INT_VEC4+
-   #:+GL_INVALID_ENUM+
-   #:+GL_INVALID_OPERATION+
-   #:+GL_INVALID_VALUE+
-   #:+GL_INVERT+
-   #:+GL_KEEP+
-   #:+GL_LEFT+
-   #:+GL_LIGHT0+
-   #:+GL_LIGHT1+
-   #:+GL_LIGHT2+
-   #:+GL_LIGHT3+
-   #:+GL_LIGHT4+
-   #:+GL_LIGHT5+
-   #:+GL_LIGHT6+
-   #:+GL_LIGHT7+
-   #:+GL_LIGHTING+
-   #:+GL_LIGHTING_BIT+
-   #:+GL_LIGHT_MODEL_AMBIENT+
-   #:+GL_LIGHT_MODEL_COLOR_CONTROL+
-   #:+GL_LIGHT_MODEL_LOCAL_VIEWER+
-   #:+GL_LIGHT_MODEL_TWO_SIDE+
-   #:+GL_LINE+
-   #:+GL_LINEAR+
-   #:+GL_LINEAR_ATTENUATION+
-   #:+GL_LINEAR_MIPMAP_LINEAR+
-   #:+GL_LINEAR_MIPMAP_NEAREST+
-   #:+GL_LINES+
-   #:+GL_LINE_BIT+
-   #:+GL_LINE_LOOP+
-   #:+GL_LINE_RESET_TOKEN+
-   #:+GL_LINE_SMOOTH+
-   #:+GL_LINE_SMOOTH_HINT+
-   #:+GL_LINE_STIPPLE+
-   #:+GL_LINE_STIPPLE_PATTERN+
-   #:+GL_LINE_STIPPLE_REPEAT+
-   #:+GL_LINE_STRIP+
-   #:+GL_LINE_TOKEN+
-   #:+GL_LINE_WIDTH+
-   #:+GL_LINE_WIDTH_GRANULARITY+
-   #:+GL_LINE_WIDTH_RANGE+
-   #:+GL_LINK_STATUS+
-   #:+GL_LIST_BASE+
-   #:+GL_LIST_BIT+
-   #:+GL_LIST_INDEX+
-   #:+GL_LIST_MODE+
-   #:+GL_LOGIC_OP_MODE+
-   #:+GL_LOWER_LEFT+
-   #:+GL_LUMINANCE+
-   #:+GL_LUMINANCE12+
-   #:+GL_LUMINANCE12_ALPHA12+
-   #:+GL_LUMINANCE12_ALPHA4+
-   #:+GL_LUMINANCE16+
-   #:+GL_LUMINANCE16_ALPHA16+
-   #:+GL_LUMINANCE4+
-   #:+GL_LUMINANCE4_ALPHA4+
-   #:+GL_LUMINANCE6_ALPHA2+
-   #:+GL_LUMINANCE8+
-   #:+GL_LUMINANCE8_ALPHA8+
-   #:+GL_LUMINANCE_ALPHA+
-   #:+GL_MAP1_COLOR_4+
-   #:+GL_MAP1_GRID_DOMAIN+
-   #:+GL_MAP1_GRID_SEGMENTS+
-   #:+GL_MAP1_INDEX+
-   #:+GL_MAP1_NORMAL+
-   #:+GL_MAP1_TEXTURE_COORD_1+
-   #:+GL_MAP1_TEXTURE_COORD_2+
-   #:+GL_MAP1_TEXTURE_COORD_3+
-   #:+GL_MAP1_TEXTURE_COORD_4+
-   #:+GL_MAP1_VERTEX_3+
-   #:+GL_MAP1_VERTEX_4+
-   #:+GL_MAP2_COLOR_4+
-   #:+GL_MAP2_GRID_DOMAIN+
-   #:+GL_MAP2_GRID_SEGMENTS+
-   #:+GL_MAP2_INDEX+
-   #:+GL_MAP2_NORMAL+
-   #:+GL_MAP2_TEXTURE_COORD_1+
-   #:+GL_MAP2_TEXTURE_COORD_2+
-   #:+GL_MAP2_TEXTURE_COORD_3+
-   #:+GL_MAP2_TEXTURE_COORD_4+
-   #:+GL_MAP2_VERTEX_3+
-   #:+GL_MAP2_VERTEX_4+
-   #:+GL_MAP_COLOR+
-   #:+GL_MAP_STENCIL+
-   #:+GL_MATRIX_MODE+
-   #:+GL_MAX+
-   #:+GL_MAX_3D_TEXTURE_SIZE+
-   #:+GL_MAX_ATTRIB_STACK_DEPTH+
-   #:+GL_MAX_CLIENT_ATTRIB_STACK_DEPTH+
-   #:+GL_MAX_CLIP_PLANES+
-   #:+GL_MAX_COLOR_MATRIX_STACK_DEPTH+
-   #:+GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS+
-   #:+GL_MAX_CONVOLUTION_HEIGHT+
-   #:+GL_MAX_CONVOLUTION_WIDTH+
-   #:+GL_MAX_DRAW_BUFFERS+
-   #:+GL_MAX_ELEMENTS_INDICES+
-   #:+GL_MAX_ELEMENTS_VERTICES+
-   #:+GL_MAX_EVAL_ORDER+
-   #:+GL_MAX_FRAGMENT_UNIFORM_COMPONENTS+
-   #:+GL_MAX_LIGHTS+
-   #:+GL_MAX_LIST_NESTING+
-   #:+GL_MAX_MODELVIEW_STACK_DEPTH+
-   #:+GL_MAX_NAME_STACK_DEPTH+
-   #:+GL_MAX_PIXEL_MAP_TABLE+
-   #:+GL_MAX_PROJECTION_STACK_DEPTH+
-   #:+GL_MAX_TEXTURE_COORDS+
-   #:+GL_MAX_TEXTURE_IMAGE_UNITS+
-   #:+GL_MAX_TEXTURE_SIZE+
-   #:+GL_MAX_TEXTURE_STACK_DEPTH+
-   #:+GL_MAX_TEXTURE_UNITS+
-   #:+GL_MAX_VARYING_FLOATS+
-   #:+GL_MAX_VERTEX_ATTRIBS+
-   #:+GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS+
-   #:+GL_MAX_VERTEX_UNIFORM_COMPONENTS+
-   #:+GL_MAX_VIEWPORT_DIMS+
-   #:+GL_MIN+
-   #:+GL_MINMAX+
-   #:+GL_MINMAX_FORMAT+
-   #:+GL_MINMAX_SINK+
-   #:+GL_MODELVIEW+
-   #:+GL_MODELVIEW_MATRIX+
-   #:+GL_MODELVIEW_STACK_DEPTH+
-   #:+GL_MODULATE+
-   #:+GL_N3F_V3F+
-   #:+GL_NAME_STACK_DEPTH+
-   #:+GL_NAND+
-   #:+GL_NEAREST+
-   #:+GL_NEAREST_MIPMAP_LINEAR+
-   #:+GL_NEAREST_MIPMAP_NEAREST+
-   #:+GL_NICEST+
-   #:+GL_NONE+
-   #:+GL_NOOP+
-   #:+GL_NOR+
-   #:+GL_NORMALIZE+
-   #:+GL_NORMAL_ARRAY+
-   #:+GL_NORMAL_ARRAY_BUFFER_BINDING+
-   #:+GL_NORMAL_ARRAY_POINTER+
-   #:+GL_NORMAL_ARRAY_STRIDE+
-   #:+GL_NORMAL_ARRAY_TYPE+
-   #:+GL_NO_ERROR+
-   #:+GL_OBJECT_LINEAR+
-   #:+GL_OBJECT_PLANE+
-   #:+GL_ONE+
-   #:+GL_ONE_MINUS_CONSTANT_ALPHA+
-   #:+GL_ONE_MINUS_CONSTANT_COLOR+
-   #:+GL_ONE_MINUS_DST_ALPHA+
-   #:+GL_ONE_MINUS_DST_COLOR+
-   #:+GL_ONE_MINUS_SRC_ALPHA+
-   #:+GL_ONE_MINUS_SRC_COLOR+
-   #:+GL_OR+
-   #:+GL_ORDER+
-   #:+GL_OR_INVERTED+
-   #:+GL_OR_REVERSE+
-   #:+GL_OUT_OF_MEMORY+
-   #:+GL_PACK_ALIGNMENT+
-   #:+GL_PACK_IMAGE_HEIGHT+
-   #:+GL_PACK_LSB_FIRST+
-   #:+GL_PACK_ROW_LENGTH+
-   #:+GL_PACK_SKIP_IMAGES+
-   #:+GL_PACK_SKIP_PIXELS+
-   #:+GL_PACK_SKIP_ROWS+
-   #:+GL_PACK_SWAP_BYTES+
-   #:+GL_PASS_THROUGH_TOKEN+
-   #:+GL_PERSPECTIVE_CORRECTION_HINT+
-   #:+GL_PIXEL_MAP_A_TO_A+
-   #:+GL_PIXEL_MAP_A_TO_A_SIZE+
-   #:+GL_PIXEL_MAP_B_TO_B+
-   #:+GL_PIXEL_MAP_B_TO_B_SIZE+
-   #:+GL_PIXEL_MAP_G_TO_G+
-   #:+GL_PIXEL_MAP_G_TO_G_SIZE+
-   #:+GL_PIXEL_MAP_I_TO_A+
-   #:+GL_PIXEL_MAP_I_TO_A_SIZE+
-   #:+GL_PIXEL_MAP_I_TO_B+
-   #:+GL_PIXEL_MAP_I_TO_B_SIZE+
-   #:+GL_PIXEL_MAP_I_TO_G+
-   #:+GL_PIXEL_MAP_I_TO_G_SIZE+
-   #:+GL_PIXEL_MAP_I_TO_I+
-   #:+GL_PIXEL_MAP_I_TO_I_SIZE+
-   #:+GL_PIXEL_MAP_I_TO_R+
-   #:+GL_PIXEL_MAP_I_TO_R_SIZE+
-   #:+GL_PIXEL_MAP_R_TO_R+
-   #:+GL_PIXEL_MAP_R_TO_R_SIZE+
-   #:+GL_PIXEL_MAP_S_TO_S+
-   #:+GL_PIXEL_MAP_S_TO_S_SIZE+
-   #:+GL_PIXEL_MODE_BIT+
-   #:+GL_PIXEL_PACK_BUFFER+
-   #:+GL_PIXEL_PACK_BUFFER_BINDING+
-   #:+GL_PIXEL_UNPACK_BUFFER+
-   #:+GL_PIXEL_UNPACK_BUFFER_BINDING+
-   #:+GL_POINT+
-   #:+GL_POINTS+
-   #:+GL_POINT_BIT+
-   #:+GL_POINT_SIZE+
-   #:+GL_POINT_SIZE_GRANULARITY+
-   #:+GL_POINT_SIZE_RANGE+
-   #:+GL_POINT_SMOOTH+
-   #:+GL_POINT_SMOOTH_HINT+
-   #:+GL_POINT_SPRITE+
-   #:+GL_POINT_SPRITE_COORD_ORIGIN+
-   #:+GL_POINT_TOKEN+
-   #:+GL_POLYGON+
-   #:+GL_POLYGON_BIT+
-   #:+GL_POLYGON_MODE+
-   #:+GL_POLYGON_OFFSET_FACTOR+
-   #:+GL_POLYGON_OFFSET_FILL+
-   #:+GL_POLYGON_OFFSET_LINE+
-   #:+GL_POLYGON_OFFSET_POINT+
-   #:+GL_POLYGON_OFFSET_UNITS+
-   #:+GL_POLYGON_SMOOTH+
-   #:+GL_POLYGON_SMOOTH_HINT+
-   #:+GL_POLYGON_STIPPLE+
-   #:+GL_POLYGON_STIPPLE_BIT+
-   #:+GL_POLYGON_TOKEN+
-   #:+GL_POSITION+
-   #:+GL_POST_COLOR_MATRIX_ALPHA_BIAS+
-   #:+GL_POST_COLOR_MATRIX_ALPHA_SCALE+
-   #:+GL_POST_COLOR_MATRIX_BLUE_BIAS+
-   #:+GL_POST_COLOR_MATRIX_BLUE_SCALE+
-   #:+GL_POST_COLOR_MATRIX_COLOR_TABLE+
-   #:+GL_POST_COLOR_MATRIX_GREEN_BIAS+
-   #:+GL_POST_COLOR_MATRIX_GREEN_SCALE+
-   #:+GL_POST_COLOR_MATRIX_RED_BIAS+
-   #:+GL_POST_COLOR_MATRIX_RED_SCALE+
-   #:+GL_POST_CONVOLUTION_ALPHA_BIAS+
-   #:+GL_POST_CONVOLUTION_ALPHA_SCALE+
-   #:+GL_POST_CONVOLUTION_BLUE_BIAS+
-   #:+GL_POST_CONVOLUTION_BLUE_SCALE+
-   #:+GL_POST_CONVOLUTION_COLOR_TABLE+
-   #:+GL_POST_CONVOLUTION_GREEN_BIAS+
-   #:+GL_POST_CONVOLUTION_GREEN_SCALE+
-   #:+GL_POST_CONVOLUTION_RED_BIAS+
-   #:+GL_POST_CONVOLUTION_RED_SCALE+
-   #:+GL_PREVIOUS+
-   #:+GL_PRIMARY_COLOR+
-   #:+GL_PROJECTION+
-   #:+GL_PROJECTION_MATRIX+
-   #:+GL_PROJECTION_STACK_DEPTH+
-   #:+GL_PROXY_COLOR_TABLE+
-   #:+GL_PROXY_HISTOGRAM+
-   #:+GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE+
-   #:+GL_PROXY_POST_CONVOLUTION_COLOR_TABLE+
-   #:+GL_PROXY_TEXTURE_1D+
-   #:+GL_PROXY_TEXTURE_2D+
-   #:+GL_PROXY_TEXTURE_3D+
-   #:+GL_Q+
-   #:+GL_QUADRATIC_ATTENUATION+
-   #:+GL_QUADS+
-   #:+GL_QUAD_STRIP+
-   #:+GL_QUERY_COUNTER_BITS+
-   #:+GL_QUERY_RESULT+
-   #:+GL_QUERY_RESULT_AVAILABLE+
-   #:+GL_R+
-   #:+GL_R3_G3_B2+
-   #:+GL_READ_BUFFER+
-   #:+GL_READ_ONLY+
-   #:+GL_READ_WRITE+
-   #:+GL_RED+
-   #:+GL_REDUCE+
-   #:+GL_RED_BIAS+
-   #:+GL_RED_BITS+
-   #:+GL_RED_SCALE+
-   #:+GL_RENDER+
-   #:+GL_RENDERER+
-   #:+GL_RENDER_MODE+
-   #:+GL_REPEAT+
-   #:+GL_REPLACE+
-   #:+GL_REPLICATE_BORDER+
-   #:+GL_RESCALE_NORMAL+
-   #:+GL_RGB+
-   #:+GL_RGB10+
-   #:+GL_RGB10_A2+
-   #:+GL_RGB12+
-   #:+GL_RGB16+
-   #:+GL_RGB4+
-   #:+GL_RGB5+
-   #:+GL_RGB5_A1+
-   #:+GL_RGB8+
-   #:+GL_RGBA+
-   #:+GL_RGBA12+
-   #:+GL_RGBA16+
-   #:+GL_RGBA2+
-   #:+GL_RGBA4+
-   #:+GL_RGBA8+
-   #:+GL_RGBA_MODE+
-   #:+GL_RGB_SCALE+
-   #:+GL_RIGHT+
-   #:+GL_S+
-   #:+GL_SAMPLER_1D+
-   #:+GL_SAMPLER_1D_SHADOW+
-   #:+GL_SAMPLER_2D+
-   #:+GL_SAMPLER_2D_SHADOW+
-   #:+GL_SAMPLER_3D+
-   #:+GL_SAMPLER_CUBE+
-   #:+GL_SAMPLES_PASSED+
-   #:+GL_SCISSOR_BIT+
-   #:+GL_SCISSOR_BOX+
-   #:+GL_SCISSOR_TEST+
-   #:+GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING+
-   #:+GL_SELECT+
-   #:+GL_SELECTION_BUFFER_POINTER+
-   #:+GL_SELECTION_BUFFER_SIZE+
-   #:+GL_SEPARABLE_2D+
-   #:+GL_SEPARATE_SPECULAR_COLOR+
-   #:+GL_SET+
-   #:+GL_SHADER_SOURCE_LENGTH+
-   #:+GL_SHADER_TYPE+
-   #:+GL_SHADE_MODEL+
-   #:+GL_SHADING_LANGUAGE_VERSION+
-   #:+GL_SHININESS+
-   #:+GL_SHORT+
-   #:+GL_SINGLE_COLOR+
-   #:+GL_SLUMINANCE+
-   #:+GL_SLUMINANCE8+
-   #:+GL_SLUMINANCE8_ALPHA8+
-   #:+GL_SLUMINANCE_ALPHA+
-   #:+GL_SMOOTH+
-   #:+GL_SMOOTH_LINE_WIDTH_GRANULARITY+
-   #:+GL_SMOOTH_LINE_WIDTH_RANGE+
-   #:+GL_SMOOTH_POINT_SIZE_GRANULARITY+
-   #:+GL_SMOOTH_POINT_SIZE_RANGE+
-   #:+GL_SPECULAR+
-   #:+GL_SPHERE_MAP+
-   #:+GL_SPOT_CUTOFF+
-   #:+GL_SPOT_DIRECTION+
-   #:+GL_SPOT_EXPONENT+
-   #:+GL_SRC0_ALPHA+
-   #:+GL_SRC0_RGB+
-   #:+GL_SRC1_ALPHA+
-   #:+GL_SRC1_RGB+
-   #:+GL_SRC2_ALPHA+
-   #:+GL_SRC2_RGB+
-   #:+GL_SRC_ALPHA+
-   #:+GL_SRC_ALPHA_SATURATE+
-   #:+GL_SRC_COLOR+
-   #:+GL_SRGB+
-   #:+GL_SRGB8+
-   #:+GL_SRGB8_ALPHA8+
-   #:+GL_SRGB_ALPHA+
-   #:+GL_STACK_OVERFLOW+
-   #:+GL_STACK_UNDERFLOW+
-   #:+GL_STATIC_COPY+
-   #:+GL_STATIC_DRAW+
-   #:+GL_STATIC_READ+
-   #:+GL_STENCIL+
-   #:+GL_STENCIL_BACK_FAIL+
-   #:+GL_STENCIL_BACK_FUNC+
-   #:+GL_STENCIL_BACK_PASS_DEPTH_FAIL+
-   #:+GL_STENCIL_BACK_PASS_DEPTH_PASS+
-   #:+GL_STENCIL_BACK_REF+
-   #:+GL_STENCIL_BACK_VALUE_MASK+
-   #:+GL_STENCIL_BACK_WRITEMASK+
-   #:+GL_STENCIL_BITS+
-   #:+GL_STENCIL_BUFFER_BIT+
-   #:+GL_STENCIL_CLEAR_VALUE+
-   #:+GL_STENCIL_FAIL+
-   #:+GL_STENCIL_FUNC+
-   #:+GL_STENCIL_INDEX+
-   #:+GL_STENCIL_PASS_DEPTH_FAIL+
-   #:+GL_STENCIL_PASS_DEPTH_PASS+
-   #:+GL_STENCIL_REF+
-   #:+GL_STENCIL_TEST+
-   #:+GL_STENCIL_VALUE_MASK+
-   #:+GL_STENCIL_WRITEMASK+
-   #:+GL_STEREO+
-   #:+GL_STREAM_COPY+
-   #:+GL_STREAM_DRAW+
-   #:+GL_STREAM_READ+
-   #:+GL_SUBPIXEL_BITS+
-   #:+GL_SUBTRACT+
-   #:+GL_T+
-   #:+GL_T2F_C3F_V3F+
-   #:+GL_T2F_C4F_N3F_V3F+
-   #:+GL_T2F_C4UB_V3F+
-   #:+GL_T2F_N3F_V3F+
-   #:+GL_T2F_V3F+
-   #:+GL_T4F_C4F_N3F_V4F+
-   #:+GL_T4F_V4F+
-   #:+GL_TABLE_TOO_LARGE+
-   #:+GL_TEXTURE+
-   #:+GL_TEXTURE0+
-   #:+GL_TEXTURE1+
-   #:+GL_TEXTURE10+
-   #:+GL_TEXTURE11+
-   #:+GL_TEXTURE12+
-   #:+GL_TEXTURE13+
-   #:+GL_TEXTURE14+
-   #:+GL_TEXTURE15+
-   #:+GL_TEXTURE16+
-   #:+GL_TEXTURE17+
-   #:+GL_TEXTURE18+
-   #:+GL_TEXTURE19+
-   #:+GL_TEXTURE2+
-   #:+GL_TEXTURE20+
-   #:+GL_TEXTURE21+
-   #:+GL_TEXTURE22+
-   #:+GL_TEXTURE23+
-   #:+GL_TEXTURE24+
-   #:+GL_TEXTURE25+
-   #:+GL_TEXTURE26+
-   #:+GL_TEXTURE27+
-   #:+GL_TEXTURE28+
-   #:+GL_TEXTURE29+
-   #:+GL_TEXTURE3+
-   #:+GL_TEXTURE30+
-   #:+GL_TEXTURE31+
-   #:+GL_TEXTURE4+
-   #:+GL_TEXTURE5+
-   #:+GL_TEXTURE6+
-   #:+GL_TEXTURE7+
-   #:+GL_TEXTURE8+
-   #:+GL_TEXTURE9+
-   #:+GL_TEXTURE_1D+
-   #:+GL_TEXTURE_2D+
-   #:+GL_TEXTURE_3D+
-   #:+GL_TEXTURE_ALPHA_SIZE+
-   #:+GL_TEXTURE_BASE_LEVEL+
-   #:+GL_TEXTURE_BINDING_1D+
-   #:+GL_TEXTURE_BINDING_2D+
-   #:+GL_TEXTURE_BINDING_3D+
-   #:+GL_TEXTURE_BIT+
-   #:+GL_TEXTURE_BLUE_SIZE+
-   #:+GL_TEXTURE_BORDER+
-   #:+GL_TEXTURE_BORDER_COLOR+
-   #:+GL_TEXTURE_COORD_ARRAY+
-   #:+GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING+
-   #:+GL_TEXTURE_COORD_ARRAY_POINTER+
-   #:+GL_TEXTURE_COORD_ARRAY_SIZE+
-   #:+GL_TEXTURE_COORD_ARRAY_STRIDE+
-   #:+GL_TEXTURE_COORD_ARRAY_TYPE+
-   #:+GL_TEXTURE_DEPTH+
-   #:+GL_TEXTURE_ENV+
-   #:+GL_TEXTURE_ENV_COLOR+
-   #:+GL_TEXTURE_ENV_MODE+
-   #:+GL_TEXTURE_GEN_MODE+
-   #:+GL_TEXTURE_GEN_Q+
-   #:+GL_TEXTURE_GEN_R+
-   #:+GL_TEXTURE_GEN_S+
-   #:+GL_TEXTURE_GEN_T+
-   #:+GL_TEXTURE_GREEN_SIZE+
-   #:+GL_TEXTURE_HEIGHT+
-   #:+GL_TEXTURE_INTENSITY_SIZE+
-   #:+GL_TEXTURE_INTERNAL_FORMAT+
-   #:+GL_TEXTURE_LUMINANCE_SIZE+
-   #:+GL_TEXTURE_MAG_FILTER+
-   #:+GL_TEXTURE_MATRIX+
-   #:+GL_TEXTURE_MAX_LEVEL+
-   #:+GL_TEXTURE_MAX_LOD+
-   #:+GL_TEXTURE_MIN_FILTER+
-   #:+GL_TEXTURE_MIN_LOD+
-   #:+GL_TEXTURE_PRIORITY+
-   #:+GL_TEXTURE_RED_SIZE+
-   #:+GL_TEXTURE_RESIDENT+
-   #:+GL_TEXTURE_STACK_DEPTH+
-   #:+GL_TEXTURE_WIDTH+
-   #:+GL_TEXTURE_WRAP_R+
-   #:+GL_TEXTURE_WRAP_S+
-   #:+GL_TEXTURE_WRAP_T+
-   #:+GL_TRANSFORM_BIT+
-   #:+GL_TRIANGLES+
-   #:+GL_TRIANGLE_FAN+
-   #:+GL_TRIANGLE_STRIP+
-   #:+GL_TRUE+
-   #:+GL_UNPACK_ALIGNMENT+
-   #:+GL_UNPACK_IMAGE_HEIGHT+
-   #:+GL_UNPACK_LSB_FIRST+
-   #:+GL_UNPACK_ROW_LENGTH+
-   #:+GL_UNPACK_SKIP_IMAGES+
-   #:+GL_UNPACK_SKIP_PIXELS+
-   #:+GL_UNPACK_SKIP_ROWS+
-   #:+GL_UNPACK_SWAP_BYTES+
-   #:+GL_UNSIGNED_BYTE+
-   #:+GL_UNSIGNED_BYTE_2_3_3_REV+
-   #:+GL_UNSIGNED_BYTE_3_3_2+
-   #:+GL_UNSIGNED_INT+
-   #:+GL_UNSIGNED_INT_10_10_10_2+
-   #:+GL_UNSIGNED_INT_2_10_10_10_REV+
-   #:+GL_UNSIGNED_INT_8_8_8_8+
-   #:+GL_UNSIGNED_INT_8_8_8_8_REV+
-   #:+GL_UNSIGNED_SHORT+
-   #:+GL_UNSIGNED_SHORT_1_5_5_5_REV+
-   #:+GL_UNSIGNED_SHORT_4_4_4_4+
-   #:+GL_UNSIGNED_SHORT_4_4_4_4_REV+
-   #:+GL_UNSIGNED_SHORT_5_5_5_1+
-   #:+GL_UNSIGNED_SHORT_5_6_5+
-   #:+GL_UNSIGNED_SHORT_5_6_5_REV+
-   #:+GL_UPPER_LEFT+
-   #:+GL_V2F+
-   #:+GL_V3F+
-   #:+GL_VALIDATE_STATUS+
-   #:+GL_VENDOR+
-   #:+GL_VERSION+
-   #:+GL_VERTEX_ARRAY+
-   #:+GL_VERTEX_ARRAY_BUFFER_BINDING+
-   #:+GL_VERTEX_ARRAY_POINTER+
-   #:+GL_VERTEX_ARRAY_SIZE+
-   #:+GL_VERTEX_ARRAY_STRIDE+
-   #:+GL_VERTEX_ARRAY_TYPE+
-   #:+GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING+
-   #:+GL_VERTEX_ATTRIB_ARRAY_ENABLED+
-   #:+GL_VERTEX_ATTRIB_ARRAY_NORMALIZED+
-   #:+GL_VERTEX_ATTRIB_ARRAY_POINTER+
-   #:+GL_VERTEX_ATTRIB_ARRAY_SIZE+
-   #:+GL_VERTEX_ATTRIB_ARRAY_STRIDE+
-   #:+GL_VERTEX_ATTRIB_ARRAY_TYPE+
-   #:+GL_VERTEX_PROGRAM_POINT_SIZE+
-   #:+GL_VERTEX_PROGRAM_TWO_SIDE+
-   #:+GL_VERTEX_SHADER+
-   #:+GL_VIEWPORT+
-   #:+GL_VIEWPORT_BIT+
-   #:+GL_WEIGHT_ARRAY_BUFFER_BINDING+
-   #:+GL_WRITE_ONLY+
-   #:+GL_XOR+
-   #:+GL_ZERO+
-   #:+GL_ZOOM_X+
-   #:+GL_ZOOM_Y+))
+   #:+gl-2d+
+   #:+gl-2-bytes+
+   #:+gl-3d+
+   #:+gl-3d-color+
+   #:+gl-3d-color-texture+
+   #:+gl-3-bytes+
+   #:+gl-4d-color-texture+
+   #:+gl-4-bytes+
+   #:+gl-accum-alpha-bits+
+   #:+gl-accum-blue-bits+
+   #:+gl-accum-buffer-bit+
+   #:+gl-accum-clear-value+
+   #:+gl-accum-green-bits+
+   #:+gl-accum-red-bits+
+   #:+gl-active-attributes+
+   #:+gl-active-attribute-max-length+
+   #:+gl-active-texture+
+   #:+gl-active-uniforms+
+   #:+gl-active-uniform-max-length+
+   #:+gl-add-signed+
+   #:+gl-aliased-line-width-range+
+   #:+gl-aliased-point-size-range+
+   #:+gl-all-attrib-bits+
+   #:+gl-alpha+
+   #:+gl-alpha12+
+   #:+gl-alpha16+
+   #:+gl-alpha4+
+   #:+gl-alpha8+
+   #:+gl-alpha-bias+
+   #:+gl-alpha-bits+
+   #:+gl-alpha-scale+
+   #:+gl-alpha-test+
+   #:+gl-alpha-test-func+
+   #:+gl-alpha-test-ref+
+   #:+gl-ambient+
+   #:+gl-ambient-and-diffuse+
+   #:+gl-and+
+   #:+gl-and-inverted+
+   #:+gl-and-reverse+
+   #:+gl-array-buffer+
+   #:+gl-array-buffer-binding+
+   #:+gl-attached-shaders+
+   #:+gl-attrib-stack-depth+
+   #:+gl-auto-normal+
+   #:+gl-aux0+
+   #:+gl-aux1+
+   #:+gl-aux2+
+   #:+gl-aux3+
+   #:+gl-aux-buffers+
+   #:+gl-back+
+   #:+gl-back-left+
+   #:+gl-back-right+
+   #:+gl-bgr+
+   #:+gl-bgra+
+   #:+gl-bitmap+
+   #:+gl-bitmap-token+
+   #:+gl-blend+
+   #:+gl-blend-color+
+   #:+gl-blend-dst+
+   #:+gl-blend-equation+
+   #:+gl-blend-equation-alpha+
+   #:+gl-blend-equation-rgb+
+   #:+gl-blend-src+
+   #:+gl-blue+
+   #:+gl-blue-bias+
+   #:+gl-blue-bits+
+   #:+gl-blue-scale+
+   #:+gl-bool+
+   #:+gl-bool-vec2+
+   #:+gl-bool-vec3+
+   #:+gl-bool-vec4+
+   #:+gl-buffer-access+
+   #:+gl-buffer-mapped+
+   #:+gl-buffer-map-pointer+
+   #:+gl-buffer-size+
+   #:+gl-buffer-usage+
+   #:+gl-byte+
+   #:+gl-c3f-v3f+
+   #:+gl-c4f-n3f-v3f+
+   #:+gl-c4ub-v2f+
+   #:+gl-c4ub-v3f+
+   #:+gl-ccw+
+   #:+gl-clamp+
+   #:+gl-clamp-to-border+
+   #:+gl-clamp-to-edge+
+   #:+gl-clear+
+   #:+gl-client-active-texture+
+   #:+gl-client-all-attrib-bits+
+   #:+gl-client-attrib-stack-depth+
+   #:+gl-client-pixel-store-bit+
+   #:+gl-client-vertex-array-bit+
+   #:+gl-clip-plane0+
+   #:+gl-clip-plane1+
+   #:+gl-clip-plane2+
+   #:+gl-clip-plane3+
+   #:+gl-clip-plane4+
+   #:+gl-clip-plane5+
+   #:+gl-coeff+
+   #:+gl-color+
+   #:+gl-color-array+
+   #:+gl-color-array-buffer-binding+
+   #:+gl-color-array-pointer+
+   #:+gl-color-array-size+
+   #:+gl-color-array-stride+
+   #:+gl-color-array-type+
+   #:+gl-color-buffer-bit+
+   #:+gl-color-clear-value+
+   #:+gl-color-index+
+   #:+gl-color-indexes+
+   #:+gl-color-logic-op+
+   #:+gl-color-material+
+   #:+gl-color-material-face+
+   #:+gl-color-material-parameter+
+   #:+gl-color-matrix+
+   #:+gl-color-matrix-stack-depth+
+   #:+gl-color-table+
+   #:+gl-color-table-alpha-size+
+   #:+gl-color-table-bias+
+   #:+gl-color-table-blue-size+
+   #:+gl-color-table-format+
+   #:+gl-color-table-green-size+
+   #:+gl-color-table-intensity-size+
+   #:+gl-color-table-luminance-size+
+   #:+gl-color-table-red-size+
+   #:+gl-color-table-scale+
+   #:+gl-color-table-width+
+   #:+gl-color-writemask+
+   #:+gl-combine+
+   #:+gl-combine-alpha+
+   #:+gl-combine-rgb+
+   #:+gl-compile+
+   #:+gl-compile-and-execute+
+   #:+gl-compile-status+
+   #:+gl-compressed-sluminance+
+   #:+gl-compressed-sluminance-alpha+
+   #:+gl-compressed-srgb+
+   #:+gl-compressed-srgb-alpha+
+   #:+gl-constant+
+   #:+gl-constant-alpha+
+   #:+gl-constant-attenuation+
+   #:+gl-constant-border+
+   #:+gl-constant-color+
+   #:+gl-convolution-1d+
+   #:+gl-convolution-2d+
+   #:+gl-convolution-border-color+
+   #:+gl-convolution-border-mode+
+   #:+gl-convolution-filter-bias+
+   #:+gl-convolution-filter-scale+
+   #:+gl-convolution-format+
+   #:+gl-convolution-height+
+   #:+gl-convolution-width+
+   #:+gl-coord-replace+
+   #:+gl-copy+
+   #:+gl-copy-inverted+
+   #:+gl-copy-pixel-token+
+   #:+gl-cull-face+
+   #:+gl-cull-face-mode+
+   #:+gl-current-bit+
+   #:+gl-current-color+
+   #:+gl-current-fog-coord+
+   #:+gl-current-index+
+   #:+gl-current-normal+
+   #:+gl-current-program+
+   #:+gl-current-query+
+   #:+gl-current-raster-color+
+   #:+gl-current-raster-distance+
+   #:+gl-current-raster-index+
+   #:+gl-current-raster-position+
+   #:+gl-current-raster-position-valid+
+   #:+gl-current-raster-secondary-color+
+   #:+gl-current-raster-texture-coords+
+   #:+gl-current-texture-coords+
+   #:+gl-current-vertex-attrib+
+   #:+gl-cw+
+   #:+gl-decal+
+   #:+gl-decr+
+   #:+gl-delete-status+
+   #:+gl-depth+
+   #:+gl-depth-bias+
+   #:+gl-depth-bits+
+   #:+gl-depth-buffer-bit+
+   #:+gl-depth-clear-value+
+   #:+gl-depth-component+
+   #:+gl-depth-func+
+   #:+gl-depth-range+
+   #:+gl-depth-scale+
+   #:+gl-depth-test+
+   #:+gl-depth-writemask+
+   #:+gl-diffuse+
+   #:+gl-dither+
+   #:+gl-domain+
+   #:+gl-dont-care+
+   #:+gl-double+
+   #:+gl-doublebuffer+
+   #:+gl-draw-buffer+
+   #:+gl-draw-buffer0+
+   #:+gl-draw-buffer1+
+   #:+gl-draw-buffer10+
+   #:+gl-draw-buffer11+
+   #:+gl-draw-buffer12+
+   #:+gl-draw-buffer13+
+   #:+gl-draw-buffer14+
+   #:+gl-draw-buffer15+
+   #:+gl-draw-buffer2+
+   #:+gl-draw-buffer3+
+   #:+gl-draw-buffer4+
+   #:+gl-draw-buffer5+
+   #:+gl-draw-buffer6+
+   #:+gl-draw-buffer7+
+   #:+gl-draw-buffer8+
+   #:+gl-draw-buffer9+
+   #:+gl-draw-pixel-token+
+   #:+gl-dst-alpha+
+   #:+gl-dst-color+
+   #:+gl-dynamic-copy+
+   #:+gl-dynamic-draw+
+   #:+gl-dynamic-read+
+   #:+gl-edge-flag+
+   #:+gl-edge-flag-array+
+   #:+gl-edge-flag-array-buffer-binding+
+   #:+gl-edge-flag-array-pointer+
+   #:+gl-edge-flag-array-stride+
+   #:+gl-element-array-buffer+
+   #:+gl-element-array-buffer-binding+
+   #:+gl-emission+
+   #:+gl-enable-bit+
+   #:+gl-equiv+
+   #:+gl-eval-bit+
+   #:+gl-exp+
+   #:+gl-exp2+
+   #:+gl-extensions+
+   #:+gl-eye-linear+
+   #:+gl-eye-plane+
+   #:+gl-false+
+   #:+gl-fastest+
+   #:+gl-feedback+
+   #:+gl-feedback-buffer-pointer+
+   #:+gl-feedback-buffer-size+
+   #:+gl-feedback-buffer-type+
+   #:+gl-fill+
+   #:+gl-flat+
+   #:+gl-float+
+   #:+gl-float-mat2+
+   #:+gl-float-mat2x3+
+   #:+gl-float-mat2x4+
+   #:+gl-float-mat3+
+   #:+gl-float-mat3x2+
+   #:+gl-float-mat3x4+
+   #:+gl-float-mat4+
+   #:+gl-float-mat4x2+
+   #:+gl-float-mat4x3+
+   #:+gl-float-vec2+
+   #:+gl-float-vec3+
+   #:+gl-float-vec4+
+   #:+gl-fog+
+   #:+gl-fog-bit+
+   #:+gl-fog-color+
+   #:+gl-fog-coord+
+   #:+gl-fog-coord-array+
+   #:+gl-fog-coord-array-buffer-binding+
+   #:+gl-fog-coord-array-pointer+
+   #:+gl-fog-coord-array-stride+
+   #:+gl-fog-coord-array-type+
+   #:+gl-fog-coord-src+
+   #:+gl-fog-density+
+   #:+gl-fog-end+
+   #:+gl-fog-hint+
+   #:+gl-fog-index+
+   #:+gl-fog-mode+
+   #:+gl-fog-start+
+   #:+gl-fragment-depth+
+   #:+gl-fragment-shader+
+   #:+gl-fragment-shader-derivative-hint+
+   #:+gl-front+
+   #:+gl-front-and-back+
+   #:+gl-front-face+
+   #:+gl-front-left+
+   #:+gl-front-right+
+   #:+gl-func-add+
+   #:+gl-func-reverse-subtract+
+   #:+gl-func-subtract+
+   #:+gl-green+
+   #:+gl-green-bias+
+   #:+gl-green-bits+
+   #:+gl-green-scale+
+   #:+gl-hint-bit+
+   #:+gl-histogram+
+   #:+gl-histogram-alpha-size+
+   #:+gl-histogram-blue-size+
+   #:+gl-histogram-format+
+   #:+gl-histogram-green-size+
+   #:+gl-histogram-luminance-size+
+   #:+gl-histogram-red-size+
+   #:+gl-histogram-sink+
+   #:+gl-histogram-width+
+   #:+gl-incr+
+   #:+gl-index-array+
+   #:+gl-index-array-buffer-binding+
+   #:+gl-index-array-pointer+
+   #:+gl-index-array-stride+
+   #:+gl-index-array-type+
+   #:+gl-index-bits+
+   #:+gl-index-clear-value+
+   #:+gl-index-logic-op+
+   #:+gl-index-mode+
+   #:+gl-index-offset+
+   #:+gl-index-shift+
+   #:+gl-index-writemask+
+   #:+gl-info-log-length+
+   #:+gl-int+
+   #:+gl-intensity+
+   #:+gl-intensity12+
+   #:+gl-intensity16+
+   #:+gl-intensity4+
+   #:+gl-intensity8+
+   #:+gl-interpolate+
+   #:+gl-int-vec2+
+   #:+gl-int-vec3+
+   #:+gl-int-vec4+
+   #:+gl-invalid-enum+
+   #:+gl-invalid-operation+
+   #:+gl-invalid-value+
+   #:+gl-invert+
+   #:+gl-keep+
+   #:+gl-left+
+   #:+gl-light0+
+   #:+gl-light1+
+   #:+gl-light2+
+   #:+gl-light3+
+   #:+gl-light4+
+   #:+gl-light5+
+   #:+gl-light6+
+   #:+gl-light7+
+   #:+gl-lighting+
+   #:+gl-lighting-bit+
+   #:+gl-light-model-ambient+
+   #:+gl-light-model-color-control+
+   #:+gl-light-model-local-viewer+
+   #:+gl-light-model-two-side+
+   #:+gl-line+
+   #:+gl-linear+
+   #:+gl-linear-attenuation+
+   #:+gl-linear-mipmap-linear+
+   #:+gl-linear-mipmap-nearest+
+   #:+gl-lines+
+   #:+gl-line-bit+
+   #:+gl-line-loop+
+   #:+gl-line-reset-token+
+   #:+gl-line-smooth+
+   #:+gl-line-smooth-hint+
+   #:+gl-line-stipple+
+   #:+gl-line-stipple-pattern+
+   #:+gl-line-stipple-repeat+
+   #:+gl-line-strip+
+   #:+gl-line-token+
+   #:+gl-line-width+
+   #:+gl-line-width-granularity+
+   #:+gl-line-width-range+
+   #:+gl-link-status+
+   #:+gl-list-base+
+   #:+gl-list-bit+
+   #:+gl-list-index+
+   #:+gl-list-mode+
+   #:+gl-logic-op-mode+
+   #:+gl-lower-left+
+   #:+gl-luminance+
+   #:+gl-luminance12+
+   #:+gl-luminance12-alpha12+
+   #:+gl-luminance12-alpha4+
+   #:+gl-luminance16+
+   #:+gl-luminance16-alpha16+
+   #:+gl-luminance4+
+   #:+gl-luminance4-alpha4+
+   #:+gl-luminance6-alpha2+
+   #:+gl-luminance8+
+   #:+gl-luminance8-alpha8+
+   #:+gl-luminance-alpha+
+   #:+gl-map1-color-4+
+   #:+gl-map1-grid-domain+
+   #:+gl-map1-grid-segments+
+   #:+gl-map1-index+
+   #:+gl-map1-normal+
+   #:+gl-map1-texture-coord-1+
+   #:+gl-map1-texture-coord-2+
+   #:+gl-map1-texture-coord-3+
+   #:+gl-map1-texture-coord-4+
+   #:+gl-map1-vertex-3+
+   #:+gl-map1-vertex-4+
+   #:+gl-map2-color-4+
+   #:+gl-map2-grid-domain+
+   #:+gl-map2-grid-segments+
+   #:+gl-map2-index+
+   #:+gl-map2-normal+
+   #:+gl-map2-texture-coord-1+
+   #:+gl-map2-texture-coord-2+
+   #:+gl-map2-texture-coord-3+
+   #:+gl-map2-texture-coord-4+
+   #:+gl-map2-vertex-3+
+   #:+gl-map2-vertex-4+
+   #:+gl-map-color+
+   #:+gl-map-stencil+
+   #:+gl-matrix-mode+
+   #:+gl-max+
+   #:+gl-max-3d-texture-size+
+   #:+gl-max-attrib-stack-depth+
+   #:+gl-max-client-attrib-stack-depth+
+   #:+gl-max-clip-planes+
+   #:+gl-max-color-matrix-stack-depth+
+   #:+gl-max-combined-texture-image-units+
+   #:+gl-max-convolution-height+
+   #:+gl-max-convolution-width+
+   #:+gl-max-draw-buffers+
+   #:+gl-max-elements-indices+
+   #:+gl-max-elements-vertices+
+   #:+gl-max-eval-order+
+   #:+gl-max-fragment-uniform-components+
+   #:+gl-max-lights+
+   #:+gl-max-list-nesting+
+   #:+gl-max-modelview-stack-depth+
+   #:+gl-max-name-stack-depth+
+   #:+gl-max-pixel-map-table+
+   #:+gl-max-projection-stack-depth+
+   #:+gl-max-texture-coords+
+   #:+gl-max-texture-image-units+
+   #:+gl-max-texture-size+
+   #:+gl-max-texture-stack-depth+
+   #:+gl-max-texture-units+
+   #:+gl-max-varying-floats+
+   #:+gl-max-vertex-attribs+
+   #:+gl-max-vertex-texture-image-units+
+   #:+gl-max-vertex-uniform-components+
+   #:+gl-max-viewport-dims+
+   #:+gl-min+
+   #:+gl-minmax+
+   #:+gl-minmax-format+
+   #:+gl-minmax-sink+
+   #:+gl-modelview+
+   #:+gl-modelview-matrix+
+   #:+gl-modelview-stack-depth+
+   #:+gl-modulate+
+   #:+gl-n3f-v3f+
+   #:+gl-name-stack-depth+
+   #:+gl-nand+
+   #:+gl-nearest+
+   #:+gl-nearest-mipmap-linear+
+   #:+gl-nearest-mipmap-nearest+
+   #:+gl-nicest+
+   #:+gl-none+
+   #:+gl-noop+
+   #:+gl-nor+
+   #:+gl-normalize+
+   #:+gl-normal-array+
+   #:+gl-normal-array-buffer-binding+
+   #:+gl-normal-array-pointer+
+   #:+gl-normal-array-stride+
+   #:+gl-normal-array-type+
+   #:+gl-no-error+
+   #:+gl-object-linear+
+   #:+gl-object-plane+
+   #:+gl-one+
+   #:+gl-one-minus-constant-alpha+
+   #:+gl-one-minus-constant-color+
+   #:+gl-one-minus-dst-alpha+
+   #:+gl-one-minus-dst-color+
+   #:+gl-one-minus-src-alpha+
+   #:+gl-one-minus-src-color+
+   #:+gl-or+
+   #:+gl-order+
+   #:+gl-or-inverted+
+   #:+gl-or-reverse+
+   #:+gl-out-of-memory+
+   #:+gl-pack-alignment+
+   #:+gl-pack-image-height+
+   #:+gl-pack-lsb-first+
+   #:+gl-pack-row-length+
+   #:+gl-pack-skip-images+
+   #:+gl-pack-skip-pixels+
+   #:+gl-pack-skip-rows+
+   #:+gl-pack-swap-bytes+
+   #:+gl-pass-through-token+
+   #:+gl-perspective-correction-hint+
+   #:+gl-pixel-map-a-to-a+
+   #:+gl-pixel-map-a-to-a-size+
+   #:+gl-pixel-map-b-to-b+
+   #:+gl-pixel-map-b-to-b-size+
+   #:+gl-pixel-map-g-to-g+
+   #:+gl-pixel-map-g-to-g-size+
+   #:+gl-pixel-map-i-to-a+
+   #:+gl-pixel-map-i-to-a-size+
+   #:+gl-pixel-map-i-to-b+
+   #:+gl-pixel-map-i-to-b-size+
+   #:+gl-pixel-map-i-to-g+
+   #:+gl-pixel-map-i-to-g-size+
+   #:+gl-pixel-map-i-to-i+
+   #:+gl-pixel-map-i-to-i-size+
+   #:+gl-pixel-map-i-to-r+
+   #:+gl-pixel-map-i-to-r-size+
+   #:+gl-pixel-map-r-to-r+
+   #:+gl-pixel-map-r-to-r-size+
+   #:+gl-pixel-map-s-to-s+
+   #:+gl-pixel-map-s-to-s-size+
+   #:+gl-pixel-mode-bit+
+   #:+gl-pixel-pack-buffer+
+   #:+gl-pixel-pack-buffer-binding+
+   #:+gl-pixel-unpack-buffer+
+   #:+gl-pixel-unpack-buffer-binding+
+   #:+gl-point+
+   #:+gl-points+
+   #:+gl-point-bit+
+   #:+gl-point-size+
+   #:+gl-point-size-granularity+
+   #:+gl-point-size-range+
+   #:+gl-point-smooth+
+   #:+gl-point-smooth-hint+
+   #:+gl-point-sprite+
+   #:+gl-point-sprite-coord-origin+
+   #:+gl-point-token+
+   #:+gl-polygon+
+   #:+gl-polygon-bit+
+   #:+gl-polygon-mode+
+   #:+gl-polygon-offset-factor+
+   #:+gl-polygon-offset-fill+
+   #:+gl-polygon-offset-line+
+   #:+gl-polygon-offset-point+
+   #:+gl-polygon-offset-units+
+   #:+gl-polygon-smooth+
+   #:+gl-polygon-smooth-hint+
+   #:+gl-polygon-stipple+
+   #:+gl-polygon-stipple-bit+
+   #:+gl-polygon-token+
+   #:+gl-position+
+   #:+gl-post-color-matrix-alpha-bias+
+   #:+gl-post-color-matrix-alpha-scale+
+   #:+gl-post-color-matrix-blue-bias+
+   #:+gl-post-color-matrix-blue-scale+
+   #:+gl-post-color-matrix-color-table+
+   #:+gl-post-color-matrix-green-bias+
+   #:+gl-post-color-matrix-green-scale+
+   #:+gl-post-color-matrix-red-bias+
+   #:+gl-post-color-matrix-red-scale+
+   #:+gl-post-convolution-alpha-bias+
+   #:+gl-post-convolution-alpha-scale+
+   #:+gl-post-convolution-blue-bias+
+   #:+gl-post-convolution-blue-scale+
+   #:+gl-post-convolution-color-table+
+   #:+gl-post-convolution-green-bias+
+   #:+gl-post-convolution-green-scale+
+   #:+gl-post-convolution-red-bias+
+   #:+gl-post-convolution-red-scale+
+   #:+gl-previous+
+   #:+gl-primary-color+
+   #:+gl-projection+
+   #:+gl-projection-matrix+
+   #:+gl-projection-stack-depth+
+   #:+gl-proxy-color-table+
+   #:+gl-proxy-histogram+
+   #:+gl-proxy-post-color-matrix-color-table+
+   #:+gl-proxy-post-convolution-color-table+
+   #:+gl-proxy-texture-1d+
+   #:+gl-proxy-texture-2d+
+   #:+gl-proxy-texture-3d+
+   #:+gl-q+
+   #:+gl-quadratic-attenuation+
+   #:+gl-quads+
+   #:+gl-quad-strip+
+   #:+gl-query-counter-bits+
+   #:+gl-query-result+
+   #:+gl-query-result-available+
+   #:+gl-r+
+   #:+gl-r3-g3-b2+
+   #:+gl-read-buffer+
+   #:+gl-read-only+
+   #:+gl-read-write+
+   #:+gl-red+
+   #:+gl-reduce+
+   #:+gl-red-bias+
+   #:+gl-red-bits+
+   #:+gl-red-scale+
+   #:+gl-render+
+   #:+gl-renderer+
+   #:+gl-render-mode+
+   #:+gl-repeat+
+   #:+gl-replace+
+   #:+gl-replicate-border+
+   #:+gl-rescale-normal+
+   #:+gl-rgb+
+   #:+gl-rgb10+
+   #:+gl-rgb10-a2+
+   #:+gl-rgb12+
+   #:+gl-rgb16+
+   #:+gl-rgb4+
+   #:+gl-rgb5+
+   #:+gl-rgb5-a1+
+   #:+gl-rgb8+
+   #:+gl-rgba+
+   #:+gl-rgba12+
+   #:+gl-rgba16+
+   #:+gl-rgba2+
+   #:+gl-rgba4+
+   #:+gl-rgba8+
+   #:+gl-rgba-mode+
+   #:+gl-rgb-scale+
+   #:+gl-right+
+   #:+gl-s+
+   #:+gl-sampler-1d+
+   #:+gl-sampler-1d-shadow+
+   #:+gl-sampler-2d+
+   #:+gl-sampler-2d-shadow+
+   #:+gl-sampler-3d+
+   #:+gl-sampler-cube+
+   #:+gl-samples-passed+
+   #:+gl-scissor-bit+
+   #:+gl-scissor-box+
+   #:+gl-scissor-test+
+   #:+gl-secondary-color-array-buffer-binding+
+   #:+gl-select+
+   #:+gl-selection-buffer-pointer+
+   #:+gl-selection-buffer-size+
+   #:+gl-separable-2d+
+   #:+gl-separate-specular-color+
+   #:+gl-set+
+   #:+gl-shader-source-length+
+   #:+gl-shader-type+
+   #:+gl-shade-model+
+   #:+gl-shading-language-version+
+   #:+gl-shininess+
+   #:+gl-short+
+   #:+gl-single-color+
+   #:+gl-sluminance+
+   #:+gl-sluminance8+
+   #:+gl-sluminance8-alpha8+
+   #:+gl-sluminance-alpha+
+   #:+gl-smooth+
+   #:+gl-smooth-line-width-granularity+
+   #:+gl-smooth-line-width-range+
+   #:+gl-smooth-point-size-granularity+
+   #:+gl-smooth-point-size-range+
+   #:+gl-specular+
+   #:+gl-sphere-map+
+   #:+gl-spot-cutoff+
+   #:+gl-spot-direction+
+   #:+gl-spot-exponent+
+   #:+gl-src0-alpha+
+   #:+gl-src0-rgb+
+   #:+gl-src1-alpha+
+   #:+gl-src1-rgb+
+   #:+gl-src2-alpha+
+   #:+gl-src2-rgb+
+   #:+gl-src-alpha+
+   #:+gl-src-alpha-saturate+
+   #:+gl-src-color+
+   #:+gl-srgb+
+   #:+gl-srgb8+
+   #:+gl-srgb8-alpha8+
+   #:+gl-srgb-alpha+
+   #:+gl-stack-overflow+
+   #:+gl-stack-underflow+
+   #:+gl-static-copy+
+   #:+gl-static-draw+
+   #:+gl-static-read+
+   #:+gl-stencil+
+   #:+gl-stencil-back-fail+
+   #:+gl-stencil-back-func+
+   #:+gl-stencil-back-pass-depth-fail+
+   #:+gl-stencil-back-pass-depth-pass+
+   #:+gl-stencil-back-ref+
+   #:+gl-stencil-back-value-mask+
+   #:+gl-stencil-back-writemask+
+   #:+gl-stencil-bits+
+   #:+gl-stencil-buffer-bit+
+   #:+gl-stencil-clear-value+
+   #:+gl-stencil-fail+
+   #:+gl-stencil-func+
+   #:+gl-stencil-index+
+   #:+gl-stencil-pass-depth-fail+
+   #:+gl-stencil-pass-depth-pass+
+   #:+gl-stencil-ref+
+   #:+gl-stencil-test+
+   #:+gl-stencil-value-mask+
+   #:+gl-stencil-writemask+
+   #:+gl-stereo+
+   #:+gl-stream-copy+
+   #:+gl-stream-draw+
+   #:+gl-stream-read+
+   #:+gl-subpixel-bits+
+   #:+gl-subtract+
+   #:+gl-t+
+   #:+gl-t2f-c3f-v3f+
+   #:+gl-t2f-c4f-n3f-v3f+
+   #:+gl-t2f-c4ub-v3f+
+   #:+gl-t2f-n3f-v3f+
+   #:+gl-t2f-v3f+
+   #:+gl-t4f-c4f-n3f-v4f+
+   #:+gl-t4f-v4f+
+   #:+gl-table-too-large+
+   #:+gl-texture+
+   #:+gl-texture0+
+   #:+gl-texture1+
+   #:+gl-texture10+
+   #:+gl-texture11+
+   #:+gl-texture12+
+   #:+gl-texture13+
+   #:+gl-texture14+
+   #:+gl-texture15+
+   #:+gl-texture16+
+   #:+gl-texture17+
+   #:+gl-texture18+
+   #:+gl-texture19+
+   #:+gl-texture2+
+   #:+gl-texture20+
+   #:+gl-texture21+
+   #:+gl-texture22+
+   #:+gl-texture23+
+   #:+gl-texture24+
+   #:+gl-texture25+
+   #:+gl-texture26+
+   #:+gl-texture27+
+   #:+gl-texture28+
+   #:+gl-texture29+
+   #:+gl-texture3+
+   #:+gl-texture30+
+   #:+gl-texture31+
+   #:+gl-texture4+
+   #:+gl-texture5+
+   #:+gl-texture6+
+   #:+gl-texture7+
+   #:+gl-texture8+
+   #:+gl-texture9+
+   #:+gl-texture-1d+
+   #:+gl-texture-2d+
+   #:+gl-texture-3d+
+   #:+gl-texture-alpha-size+
+   #:+gl-texture-base-level+
+   #:+gl-texture-binding-1d+
+   #:+gl-texture-binding-2d+
+   #:+gl-texture-binding-3d+
+   #:+gl-texture-bit+
+   #:+gl-texture-blue-size+
+   #:+gl-texture-border+
+   #:+gl-texture-border-color+
+   #:+gl-texture-coord-array+
+   #:+gl-texture-coord-array-buffer-binding+
+   #:+gl-texture-coord-array-pointer+
+   #:+gl-texture-coord-array-size+
+   #:+gl-texture-coord-array-stride+
+   #:+gl-texture-coord-array-type+
+   #:+gl-texture-depth+
+   #:+gl-texture-env+
+   #:+gl-texture-env-color+
+   #:+gl-texture-env-mode+
+   #:+gl-texture-gen-mode+
+   #:+gl-texture-gen-q+
+   #:+gl-texture-gen-r+
+   #:+gl-texture-gen-s+
+   #:+gl-texture-gen-t+
+   #:+gl-texture-green-size+
+   #:+gl-texture-height+
+   #:+gl-texture-intensity-size+
+   #:+gl-texture-internal-format+
+   #:+gl-texture-luminance-size+
+   #:+gl-texture-mag-filter+
+   #:+gl-texture-matrix+
+   #:+gl-texture-max-level+
+   #:+gl-texture-max-lod+
+   #:+gl-texture-min-filter+
+   #:+gl-texture-min-lod+
+   #:+gl-texture-priority+
+   #:+gl-texture-red-size+
+   #:+gl-texture-resident+
+   #:+gl-texture-stack-depth+
+   #:+gl-texture-width+
+   #:+gl-texture-wrap-r+
+   #:+gl-texture-wrap-s+
+   #:+gl-texture-wrap-t+
+   #:+gl-transform-bit+
+   #:+gl-triangles+
+   #:+gl-triangle-fan+
+   #:+gl-triangle-strip+
+   #:+gl-true+
+   #:+gl-unpack-alignment+
+   #:+gl-unpack-image-height+
+   #:+gl-unpack-lsb-first+
+   #:+gl-unpack-row-length+
+   #:+gl-unpack-skip-images+
+   #:+gl-unpack-skip-pixels+
+   #:+gl-unpack-skip-rows+
+   #:+gl-unpack-swap-bytes+
+   #:+gl-unsigned-byte+
+   #:+gl-unsigned-byte-2-3-3-rev+
+   #:+gl-unsigned-byte-3-3-2+
+   #:+gl-unsigned-int+
+   #:+gl-unsigned-int-10-10-10-2+
+   #:+gl-unsigned-int-2-10-10-10-rev+
+   #:+gl-unsigned-int-8-8-8-8+
+   #:+gl-unsigned-int-8-8-8-8-rev+
+   #:+gl-unsigned-short+
+   #:+gl-unsigned-short-1-5-5-5-rev+
+   #:+gl-unsigned-short-4-4-4-4+
+   #:+gl-unsigned-short-4-4-4-4-rev+
+   #:+gl-unsigned-short-5-5-5-1+
+   #:+gl-unsigned-short-5-6-5+
+   #:+gl-unsigned-short-5-6-5-rev+
+   #:+gl-upper-left+
+   #:+gl-v2f+
+   #:+gl-v3f+
+   #:+gl-validate-status+
+   #:+gl-vendor+
+   #:+gl-version+
+   #:+gl-vertex-array+
+   #:+gl-vertex-array-buffer-binding+
+   #:+gl-vertex-array-pointer+
+   #:+gl-vertex-array-size+
+   #:+gl-vertex-array-stride+
+   #:+gl-vertex-array-type+
+   #:+gl-vertex-attrib-array-buffer-binding+
+   #:+gl-vertex-attrib-array-enabled+
+   #:+gl-vertex-attrib-array-normalized+
+   #:+gl-vertex-attrib-array-pointer+
+   #:+gl-vertex-attrib-array-size+
+   #:+gl-vertex-attrib-array-stride+
+   #:+gl-vertex-attrib-array-type+
+   #:+gl-vertex-program-point-size+
+   #:+gl-vertex-program-two-side+
+   #:+gl-vertex-shader+
+   #:+gl-viewport+
+   #:+gl-viewport-bit+
+   #:+gl-weight-array-buffer-binding+
+   #:+gl-write-only+
+   #:+gl-xor+
+   #:+gl-zero+
+   #:+gl-zoom-x+
+   #:+gl-zoom-y+))
 
 (in-package :opengl)
 
@@ -1446,6 +1446,10 @@
   (let ((dll #+darwin #p"/System/Library/Frameworks/OpenGL.FrameWork/OpenGL"
              #+mswindows #p"c:/Windows/System32/opengl32.dll"))
     (register-module :gl :real-name dll :connection-style :immediate)))
+
+(defun double (n)
+  "Coerce a value to a double-float."
+  (coerce n 'double-float))
 
 ;;; plain old data
 (define-c-typedef gl-enum :unsigned-int)
@@ -1458,11 +1462,11 @@
 (define-c-typedef gl-ubyte :unsigned-byte)
 (define-c-typedef gl-ushort :unsigned-short)
 (define-c-typedef gl-uint :unsigned-int)
-(define-c-typedef gl-float :float)
-(define-c-typedef gl-clampf :float)
+(define-c-typedef gl-float (:wrapper :float :lisp-to-foreign float))
+(define-c-typedef gl-clampf (:wrapper :float :lisp-to-foreign float))
 (define-c-typedef gl-void :void)
-(define-c-typedef gl-double :double)
-(define-c-typedef gl-clampd :double)
+(define-c-typedef gl-double (:wrapper :double :lisp-to-foreign double))
+(define-c-typedef gl-clampd (:wrapper :double :lisp-to-foreign double))
 (define-c-typedef gl-char :char)
 (define-c-typedef gl-half :unsigned-short)
 
@@ -1471,838 +1475,838 @@
 (define-c-typedef gl-sizeiptr (:pointer gl-sizei))
 
 ;;; constants
-(defconstant +GL_2D+ #X0600)
-(defconstant +GL_2_BYTES+ #X1407)
-(defconstant +GL_3D+ #X0601)
-(defconstant +GL_3D_COLOR+ #X0602)
-(defconstant +GL_3D_COLOR_TEXTURE+ #X0603)
-(defconstant +GL_3_BYTES+ #X1408)
-(defconstant +GL_4D_COLOR_TEXTURE+ #X0604)
-(defconstant +GL_4_BYTES+ #X1409)
-(defconstant +GL_ACCUM_ALPHA_BITS+ #X0D5B)
-(defconstant +GL_ACCUM_BLUE_BITS+ #X0D5A)
-(defconstant +GL_ACCUM_BUFFER_BIT+ #X00000200)
-(defconstant +GL_ACCUM_CLEAR_VALUE+ #X0B80)
-(defconstant +GL_ACCUM_GREEN_BITS+ #X0D59)
-(defconstant +GL_ACCUM_RED_BITS+ #X0D58)
-(defconstant +GL_ACTIVE_ATTRIBUTES+ #X8B89)
-(defconstant +GL_ACTIVE_ATTRIBUTE_MAX_LENGTH+ #X8B8A)
-(defconstant +GL_ACTIVE_TEXTURE+ #X84E0)
-(defconstant +GL_ACTIVE_UNIFORMS+ #X8B86)
-(defconstant +GL_ACTIVE_UNIFORM_MAX_LENGTH+ #X8B87)
-(defconstant +GL_ADD_SIGNED+ #X8574)
-(defconstant +GL_ALIASED_LINE_WIDTH_RANGE+ #X846E)
-(defconstant +GL_ALIASED_POINT_SIZE_RANGE+ #X846D)
-(defconstant +GL_ALL_ATTRIB_BITS+ #X000FFFFF)
-(defconstant +GL_ALPHA+ #X1906)
-(defconstant +GL_ALPHA12+ #X803D)
-(defconstant +GL_ALPHA16+ #X803E)
-(defconstant +GL_ALPHA4+ #X803B)
-(defconstant +GL_ALPHA8+ #X803C)
-(defconstant +GL_ALPHA_BIAS+ #X0D1D)
-(defconstant +GL_ALPHA_BITS+ #X0D55)
-(defconstant +GL_ALPHA_SCALE+ #X0D1C)
-(defconstant +GL_ALPHA_TEST+ #X0BC0)
-(defconstant +GL_ALPHA_TEST_FUNC+ #X0BC1)
-(defconstant +GL_ALPHA_TEST_REF+ #X0BC2)
-(defconstant +GL_AMBIENT+ #X1200)
-(defconstant +GL_AMBIENT_AND_DIFFUSE+ #X1602)
-(defconstant +GL_AND+ #X1501)
-(defconstant +GL_AND_INVERTED+ #X1504)
-(defconstant +GL_AND_REVERSE+ #X1502)
-(defconstant +GL_ARRAY_BUFFER+ #X8892)
-(defconstant +GL_ARRAY_BUFFER_BINDING+ #X8894)
-(defconstant +GL_ATTACHED_SHADERS+ #X8B85)
-(defconstant +GL_ATTRIB_STACK_DEPTH+ #X0BB0)
-(defconstant +GL_AUTO_NORMAL+ #X0D80)
-(defconstant +GL_AUX0+ #X0409)
-(defconstant +GL_AUX1+ #X040A)
-(defconstant +GL_AUX2+ #X040B)
-(defconstant +GL_AUX3+ #X040C)
-(defconstant +GL_AUX_BUFFERS+ #X0C00)
-(defconstant +GL_BACK+ #X0405)
-(defconstant +GL_BACK_LEFT+ #X0402)
-(defconstant +GL_BACK_RIGHT+ #X0403)
-(defconstant +GL_BGR+ #X80E0)
-(defconstant +GL_BGRA+ #X80E1)
-(defconstant +GL_BITMAP+ #X1A00)
-(defconstant +GL_BITMAP_TOKEN+ #X0704)
-(defconstant +GL_BLEND+ #X0BE2)
-(defconstant +GL_BLEND_COLOR+ #X8005)
-(defconstant +GL_BLEND_DST+ #X0BE0)
-(defconstant +GL_BLEND_EQUATION+ #X8009)
-(defconstant +GL_BLEND_EQUATION_ALPHA+ #X883D)
-(defconstant +GL_BLEND_EQUATION_RGB+ #X8009)
-(defconstant +GL_BLEND_SRC+ #X0BE1)
-(defconstant +GL_BLUE+ #X1905)
-(defconstant +GL_BLUE_BIAS+ #X0D1B)
-(defconstant +GL_BLUE_BITS+ #X0D54)
-(defconstant +GL_BLUE_SCALE+ #X0D1A)
-(defconstant +GL_BOOL+ #X8B56)
-(defconstant +GL_BOOL_VEC2+ #X8B57)
-(defconstant +GL_BOOL_VEC3+ #X8B58)
-(defconstant +GL_BOOL_VEC4+ #X8B59)
-(defconstant +GL_BUFFER_ACCESS+ #X88BB)
-(defconstant +GL_BUFFER_MAPPED+ #X88BC)
-(defconstant +GL_BUFFER_MAP_POINTER+ #X88BD)
-(defconstant +GL_BUFFER_SIZE+ #X8764)
-(defconstant +GL_BUFFER_USAGE+ #X8765)
-(defconstant +GL_BYTE+ #X1400)
-(defconstant +GL_C3F_V3F+ #X2A24)
-(defconstant +GL_C4F_N3F_V3F+ #X2A26)
-(defconstant +GL_C4UB_V2F+ #X2A22)
-(defconstant +GL_C4UB_V3F+ #X2A23)
-(defconstant +GL_CCW+ #X0901)
-(defconstant +GL_CLAMP+ #X2900)
-(defconstant +GL_CLAMP_TO_BORDER+ #X812D)
-(defconstant +GL_CLAMP_TO_EDGE+ #X812F)
-(defconstant +GL_CLEAR+ #X1500)
-(defconstant +GL_CLIENT_ACTIVE_TEXTURE+ #X84E1)
-(defconstant +GL_CLIENT_ALL_ATTRIB_BITS+ #XFFFFFFFF)
-(defconstant +GL_CLIENT_ATTRIB_STACK_DEPTH+ #X0BB1)
-(defconstant +GL_CLIENT_PIXEL_STORE_BIT+ #X00000001)
-(defconstant +GL_CLIENT_VERTEX_ARRAY_BIT+ #X00000002)
-(defconstant +GL_CLIP_PLANE0+ #X3000)
-(defconstant +GL_CLIP_PLANE1+ #X3001)
-(defconstant +GL_CLIP_PLANE2+ #X3002)
-(defconstant +GL_CLIP_PLANE3+ #X3003)
-(defconstant +GL_CLIP_PLANE4+ #X3004)
-(defconstant +GL_CLIP_PLANE5+ #X3005)
-(defconstant +GL_COEFF+ #X0A00)
-(defconstant +GL_COLOR+ #X1800)
-(defconstant +GL_COLOR_ARRAY+ #X8076)
-(defconstant +GL_COLOR_ARRAY_BUFFER_BINDING+ #X8898)
-(defconstant +GL_COLOR_ARRAY_POINTER+ #X8090)
-(defconstant +GL_COLOR_ARRAY_SIZE+ #X8081)
-(defconstant +GL_COLOR_ARRAY_STRIDE+ #X8083)
-(defconstant +GL_COLOR_ARRAY_TYPE+ #X8082)
-(defconstant +GL_COLOR_BUFFER_BIT+ #X00004000)
-(defconstant +GL_COLOR_CLEAR_VALUE+ #X0C22)
-(defconstant +GL_COLOR_INDEX+ #X1900)
-(defconstant +GL_COLOR_INDEXES+ #X1603)
-(defconstant +GL_COLOR_LOGIC_OP+ #X0BF2)
-(defconstant +GL_COLOR_MATERIAL+ #X0B57)
-(defconstant +GL_COLOR_MATERIAL_FACE+ #X0B55)
-(defconstant +GL_COLOR_MATERIAL_PARAMETER+ #X0B56)
-(defconstant +GL_COLOR_MATRIX+ #X80B1)
-(defconstant +GL_COLOR_MATRIX_STACK_DEPTH+ #X80B2)
-(defconstant +GL_COLOR_TABLE+ #X80D0)
-(defconstant +GL_COLOR_TABLE_ALPHA_SIZE+ #X80DD)
-(defconstant +GL_COLOR_TABLE_BIAS+ #X80D7)
-(defconstant +GL_COLOR_TABLE_BLUE_SIZE+ #X80DC)
-(defconstant +GL_COLOR_TABLE_FORMAT+ #X80D8)
-(defconstant +GL_COLOR_TABLE_GREEN_SIZE+ #X80DB)
-(defconstant +GL_COLOR_TABLE_INTENSITY_SIZE+ #X80DF)
-(defconstant +GL_COLOR_TABLE_LUMINANCE_SIZE+ #X80DE)
-(defconstant +GL_COLOR_TABLE_RED_SIZE+ #X80DA)
-(defconstant +GL_COLOR_TABLE_SCALE+ #X80D6)
-(defconstant +GL_COLOR_TABLE_WIDTH+ #X80D9)
-(defconstant +GL_COLOR_WRITEMASK+ #X0C23)
-(defconstant +GL_COMBINE+ #X8570)
-(defconstant +GL_COMBINE_ALPHA+ #X8572)
-(defconstant +GL_COMBINE_RGB+ #X8571)
-(defconstant +GL_COMPILE+ #X1300)
-(defconstant +GL_COMPILE_AND_EXECUTE+ #X1301)
-(defconstant +GL_COMPILE_STATUS+ #X8B81)
-(defconstant +GL_COMPRESSED_SLUMINANCE+ #X8C4A)
-(defconstant +GL_COMPRESSED_SLUMINANCE_ALPHA+ #X8C4B)
-(defconstant +GL_COMPRESSED_SRGB+ #X8C48)
-(defconstant +GL_COMPRESSED_SRGB_ALPHA+ #X8C49)
-(defconstant +GL_CONSTANT+ #X8576)
-(defconstant +GL_CONSTANT_ALPHA+ #X8003)
-(defconstant +GL_CONSTANT_ATTENUATION+ #X1207)
-(defconstant +GL_CONSTANT_BORDER+ #X8151)
-(defconstant +GL_CONSTANT_COLOR+ #X8001)
-(defconstant +GL_CONVOLUTION_1D+ #X8010)
-(defconstant +GL_CONVOLUTION_2D+ #X8011)
-(defconstant +GL_CONVOLUTION_BORDER_COLOR+ #X8154)
-(defconstant +GL_CONVOLUTION_BORDER_MODE+ #X8013)
-(defconstant +GL_CONVOLUTION_FILTER_BIAS+ #X8015)
-(defconstant +GL_CONVOLUTION_FILTER_SCALE+ #X8014)
-(defconstant +GL_CONVOLUTION_FORMAT+ #X8017)
-(defconstant +GL_CONVOLUTION_HEIGHT+ #X8019)
-(defconstant +GL_CONVOLUTION_WIDTH+ #X8018)
-(defconstant +GL_COORD_REPLACE+ #X8862)
-(defconstant +GL_COPY+ #X1503)
-(defconstant +GL_COPY_INVERTED+ #X150C)
-(defconstant +GL_COPY_PIXEL_TOKEN+ #X0706)
-(defconstant +GL_CULL_FACE+ #X0B44)
-(defconstant +GL_CULL_FACE_MODE+ #X0B45)
-(defconstant +GL_CURRENT_BIT+ #X00000001)
-(defconstant +GL_CURRENT_COLOR+ #X0B00)
-(defconstant +GL_CURRENT_FOG_COORD+ #X8453)
-(defconstant +GL_CURRENT_INDEX+ #X0B01)
-(defconstant +GL_CURRENT_NORMAL+ #X0B02)
-(defconstant +GL_CURRENT_PROGRAM+ #X8B8D)
-(defconstant +GL_CURRENT_QUERY+ #X8865)
-(defconstant +GL_CURRENT_RASTER_COLOR+ #X0B04)
-(defconstant +GL_CURRENT_RASTER_DISTANCE+ #X0B09)
-(defconstant +GL_CURRENT_RASTER_INDEX+ #X0B05)
-(defconstant +GL_CURRENT_RASTER_POSITION+ #X0B07)
-(defconstant +GL_CURRENT_RASTER_POSITION_VALID+ #X0B08)
-(defconstant +GL_CURRENT_RASTER_SECONDARY_COLOR+ #X845F)
-(defconstant +GL_CURRENT_RASTER_TEXTURE_COORDS+ #X0B06)
-(defconstant +GL_CURRENT_TEXTURE_COORDS+ #X0B03)
-(defconstant +GL_CURRENT_VERTEX_ATTRIB+ #X8626)
-(defconstant +GL_CW+ #X0900)
-(defconstant +GL_DECAL+ #X2101)
-(defconstant +GL_DECR+ #X1E03)
-(defconstant +GL_DELETE_STATUS+ #X8B80)
-(defconstant +GL_DEPTH+ #X1801)
-(defconstant +GL_DEPTH_BIAS+ #X0D1F)
-(defconstant +GL_DEPTH_BITS+ #X0D56)
-(defconstant +GL_DEPTH_BUFFER_BIT+ #X00000100)
-(defconstant +GL_DEPTH_CLEAR_VALUE+ #X0B73)
-(defconstant +GL_DEPTH_COMPONENT+ #X1902)
-(defconstant +GL_DEPTH_FUNC+ #X0B74)
-(defconstant +GL_DEPTH_RANGE+ #X0B70)
-(defconstant +GL_DEPTH_SCALE+ #X0D1E)
-(defconstant +GL_DEPTH_TEST+ #X0B71)
-(defconstant +GL_DEPTH_WRITEMASK+ #X0B72)
-(defconstant +GL_DIFFUSE+ #X1201)
-(defconstant +GL_DITHER+ #X0BD0)
-(defconstant +GL_DOMAIN+ #X0A02)
-(defconstant +GL_DONT_CARE+ #X1100)
-(defconstant +GL_DOUBLE+ #X140A)
-(defconstant +GL_DOUBLEBUFFER+ #X0C32)
-(defconstant +GL_DRAW_BUFFER+ #X0C01)
-(defconstant +GL_DRAW_BUFFER0+ #X8825)
-(defconstant +GL_DRAW_BUFFER1+ #X8826)
-(defconstant +GL_DRAW_BUFFER10+ #X882F)
-(defconstant +GL_DRAW_BUFFER11+ #X8830)
-(defconstant +GL_DRAW_BUFFER12+ #X8831)
-(defconstant +GL_DRAW_BUFFER13+ #X8832)
-(defconstant +GL_DRAW_BUFFER14+ #X8833)
-(defconstant +GL_DRAW_BUFFER15+ #X8834)
-(defconstant +GL_DRAW_BUFFER2+ #X8827)
-(defconstant +GL_DRAW_BUFFER3+ #X8828)
-(defconstant +GL_DRAW_BUFFER4+ #X8829)
-(defconstant +GL_DRAW_BUFFER5+ #X882A)
-(defconstant +GL_DRAW_BUFFER6+ #X882B)
-(defconstant +GL_DRAW_BUFFER7+ #X882C)
-(defconstant +GL_DRAW_BUFFER8+ #X882D)
-(defconstant +GL_DRAW_BUFFER9+ #X882E)
-(defconstant +GL_DRAW_PIXEL_TOKEN+ #X0705)
-(defconstant +GL_DST_ALPHA+ #X0304)
-(defconstant +GL_DST_COLOR+ #X0306)
-(defconstant +GL_DYNAMIC_COPY+ #X88EA)
-(defconstant +GL_DYNAMIC_DRAW+ #X88E8)
-(defconstant +GL_DYNAMIC_READ+ #X88E9)
-(defconstant +GL_EDGE_FLAG+ #X0B43)
-(defconstant +GL_EDGE_FLAG_ARRAY+ #X8079)
-(defconstant +GL_EDGE_FLAG_ARRAY_BUFFER_BINDING+ #X889B)
-(defconstant +GL_EDGE_FLAG_ARRAY_POINTER+ #X8093)
-(defconstant +GL_EDGE_FLAG_ARRAY_STRIDE+ #X808C)
-(defconstant +GL_ELEMENT_ARRAY_BUFFER+ #X8893)
-(defconstant +GL_ELEMENT_ARRAY_BUFFER_BINDING+ #X8895)
-(defconstant +GL_EMISSION+ #X1600)
-(defconstant +GL_ENABLE_BIT+ #X00002000)
-(defconstant +GL_EQUIV+ #X1509)
-(defconstant +GL_EVAL_BIT+ #X00010000)
-(defconstant +GL_EXP+ #X0800)
-(defconstant +GL_EXP2+ #X0801)
-(defconstant +GL_EXTENSIONS+ #X1F03)
-(defconstant +GL_EYE_LINEAR+ #X2400)
-(defconstant +GL_EYE_PLANE+ #X2502)
-(defconstant +GL_FALSE+ 0)
-(defconstant +GL_FASTEST+ #X1101)
-(defconstant +GL_FEEDBACK+ #X1C01)
-(defconstant +GL_FEEDBACK_BUFFER_POINTER+ #X0DF0)
-(defconstant +GL_FEEDBACK_BUFFER_SIZE+ #X0DF1)
-(defconstant +GL_FEEDBACK_BUFFER_TYPE+ #X0DF2)
-(defconstant +GL_FILL+ #X1B02)
-(defconstant +GL_FLAT+ #X1D00)
-(defconstant +GL_FLOAT+ #X1406)
-(defconstant +GL_FLOAT_MAT2+ #X8B5A)
-(defconstant +GL_FLOAT_MAT2X3+ #X8B65)
-(defconstant +GL_FLOAT_MAT2X4+ #X8B66)
-(defconstant +GL_FLOAT_MAT3+ #X8B5B)
-(defconstant +GL_FLOAT_MAT3X2+ #X8B67)
-(defconstant +GL_FLOAT_MAT3X4+ #X8B68)
-(defconstant +GL_FLOAT_MAT4+ #X8B5C)
-(defconstant +GL_FLOAT_MAT4X2+ #X8B69)
-(defconstant +GL_FLOAT_MAT4X3+ #X8B6A)
-(defconstant +GL_FLOAT_VEC2+ #X8B50)
-(defconstant +GL_FLOAT_VEC3+ #X8B51)
-(defconstant +GL_FLOAT_VEC4+ #X8B52)
-(defconstant +GL_FOG+ #X0B60)
-(defconstant +GL_FOG_BIT+ #X00000080)
-(defconstant +GL_FOG_COLOR+ #X0B66)
-(defconstant +GL_FOG_COORD+ #X8451)
-(defconstant +GL_FOG_COORD_ARRAY+ #X8457)
-(defconstant +GL_FOG_COORD_ARRAY_BUFFER_BINDING+ #X889D)
-(defconstant +GL_FOG_COORD_ARRAY_POINTER+ #X8456)
-(defconstant +GL_FOG_COORD_ARRAY_STRIDE+ #X8455)
-(defconstant +GL_FOG_COORD_ARRAY_TYPE+ #X8454)
-(defconstant +GL_FOG_COORD_SRC+ #X8450)
-(defconstant +GL_FOG_DENSITY+ #X0B62)
-(defconstant +GL_FOG_END+ #X0B64)
-(defconstant +GL_FOG_HINT+ #X0C54)
-(defconstant +GL_FOG_INDEX+ #X0B61)
-(defconstant +GL_FOG_MODE+ #X0B65)
-(defconstant +GL_FOG_START+ #X0B63)
-(defconstant +GL_FRAGMENT_DEPTH+ #X8452)
-(defconstant +GL_FRAGMENT_SHADER+ #X8B30)
-(defconstant +GL_FRAGMENT_SHADER_DERIVATIVE_HINT+ #X8B8B)
-(defconstant +GL_FRONT+ #X0404)
-(defconstant +GL_FRONT_AND_BACK+ #X0408)
-(defconstant +GL_FRONT_FACE+ #X0B46)
-(defconstant +GL_FRONT_LEFT+ #X0400)
-(defconstant +GL_FRONT_RIGHT+ #X0401)
-(defconstant +GL_FUNC_ADD+ #X8006)
-(defconstant +GL_FUNC_REVERSE_SUBTRACT+ #X800B)
-(defconstant +GL_FUNC_SUBTRACT+ #X800A)
-(defconstant +GL_GREEN+ #X1904)
-(defconstant +GL_GREEN_BIAS+ #X0D19)
-(defconstant +GL_GREEN_BITS+ #X0D53)
-(defconstant +GL_GREEN_SCALE+ #X0D18)
-(defconstant +GL_HINT_BIT+ #X00008000)
-(defconstant +GL_HISTOGRAM+ #X8024)
-(defconstant +GL_HISTOGRAM_ALPHA_SIZE+ #X802B)
-(defconstant +GL_HISTOGRAM_BLUE_SIZE+ #X802A)
-(defconstant +GL_HISTOGRAM_FORMAT+ #X8027)
-(defconstant +GL_HISTOGRAM_GREEN_SIZE+ #X8029)
-(defconstant +GL_HISTOGRAM_LUMINANCE_SIZE+ #X802C)
-(defconstant +GL_HISTOGRAM_RED_SIZE+ #X8028)
-(defconstant +GL_HISTOGRAM_SINK+ #X802D)
-(defconstant +GL_HISTOGRAM_WIDTH+ #X8026)
-(defconstant +GL_INCR+ #X1E02)
-(defconstant +GL_INDEX_ARRAY+ #X8077)
-(defconstant +GL_INDEX_ARRAY_BUFFER_BINDING+ #X8899)
-(defconstant +GL_INDEX_ARRAY_POINTER+ #X8091)
-(defconstant +GL_INDEX_ARRAY_STRIDE+ #X8086)
-(defconstant +GL_INDEX_ARRAY_TYPE+ #X8085)
-(defconstant +GL_INDEX_BITS+ #X0D51)
-(defconstant +GL_INDEX_CLEAR_VALUE+ #X0C20)
-(defconstant +GL_INDEX_LOGIC_OP+ #X0BF1)
-(defconstant +GL_INDEX_MODE+ #X0C30)
-(defconstant +GL_INDEX_OFFSET+ #X0D13)
-(defconstant +GL_INDEX_SHIFT+ #X0D12)
-(defconstant +GL_INDEX_WRITEMASK+ #X0C21)
-(defconstant +GL_INFO_LOG_LENGTH+ #X8B84)
-(defconstant +GL_INT+ #X1404)
-(defconstant +GL_INTENSITY+ #X8049)
-(defconstant +GL_INTENSITY12+ #X804C)
-(defconstant +GL_INTENSITY16+ #X804D)
-(defconstant +GL_INTENSITY4+ #X804A)
-(defconstant +GL_INTENSITY8+ #X804B)
-(defconstant +GL_INTERPOLATE+ #X8575)
-(defconstant +GL_INT_VEC2+ #X8B53)
-(defconstant +GL_INT_VEC3+ #X8B54)
-(defconstant +GL_INT_VEC4+ #X8B55)
-(defconstant +GL_INVALID_ENUM+ #X0500)
-(defconstant +GL_INVALID_OPERATION+ #X0502)
-(defconstant +GL_INVALID_VALUE+ #X0501)
-(defconstant +GL_INVERT+ #X150A)
-(defconstant +GL_KEEP+ #X1E00)
-(defconstant +GL_LEFT+ #X0406)
-(defconstant +GL_LIGHT0+ #X4000)
-(defconstant +GL_LIGHT1+ #X4001)
-(defconstant +GL_LIGHT2+ #X4002)
-(defconstant +GL_LIGHT3+ #X4003)
-(defconstant +GL_LIGHT4+ #X4004)
-(defconstant +GL_LIGHT5+ #X4005)
-(defconstant +GL_LIGHT6+ #X4006)
-(defconstant +GL_LIGHT7+ #X4007)
-(defconstant +GL_LIGHTING+ #X0B50)
-(defconstant +GL_LIGHTING_BIT+ #X00000040)
-(defconstant +GL_LIGHT_MODEL_AMBIENT+ #X0B53)
-(defconstant +GL_LIGHT_MODEL_COLOR_CONTROL+ #X81F8)
-(defconstant +GL_LIGHT_MODEL_LOCAL_VIEWER+ #X0B51)
-(defconstant +GL_LIGHT_MODEL_TWO_SIDE+ #X0B52)
-(defconstant +GL_LINE+ #X1B01)
-(defconstant +GL_LINEAR+ #X2601)
-(defconstant +GL_LINEAR_ATTENUATION+ #X1208)
-(defconstant +GL_LINEAR_MIPMAP_LINEAR+ #X2703)
-(defconstant +GL_LINEAR_MIPMAP_NEAREST+ #X2701)
-(defconstant +GL_LINES+ #X0001)
-(defconstant +GL_LINE_BIT+ #X00000004)
-(defconstant +GL_LINE_LOOP+ #X0002)
-(defconstant +GL_LINE_RESET_TOKEN+ #X0707)
-(defconstant +GL_LINE_SMOOTH+ #X0B20)
-(defconstant +GL_LINE_SMOOTH_HINT+ #X0C52)
-(defconstant +GL_LINE_STIPPLE+ #X0B24)
-(defconstant +GL_LINE_STIPPLE_PATTERN+ #X0B25)
-(defconstant +GL_LINE_STIPPLE_REPEAT+ #X0B26)
-(defconstant +GL_LINE_STRIP+ #X0003)
-(defconstant +GL_LINE_TOKEN+ #X0702)
-(defconstant +GL_LINE_WIDTH+ #X0B21)
-(defconstant +GL_LINE_WIDTH_GRANULARITY+ #X0B23)
-(defconstant +GL_LINE_WIDTH_RANGE+ #X0B22)
-(defconstant +GL_LINK_STATUS+ #X8B82)
-(defconstant +GL_LIST_BASE+ #X0B32)
-(defconstant +GL_LIST_BIT+ #X00020000)
-(defconstant +GL_LIST_INDEX+ #X0B33)
-(defconstant +GL_LIST_MODE+ #X0B30)
-(defconstant +GL_LOGIC_OP_MODE+ #X0BF0)
-(defconstant +GL_LOWER_LEFT+ #X8CA1)
-(defconstant +GL_LUMINANCE+ #X1909)
-(defconstant +GL_LUMINANCE12+ #X8041)
-(defconstant +GL_LUMINANCE12_ALPHA12+ #X8047)
-(defconstant +GL_LUMINANCE12_ALPHA4+ #X8046)
-(defconstant +GL_LUMINANCE16+ #X8042)
-(defconstant +GL_LUMINANCE16_ALPHA16+ #X8048)
-(defconstant +GL_LUMINANCE4+ #X803F)
-(defconstant +GL_LUMINANCE4_ALPHA4+ #X8043)
-(defconstant +GL_LUMINANCE6_ALPHA2+ #X8044)
-(defconstant +GL_LUMINANCE8+ #X8040)
-(defconstant +GL_LUMINANCE8_ALPHA8+ #X8045)
-(defconstant +GL_LUMINANCE_ALPHA+ #X190A)
-(defconstant +GL_MAP1_COLOR_4+ #X0D90)
-(defconstant +GL_MAP1_GRID_DOMAIN+ #X0DD0)
-(defconstant +GL_MAP1_GRID_SEGMENTS+ #X0DD1)
-(defconstant +GL_MAP1_INDEX+ #X0D91)
-(defconstant +GL_MAP1_NORMAL+ #X0D92)
-(defconstant +GL_MAP1_TEXTURE_COORD_1+ #X0D93)
-(defconstant +GL_MAP1_TEXTURE_COORD_2+ #X0D94)
-(defconstant +GL_MAP1_TEXTURE_COORD_3+ #X0D95)
-(defconstant +GL_MAP1_TEXTURE_COORD_4+ #X0D96)
-(defconstant +GL_MAP1_VERTEX_3+ #X0D97)
-(defconstant +GL_MAP1_VERTEX_4+ #X0D98)
-(defconstant +GL_MAP2_COLOR_4+ #X0DB0)
-(defconstant +GL_MAP2_GRID_DOMAIN+ #X0DD2)
-(defconstant +GL_MAP2_GRID_SEGMENTS+ #X0DD3)
-(defconstant +GL_MAP2_INDEX+ #X0DB1)
-(defconstant +GL_MAP2_NORMAL+ #X0DB2)
-(defconstant +GL_MAP2_TEXTURE_COORD_1+ #X0DB3)
-(defconstant +GL_MAP2_TEXTURE_COORD_2+ #X0DB4)
-(defconstant +GL_MAP2_TEXTURE_COORD_3+ #X0DB5)
-(defconstant +GL_MAP2_TEXTURE_COORD_4+ #X0DB6)
-(defconstant +GL_MAP2_VERTEX_3+ #X0DB7)
-(defconstant +GL_MAP2_VERTEX_4+ #X0DB8)
-(defconstant +GL_MAP_COLOR+ #X0D10)
-(defconstant +GL_MAP_STENCIL+ #X0D11)
-(defconstant +GL_MATRIX_MODE+ #X0BA0)
-(defconstant +GL_MAX+ #X8008)
-(defconstant +GL_MAX_3D_TEXTURE_SIZE+ #X8073)
-(defconstant +GL_MAX_ATTRIB_STACK_DEPTH+ #X0D35)
-(defconstant +GL_MAX_CLIENT_ATTRIB_STACK_DEPTH+ #X0D3B)
-(defconstant +GL_MAX_CLIP_PLANES+ #X0D32)
-(defconstant +GL_MAX_COLOR_MATRIX_STACK_DEPTH+ #X80B3)
-(defconstant +GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS+ #X8B4D)
-(defconstant +GL_MAX_CONVOLUTION_HEIGHT+ #X801B)
-(defconstant +GL_MAX_CONVOLUTION_WIDTH+ #X801A)
-(defconstant +GL_MAX_DRAW_BUFFERS+ #X8824)
-(defconstant +GL_MAX_ELEMENTS_INDICES+ #X80E9)
-(defconstant +GL_MAX_ELEMENTS_VERTICES+ #X80E8)
-(defconstant +GL_MAX_EVAL_ORDER+ #X0D30)
-(defconstant +GL_MAX_FRAGMENT_UNIFORM_COMPONENTS+ #X8B49)
-(defconstant +GL_MAX_LIGHTS+ #X0D31)
-(defconstant +GL_MAX_LIST_NESTING+ #X0B31)
-(defconstant +GL_MAX_MODELVIEW_STACK_DEPTH+ #X0D36)
-(defconstant +GL_MAX_NAME_STACK_DEPTH+ #X0D37)
-(defconstant +GL_MAX_PIXEL_MAP_TABLE+ #X0D34)
-(defconstant +GL_MAX_PROJECTION_STACK_DEPTH+ #X0D38)
-(defconstant +GL_MAX_TEXTURE_COORDS+ #X8871)
-(defconstant +GL_MAX_TEXTURE_IMAGE_UNITS+ #X8872)
-(defconstant +GL_MAX_TEXTURE_SIZE+ #X0D33)
-(defconstant +GL_MAX_TEXTURE_STACK_DEPTH+ #X0D39)
-(defconstant +GL_MAX_TEXTURE_UNITS+ #X84E2)
-(defconstant +GL_MAX_VARYING_FLOATS+ #X8B4B)
-(defconstant +GL_MAX_VERTEX_ATTRIBS+ #X8869)
-(defconstant +GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS+ #X8B4C)
-(defconstant +GL_MAX_VERTEX_UNIFORM_COMPONENTS+ #X8B4A)
-(defconstant +GL_MAX_VIEWPORT_DIMS+ #X0D3A)
-(defconstant +GL_MIN+ #X8007)
-(defconstant +GL_MINMAX+ #X802E)
-(defconstant +GL_MINMAX_FORMAT+ #X802F)
-(defconstant +GL_MINMAX_SINK+ #X8030)
-(defconstant +GL_MODELVIEW+ #X1700)
-(defconstant +GL_MODELVIEW_MATRIX+ #X0BA6)
-(defconstant +GL_MODELVIEW_STACK_DEPTH+ #X0BA3)
-(defconstant +GL_MODULATE+ #X2100)
-(defconstant +GL_N3F_V3F+ #X2A25)
-(defconstant +GL_NAME_STACK_DEPTH+ #X0D70)
-(defconstant +GL_NAND+ #X150E)
-(defconstant +GL_NEAREST+ #X2600)
-(defconstant +GL_NEAREST_MIPMAP_LINEAR+ #X2702)
-(defconstant +GL_NEAREST_MIPMAP_NEAREST+ #X2700)
-(defconstant +GL_NICEST+ #X1102)
-(defconstant +GL_NONE+ 0)
-(defconstant +GL_NOOP+ #X1505)
-(defconstant +GL_NOR+ #X1508)
-(defconstant +GL_NORMALIZE+ #X0BA1)
-(defconstant +GL_NORMAL_ARRAY+ #X8075)
-(defconstant +GL_NORMAL_ARRAY_BUFFER_BINDING+ #X8897)
-(defconstant +GL_NORMAL_ARRAY_POINTER+ #X808F)
-(defconstant +GL_NORMAL_ARRAY_STRIDE+ #X807F)
-(defconstant +GL_NORMAL_ARRAY_TYPE+ #X807E)
-(defconstant +GL_NO_ERROR+ 0)
-(defconstant +GL_OBJECT_LINEAR+ #X2401)
-(defconstant +GL_OBJECT_PLANE+ #X2501)
-(defconstant +GL_ONE+ 1)
-(defconstant +GL_ONE_MINUS_CONSTANT_ALPHA+ #X8004)
-(defconstant +GL_ONE_MINUS_CONSTANT_COLOR+ #X8002)
-(defconstant +GL_ONE_MINUS_DST_ALPHA+ #X0305)
-(defconstant +GL_ONE_MINUS_DST_COLOR+ #X0307)
-(defconstant +GL_ONE_MINUS_SRC_ALPHA+ #X0303)
-(defconstant +GL_ONE_MINUS_SRC_COLOR+ #X0301)
-(defconstant +GL_OR+ #X1507)
-(defconstant +GL_ORDER+ #X0A01)
-(defconstant +GL_OR_INVERTED+ #X150D)
-(defconstant +GL_OR_REVERSE+ #X150B)
-(defconstant +GL_OUT_OF_MEMORY+ #X0505)
-(defconstant +GL_PACK_ALIGNMENT+ #X0D05)
-(defconstant +GL_PACK_IMAGE_HEIGHT+ #X806C)
-(defconstant +GL_PACK_LSB_FIRST+ #X0D01)
-(defconstant +GL_PACK_ROW_LENGTH+ #X0D02)
-(defconstant +GL_PACK_SKIP_IMAGES+ #X806B)
-(defconstant +GL_PACK_SKIP_PIXELS+ #X0D04)
-(defconstant +GL_PACK_SKIP_ROWS+ #X0D03)
-(defconstant +GL_PACK_SWAP_BYTES+ #X0D00)
-(defconstant +GL_PASS_THROUGH_TOKEN+ #X0700)
-(defconstant +GL_PERSPECTIVE_CORRECTION_HINT+ #X0C50)
-(defconstant +GL_PIXEL_MAP_A_TO_A+ #X0C79)
-(defconstant +GL_PIXEL_MAP_A_TO_A_SIZE+ #X0CB9)
-(defconstant +GL_PIXEL_MAP_B_TO_B+ #X0C78)
-(defconstant +GL_PIXEL_MAP_B_TO_B_SIZE+ #X0CB8)
-(defconstant +GL_PIXEL_MAP_G_TO_G+ #X0C77)
-(defconstant +GL_PIXEL_MAP_G_TO_G_SIZE+ #X0CB7)
-(defconstant +GL_PIXEL_MAP_I_TO_A+ #X0C75)
-(defconstant +GL_PIXEL_MAP_I_TO_A_SIZE+ #X0CB5)
-(defconstant +GL_PIXEL_MAP_I_TO_B+ #X0C74)
-(defconstant +GL_PIXEL_MAP_I_TO_B_SIZE+ #X0CB4)
-(defconstant +GL_PIXEL_MAP_I_TO_G+ #X0C73)
-(defconstant +GL_PIXEL_MAP_I_TO_G_SIZE+ #X0CB3)
-(defconstant +GL_PIXEL_MAP_I_TO_I+ #X0C70)
-(defconstant +GL_PIXEL_MAP_I_TO_I_SIZE+ #X0CB0)
-(defconstant +GL_PIXEL_MAP_I_TO_R+ #X0C72)
-(defconstant +GL_PIXEL_MAP_I_TO_R_SIZE+ #X0CB2)
-(defconstant +GL_PIXEL_MAP_R_TO_R+ #X0C76)
-(defconstant +GL_PIXEL_MAP_R_TO_R_SIZE+ #X0CB6)
-(defconstant +GL_PIXEL_MAP_S_TO_S+ #X0C71)
-(defconstant +GL_PIXEL_MAP_S_TO_S_SIZE+ #X0CB1)
-(defconstant +GL_PIXEL_MODE_BIT+ #X00000020)
-(defconstant +GL_PIXEL_PACK_BUFFER+ #X88EB)
-(defconstant +GL_PIXEL_PACK_BUFFER_BINDING+ #X88ED)
-(defconstant +GL_PIXEL_UNPACK_BUFFER+ #X88EC)
-(defconstant +GL_PIXEL_UNPACK_BUFFER_BINDING+ #X88EF)
-(defconstant +GL_POINT+ #X1B00)
-(defconstant +GL_POINTS+ #X0000)
-(defconstant +GL_POINT_BIT+ #X00000002)
-(defconstant +GL_POINT_SIZE+ #X0B11)
-(defconstant +GL_POINT_SIZE_GRANULARITY+ #X0B13)
-(defconstant +GL_POINT_SIZE_RANGE+ #X0B12)
-(defconstant +GL_POINT_SMOOTH+ #X0B10)
-(defconstant +GL_POINT_SMOOTH_HINT+ #X0C51)
-(defconstant +GL_POINT_SPRITE+ #X8861)
-(defconstant +GL_POINT_SPRITE_COORD_ORIGIN+ #X8CA0)
-(defconstant +GL_POINT_TOKEN+ #X0701)
-(defconstant +GL_POLYGON+ #X0009)
-(defconstant +GL_POLYGON_BIT+ #X00000008)
-(defconstant +GL_POLYGON_MODE+ #X0B40)
-(defconstant +GL_POLYGON_OFFSET_FACTOR+ #X8038)
-(defconstant +GL_POLYGON_OFFSET_FILL+ #X8037)
-(defconstant +GL_POLYGON_OFFSET_LINE+ #X2A02)
-(defconstant +GL_POLYGON_OFFSET_POINT+ #X2A01)
-(defconstant +GL_POLYGON_OFFSET_UNITS+ #X2A00)
-(defconstant +GL_POLYGON_SMOOTH+ #X0B41)
-(defconstant +GL_POLYGON_SMOOTH_HINT+ #X0C53)
-(defconstant +GL_POLYGON_STIPPLE+ #X0B42)
-(defconstant +GL_POLYGON_STIPPLE_BIT+ #X00000010)
-(defconstant +GL_POLYGON_TOKEN+ #X0703)
-(defconstant +GL_POSITION+ #X1203)
-(defconstant +GL_POST_COLOR_MATRIX_ALPHA_BIAS+ #X80BB)
-(defconstant +GL_POST_COLOR_MATRIX_ALPHA_SCALE+ #X80B7)
-(defconstant +GL_POST_COLOR_MATRIX_BLUE_BIAS+ #X80BA)
-(defconstant +GL_POST_COLOR_MATRIX_BLUE_SCALE+ #X80B6)
-(defconstant +GL_POST_COLOR_MATRIX_COLOR_TABLE+ #X80D2)
-(defconstant +GL_POST_COLOR_MATRIX_GREEN_BIAS+ #X80B9)
-(defconstant +GL_POST_COLOR_MATRIX_GREEN_SCALE+ #X80B5)
-(defconstant +GL_POST_COLOR_MATRIX_RED_BIAS+ #X80B8)
-(defconstant +GL_POST_COLOR_MATRIX_RED_SCALE+ #X80B4)
-(defconstant +GL_POST_CONVOLUTION_ALPHA_BIAS+ #X8023)
-(defconstant +GL_POST_CONVOLUTION_ALPHA_SCALE+ #X801F)
-(defconstant +GL_POST_CONVOLUTION_BLUE_BIAS+ #X8022)
-(defconstant +GL_POST_CONVOLUTION_BLUE_SCALE+ #X801E)
-(defconstant +GL_POST_CONVOLUTION_COLOR_TABLE+ #X80D1)
-(defconstant +GL_POST_CONVOLUTION_GREEN_BIAS+ #X8021)
-(defconstant +GL_POST_CONVOLUTION_GREEN_SCALE+ #X801D)
-(defconstant +GL_POST_CONVOLUTION_RED_BIAS+ #X8020)
-(defconstant +GL_POST_CONVOLUTION_RED_SCALE+ #X801C)
-(defconstant +GL_PREVIOUS+ #X8578)
-(defconstant +GL_PRIMARY_COLOR+ #X8577)
-(defconstant +GL_PROJECTION+ #X1701)
-(defconstant +GL_PROJECTION_MATRIX+ #X0BA7)
-(defconstant +GL_PROJECTION_STACK_DEPTH+ #X0BA4)
-(defconstant +GL_PROXY_COLOR_TABLE+ #X80D3)
-(defconstant +GL_PROXY_HISTOGRAM+ #X8025)
-(defconstant +GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE+ #X80D5)
-(defconstant +GL_PROXY_POST_CONVOLUTION_COLOR_TABLE+ #X80D4)
-(defconstant +GL_PROXY_TEXTURE_1D+ #X8063)
-(defconstant +GL_PROXY_TEXTURE_2D+ #X8064)
-(defconstant +GL_PROXY_TEXTURE_3D+ #X8070)
-(defconstant +GL_Q+ #X2003)
-(defconstant +GL_QUADRATIC_ATTENUATION+ #X1209)
-(defconstant +GL_QUADS+ #X0007)
-(defconstant +GL_QUAD_STRIP+ #X0008)
-(defconstant +GL_QUERY_COUNTER_BITS+ #X8864)
-(defconstant +GL_QUERY_RESULT+ #X8866)
-(defconstant +GL_QUERY_RESULT_AVAILABLE+ #X8867)
-(defconstant +GL_R+ #X2002)
-(defconstant +GL_R3_G3_B2+ #X2A10)
-(defconstant +GL_READ_BUFFER+ #X0C02)
-(defconstant +GL_READ_ONLY+ #X88B8)
-(defconstant +GL_READ_WRITE+ #X88BA)
-(defconstant +GL_RED+ #X1903)
-(defconstant +GL_REDUCE+ #X8016)
-(defconstant +GL_RED_BIAS+ #X0D15)
-(defconstant +GL_RED_BITS+ #X0D52)
-(defconstant +GL_RED_SCALE+ #X0D14)
-(defconstant +GL_RENDER+ #X1C00)
-(defconstant +GL_RENDERER+ #X1F01)
-(defconstant +GL_RENDER_MODE+ #X0C40)
-(defconstant +GL_REPEAT+ #X2901)
-(defconstant +GL_REPLACE+ #X1E01)
-(defconstant +GL_REPLICATE_BORDER+ #X8153)
-(defconstant +GL_RESCALE_NORMAL+ #X803A)
-(defconstant +GL_RGB+ #X1907)
-(defconstant +GL_RGB10+ #X8052)
-(defconstant +GL_RGB10_A2+ #X8059)
-(defconstant +GL_RGB12+ #X8053)
-(defconstant +GL_RGB16+ #X8054)
-(defconstant +GL_RGB4+ #X804F)
-(defconstant +GL_RGB5+ #X8050)
-(defconstant +GL_RGB5_A1+ #X8057)
-(defconstant +GL_RGB8+ #X8051)
-(defconstant +GL_RGBA+ #X1908)
-(defconstant +GL_RGBA12+ #X805A)
-(defconstant +GL_RGBA16+ #X805B)
-(defconstant +GL_RGBA2+ #X8055)
-(defconstant +GL_RGBA4+ #X8056)
-(defconstant +GL_RGBA8+ #X8058)
-(defconstant +GL_RGBA_MODE+ #X0C31)
-(defconstant +GL_RGB_SCALE+ #X8573)
-(defconstant +GL_RIGHT+ #X0407)
-(defconstant +GL_S+ #X2000)
-(defconstant +GL_SAMPLER_1D+ #X8B5D)
-(defconstant +GL_SAMPLER_1D_SHADOW+ #X8B61)
-(defconstant +GL_SAMPLER_2D+ #X8B5E)
-(defconstant +GL_SAMPLER_2D_SHADOW+ #X8B62)
-(defconstant +GL_SAMPLER_3D+ #X8B5F)
-(defconstant +GL_SAMPLER_CUBE+ #X8B60)
-(defconstant +GL_SAMPLES_PASSED+ #X8914)
-(defconstant +GL_SCISSOR_BIT+ #X00080000)
-(defconstant +GL_SCISSOR_BOX+ #X0C10)
-(defconstant +GL_SCISSOR_TEST+ #X0C11)
-(defconstant +GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING+ #X889C)
-(defconstant +GL_SELECT+ #X1C02)
-(defconstant +GL_SELECTION_BUFFER_POINTER+ #X0DF3)
-(defconstant +GL_SELECTION_BUFFER_SIZE+ #X0DF4)
-(defconstant +GL_SEPARABLE_2D+ #X8012)
-(defconstant +GL_SEPARATE_SPECULAR_COLOR+ #X81FA)
-(defconstant +GL_SET+ #X150F)
-(defconstant +GL_SHADER_SOURCE_LENGTH+ #X8B88)
-(defconstant +GL_SHADER_TYPE+ #X8B4F)
-(defconstant +GL_SHADE_MODEL+ #X0B54)
-(defconstant +GL_SHADING_LANGUAGE_VERSION+ #X8B8C)
-(defconstant +GL_SHININESS+ #X1601)
-(defconstant +GL_SHORT+ #X1402)
-(defconstant +GL_SINGLE_COLOR+ #X81F9)
-(defconstant +GL_SLUMINANCE+ #X8C46)
-(defconstant +GL_SLUMINANCE8+ #X8C47)
-(defconstant +GL_SLUMINANCE8_ALPHA8+ #X8C45)
-(defconstant +GL_SLUMINANCE_ALPHA+ #X8C44)
-(defconstant +GL_SMOOTH+ #X1D01)
-(defconstant +GL_SMOOTH_LINE_WIDTH_GRANULARITY+ #X0B23)
-(defconstant +GL_SMOOTH_LINE_WIDTH_RANGE+ #X0B22)
-(defconstant +GL_SMOOTH_POINT_SIZE_GRANULARITY+ #X0B13)
-(defconstant +GL_SMOOTH_POINT_SIZE_RANGE+ #X0B12)
-(defconstant +GL_SPECULAR+ #X1202)
-(defconstant +GL_SPHERE_MAP+ #X2402)
-(defconstant +GL_SPOT_CUTOFF+ #X1206)
-(defconstant +GL_SPOT_DIRECTION+ #X1204)
-(defconstant +GL_SPOT_EXPONENT+ #X1205)
-(defconstant +GL_SRC0_ALPHA+ #X8588)
-(defconstant +GL_SRC0_RGB+ #X8580)
-(defconstant +GL_SRC1_ALPHA+ #X8589)
-(defconstant +GL_SRC1_RGB+ #X8581)
-(defconstant +GL_SRC2_ALPHA+ #X858A)
-(defconstant +GL_SRC2_RGB+ #X8582)
-(defconstant +GL_SRC_ALPHA+ #X0302)
-(defconstant +GL_SRC_ALPHA_SATURATE+ #X0308)
-(defconstant +GL_SRC_COLOR+ #X0300)
-(defconstant +GL_SRGB+ #X8C40)
-(defconstant +GL_SRGB8+ #X8C41)
-(defconstant +GL_SRGB8_ALPHA8+ #X8C43)
-(defconstant +GL_SRGB_ALPHA+ #X8C42)
-(defconstant +GL_STACK_OVERFLOW+ #X0503)
-(defconstant +GL_STACK_UNDERFLOW+ #X0504)
-(defconstant +GL_STATIC_COPY+ #X88E6)
-(defconstant +GL_STATIC_DRAW+ #X88E4)
-(defconstant +GL_STATIC_READ+ #X88E5)
-(defconstant +GL_STENCIL+ #X1802)
-(defconstant +GL_STENCIL_BACK_FAIL+ #X8801)
-(defconstant +GL_STENCIL_BACK_FUNC+ #X8800)
-(defconstant +GL_STENCIL_BACK_PASS_DEPTH_FAIL+ #X8802)
-(defconstant +GL_STENCIL_BACK_PASS_DEPTH_PASS+ #X8803)
-(defconstant +GL_STENCIL_BACK_REF+ #X8CA3)
-(defconstant +GL_STENCIL_BACK_VALUE_MASK+ #X8CA4)
-(defconstant +GL_STENCIL_BACK_WRITEMASK+ #X8CA5)
-(defconstant +GL_STENCIL_BITS+ #X0D57)
-(defconstant +GL_STENCIL_BUFFER_BIT+ #X00000400)
-(defconstant +GL_STENCIL_CLEAR_VALUE+ #X0B91)
-(defconstant +GL_STENCIL_FAIL+ #X0B94)
-(defconstant +GL_STENCIL_FUNC+ #X0B92)
-(defconstant +GL_STENCIL_INDEX+ #X1901)
-(defconstant +GL_STENCIL_PASS_DEPTH_FAIL+ #X0B95)
-(defconstant +GL_STENCIL_PASS_DEPTH_PASS+ #X0B96)
-(defconstant +GL_STENCIL_REF+ #X0B97)
-(defconstant +GL_STENCIL_TEST+ #X0B90)
-(defconstant +GL_STENCIL_VALUE_MASK+ #X0B93)
-(defconstant +GL_STENCIL_WRITEMASK+ #X0B98)
-(defconstant +GL_STEREO+ #X0C33)
-(defconstant +GL_STREAM_COPY+ #X88E2)
-(defconstant +GL_STREAM_DRAW+ #X88E0)
-(defconstant +GL_STREAM_READ+ #X88E1)
-(defconstant +GL_SUBPIXEL_BITS+ #X0D50)
-(defconstant +GL_SUBTRACT+ #X84E7)
-(defconstant +GL_T+ #X2001)
-(defconstant +GL_T2F_C3F_V3F+ #X2A2A)
-(defconstant +GL_T2F_C4F_N3F_V3F+ #X2A2C)
-(defconstant +GL_T2F_C4UB_V3F+ #X2A29)
-(defconstant +GL_T2F_N3F_V3F+ #X2A2B)
-(defconstant +GL_T2F_V3F+ #X2A27)
-(defconstant +GL_T4F_C4F_N3F_V4F+ #X2A2D)
-(defconstant +GL_T4F_V4F+ #X2A28)
-(defconstant +GL_TABLE_TOO_LARGE+ #X8031)
-(defconstant +GL_TEXTURE+ #X1702)
-(defconstant +GL_TEXTURE0+ #X84C0)
-(defconstant +GL_TEXTURE1+ #X84C1)
-(defconstant +GL_TEXTURE10+ #X84CA)
-(defconstant +GL_TEXTURE11+ #X84CB)
-(defconstant +GL_TEXTURE12+ #X84CC)
-(defconstant +GL_TEXTURE13+ #X84CD)
-(defconstant +GL_TEXTURE14+ #X84CE)
-(defconstant +GL_TEXTURE15+ #X84CF)
-(defconstant +GL_TEXTURE16+ #X84D0)
-(defconstant +GL_TEXTURE17+ #X84D1)
-(defconstant +GL_TEXTURE18+ #X84D2)
-(defconstant +GL_TEXTURE19+ #X84D3)
-(defconstant +GL_TEXTURE2+ #X84C2)
-(defconstant +GL_TEXTURE20+ #X84D4)
-(defconstant +GL_TEXTURE21+ #X84D5)
-(defconstant +GL_TEXTURE22+ #X84D6)
-(defconstant +GL_TEXTURE23+ #X84D7)
-(defconstant +GL_TEXTURE24+ #X84D8)
-(defconstant +GL_TEXTURE25+ #X84D9)
-(defconstant +GL_TEXTURE26+ #X84DA)
-(defconstant +GL_TEXTURE27+ #X84DB)
-(defconstant +GL_TEXTURE28+ #X84DC)
-(defconstant +GL_TEXTURE29+ #X84DD)
-(defconstant +GL_TEXTURE3+ #X84C3)
-(defconstant +GL_TEXTURE30+ #X84DE)
-(defconstant +GL_TEXTURE31+ #X84DF)
-(defconstant +GL_TEXTURE4+ #X84C4)
-(defconstant +GL_TEXTURE5+ #X84C5)
-(defconstant +GL_TEXTURE6+ #X84C6)
-(defconstant +GL_TEXTURE7+ #X84C7)
-(defconstant +GL_TEXTURE8+ #X84C8)
-(defconstant +GL_TEXTURE9+ #X84C9)
-(defconstant +GL_TEXTURE_1D+ #X0DE0)
-(defconstant +GL_TEXTURE_2D+ #X0DE1)
-(defconstant +GL_TEXTURE_3D+ #X806F)
-(defconstant +GL_TEXTURE_ALPHA_SIZE+ #X805F)
-(defconstant +GL_TEXTURE_BASE_LEVEL+ #X813C)
-(defconstant +GL_TEXTURE_BINDING_1D+ #X8068)
-(defconstant +GL_TEXTURE_BINDING_2D+ #X8069)
-(defconstant +GL_TEXTURE_BINDING_3D+ #X806A)
-(defconstant +GL_TEXTURE_BIT+ #X00040000)
-(defconstant +GL_TEXTURE_BLUE_SIZE+ #X805E)
-(defconstant +GL_TEXTURE_BORDER+ #X1005)
-(defconstant +GL_TEXTURE_BORDER_COLOR+ #X1004)
-(defconstant +GL_TEXTURE_COORD_ARRAY+ #X8078)
-(defconstant +GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING+ #X889A)
-(defconstant +GL_TEXTURE_COORD_ARRAY_POINTER+ #X8092)
-(defconstant +GL_TEXTURE_COORD_ARRAY_SIZE+ #X8088)
-(defconstant +GL_TEXTURE_COORD_ARRAY_STRIDE+ #X808A)
-(defconstant +GL_TEXTURE_COORD_ARRAY_TYPE+ #X8089)
-(defconstant +GL_TEXTURE_DEPTH+ #X8071)
-(defconstant +GL_TEXTURE_ENV+ #X2300)
-(defconstant +GL_TEXTURE_ENV_COLOR+ #X2201)
-(defconstant +GL_TEXTURE_ENV_MODE+ #X2200)
-(defconstant +GL_TEXTURE_GEN_MODE+ #X2500)
-(defconstant +GL_TEXTURE_GEN_Q+ #X0C63)
-(defconstant +GL_TEXTURE_GEN_R+ #X0C62)
-(defconstant +GL_TEXTURE_GEN_S+ #X0C60)
-(defconstant +GL_TEXTURE_GEN_T+ #X0C61)
-(defconstant +GL_TEXTURE_GREEN_SIZE+ #X805D)
-(defconstant +GL_TEXTURE_HEIGHT+ #X1001)
-(defconstant +GL_TEXTURE_INTENSITY_SIZE+ #X8061)
-(defconstant +GL_TEXTURE_INTERNAL_FORMAT+ #X1003)
-(defconstant +GL_TEXTURE_LUMINANCE_SIZE+ #X8060)
-(defconstant +GL_TEXTURE_MAG_FILTER+ #X2800)
-(defconstant +GL_TEXTURE_MATRIX+ #X0BA8)
-(defconstant +GL_TEXTURE_MAX_LEVEL+ #X813D)
-(defconstant +GL_TEXTURE_MAX_LOD+ #X813B)
-(defconstant +GL_TEXTURE_MIN_FILTER+ #X2801)
-(defconstant +GL_TEXTURE_MIN_LOD+ #X813A)
-(defconstant +GL_TEXTURE_PRIORITY+ #X8066)
-(defconstant +GL_TEXTURE_RED_SIZE+ #X805C)
-(defconstant +GL_TEXTURE_RESIDENT+ #X8067)
-(defconstant +GL_TEXTURE_STACK_DEPTH+ #X0BA5)
-(defconstant +GL_TEXTURE_WIDTH+ #X1000)
-(defconstant +GL_TEXTURE_WRAP_R+ #X8072)
-(defconstant +GL_TEXTURE_WRAP_S+ #X2802)
-(defconstant +GL_TEXTURE_WRAP_T+ #X2803)
-(defconstant +GL_TRANSFORM_BIT+ #X00001000)
-(defconstant +GL_TRIANGLES+ #X0004)
-(defconstant +GL_TRIANGLE_FAN+ #X0006)
-(defconstant +GL_TRIANGLE_STRIP+ #X0005)
-(defconstant +GL_TRUE+ 1)
-(defconstant +GL_UNPACK_ALIGNMENT+ #X0CF5)
-(defconstant +GL_UNPACK_IMAGE_HEIGHT+ #X806E)
-(defconstant +GL_UNPACK_LSB_FIRST+ #X0CF1)
-(defconstant +GL_UNPACK_ROW_LENGTH+ #X0CF2)
-(defconstant +GL_UNPACK_SKIP_IMAGES+ #X806D)
-(defconstant +GL_UNPACK_SKIP_PIXELS+ #X0CF4)
-(defconstant +GL_UNPACK_SKIP_ROWS+ #X0CF3)
-(defconstant +GL_UNPACK_SWAP_BYTES+ #X0CF0)
-(defconstant +GL_UNSIGNED_BYTE+ #X1401)
-(defconstant +GL_UNSIGNED_BYTE_2_3_3_REV+ #X8362)
-(defconstant +GL_UNSIGNED_BYTE_3_3_2+ #X8032)
-(defconstant +GL_UNSIGNED_INT+ #X1405)
-(defconstant +GL_UNSIGNED_INT_10_10_10_2+ #X8036)
-(defconstant +GL_UNSIGNED_INT_2_10_10_10_REV+ #X8368)
-(defconstant +GL_UNSIGNED_INT_8_8_8_8+ #X8035)
-(defconstant +GL_UNSIGNED_INT_8_8_8_8_REV+ #X8367)
-(defconstant +GL_UNSIGNED_SHORT+ #X1403)
-(defconstant +GL_UNSIGNED_SHORT_1_5_5_5_REV+ #X8366)
-(defconstant +GL_UNSIGNED_SHORT_4_4_4_4+ #X8033)
-(defconstant +GL_UNSIGNED_SHORT_4_4_4_4_REV+ #X8365)
-(defconstant +GL_UNSIGNED_SHORT_5_5_5_1+ #X8034)
-(defconstant +GL_UNSIGNED_SHORT_5_6_5+ #X8363)
-(defconstant +GL_UNSIGNED_SHORT_5_6_5_REV+ #X8364)
-(defconstant +GL_UPPER_LEFT+ #X8CA2)
-(defconstant +GL_V2F+ #X2A20)
-(defconstant +GL_V3F+ #X2A21)
-(defconstant +GL_VALIDATE_STATUS+ #X8B83)
-(defconstant +GL_VENDOR+ #X1F00)
-(defconstant +GL_VERSION+ #X1F02)
-(defconstant +GL_VERTEX_ARRAY+ #X8074)
-(defconstant +GL_VERTEX_ARRAY_BUFFER_BINDING+ #X8896)
-(defconstant +GL_VERTEX_ARRAY_POINTER+ #X808E)
-(defconstant +GL_VERTEX_ARRAY_SIZE+ #X807A)
-(defconstant +GL_VERTEX_ARRAY_STRIDE+ #X807C)
-(defconstant +GL_VERTEX_ARRAY_TYPE+ #X807B)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING+ #X889F)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_ENABLED+ #X8622)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_NORMALIZED+ #X886A)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_POINTER+ #X8645)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_SIZE+ #X8623)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_STRIDE+ #X8624)
-(defconstant +GL_VERTEX_ATTRIB_ARRAY_TYPE+ #X8625)
-(defconstant +GL_VERTEX_PROGRAM_POINT_SIZE+ #X8642)
-(defconstant +GL_VERTEX_PROGRAM_TWO_SIDE+ #X8643)
-(defconstant +GL_VERTEX_SHADER+ #X8B31)
-(defconstant +GL_VIEWPORT+ #X0BA2)
-(defconstant +GL_VIEWPORT_BIT+ #X00000800)
-(defconstant +GL_WEIGHT_ARRAY_BUFFER_BINDING+ #X889E)
-(defconstant +GL_WRITE_ONLY+ #X88B9)
-(defconstant +GL_XOR+ #X1506)
-(defconstant +GL_ZERO+ 0)
-(defconstant +GL_ZOOM_X+ #X0D16)
-(defconstant +GL_ZOOM_Y+ #X0D17)
+(defconstant +gl-2d+ #x0600)
+(defconstant +gl-2-bytes+ #x1407)
+(defconstant +gl-3d+ #x0601)
+(defconstant +gl-3d-color+ #x0602)
+(defconstant +gl-3d-color-texture+ #x0603)
+(defconstant +gl-3-bytes+ #x1408)
+(defconstant +gl-4d-color-texture+ #x0604)
+(defconstant +gl-4-bytes+ #x1409)
+(defconstant +gl-accum-alpha-bits+ #x0d5b)
+(defconstant +gl-accum-blue-bits+ #x0d5a)
+(defconstant +gl-accum-buffer-bit+ #x00000200)
+(defconstant +gl-accum-clear-value+ #x0b80)
+(defconstant +gl-accum-green-bits+ #x0d59)
+(defconstant +gl-accum-red-bits+ #x0d58)
+(defconstant +gl-active-attributes+ #x8b89)
+(defconstant +gl-active-attribute-max-length+ #x8b8a)
+(defconstant +gl-active-texture+ #x84e0)
+(defconstant +gl-active-uniforms+ #x8b86)
+(defconstant +gl-active-uniform-max-length+ #x8b87)
+(defconstant +gl-add-signed+ #x8574)
+(defconstant +gl-aliased-line-width-range+ #x846e)
+(defconstant +gl-aliased-point-size-range+ #x846d)
+(defconstant +gl-all-attrib-bits+ #x000fffff)
+(defconstant +gl-alpha+ #x1906)
+(defconstant +gl-alpha12+ #x803d)
+(defconstant +gl-alpha16+ #x803e)
+(defconstant +gl-alpha4+ #x803b)
+(defconstant +gl-alpha8+ #x803c)
+(defconstant +gl-alpha-bias+ #x0d1d)
+(defconstant +gl-alpha-bits+ #x0d55)
+(defconstant +gl-alpha-scale+ #x0d1c)
+(defconstant +gl-alpha-test+ #x0bc0)
+(defconstant +gl-alpha-test-func+ #x0bc1)
+(defconstant +gl-alpha-test-ref+ #x0bc2)
+(defconstant +gl-ambient+ #x1200)
+(defconstant +gl-ambient-and-diffuse+ #x1602)
+(defconstant +gl-and+ #x1501)
+(defconstant +gl-and-inverted+ #x1504)
+(defconstant +gl-and-reverse+ #x1502)
+(defconstant +gl-array-buffer+ #x8892)
+(defconstant +gl-array-buffer-binding+ #x8894)
+(defconstant +gl-attached-shaders+ #x8b85)
+(defconstant +gl-attrib-stack-depth+ #x0bb0)
+(defconstant +gl-auto-normal+ #x0d80)
+(defconstant +gl-aux0+ #x0409)
+(defconstant +gl-aux1+ #x040a)
+(defconstant +gl-aux2+ #x040b)
+(defconstant +gl-aux3+ #x040c)
+(defconstant +gl-aux-buffers+ #x0c00)
+(defconstant +gl-back+ #x0405)
+(defconstant +gl-back-left+ #x0402)
+(defconstant +gl-back-right+ #x0403)
+(defconstant +gl-bgr+ #x80e0)
+(defconstant +gl-bgra+ #x80e1)
+(defconstant +gl-bitmap+ #x1a00)
+(defconstant +gl-bitmap-token+ #x0704)
+(defconstant +gl-blend+ #x0be2)
+(defconstant +gl-blend-color+ #x8005)
+(defconstant +gl-blend-dst+ #x0be0)
+(defconstant +gl-blend-equation+ #x8009)
+(defconstant +gl-blend-equation-alpha+ #x883d)
+(defconstant +gl-blend-equation-rgb+ #x8009)
+(defconstant +gl-blend-src+ #x0be1)
+(defconstant +gl-blue+ #x1905)
+(defconstant +gl-blue-bias+ #x0d1b)
+(defconstant +gl-blue-bits+ #x0d54)
+(defconstant +gl-blue-scale+ #x0d1a)
+(defconstant +gl-bool+ #x8b56)
+(defconstant +gl-bool-vec2+ #x8b57)
+(defconstant +gl-bool-vec3+ #x8b58)
+(defconstant +gl-bool-vec4+ #x8b59)
+(defconstant +gl-buffer-access+ #x88bb)
+(defconstant +gl-buffer-mapped+ #x88bc)
+(defconstant +gl-buffer-map-pointer+ #x88bd)
+(defconstant +gl-buffer-size+ #x8764)
+(defconstant +gl-buffer-usage+ #x8765)
+(defconstant +gl-byte+ #x1400)
+(defconstant +gl-c3f-v3f+ #x2a24)
+(defconstant +gl-c4f-n3f-v3f+ #x2a26)
+(defconstant +gl-c4ub-v2f+ #x2a22)
+(defconstant +gl-c4ub-v3f+ #x2a23)
+(defconstant +gl-ccw+ #x0901)
+(defconstant +gl-clamp+ #x2900)
+(defconstant +gl-clamp-to-border+ #x812d)
+(defconstant +gl-clamp-to-edge+ #x812f)
+(defconstant +gl-clear+ #x1500)
+(defconstant +gl-client-active-texture+ #x84e1)
+(defconstant +gl-client-all-attrib-bits+ #xffffffff)
+(defconstant +gl-client-attrib-stack-depth+ #x0bb1)
+(defconstant +gl-client-pixel-store-bit+ #x00000001)
+(defconstant +gl-client-vertex-array-bit+ #x00000002)
+(defconstant +gl-clip-plane0+ #x3000)
+(defconstant +gl-clip-plane1+ #x3001)
+(defconstant +gl-clip-plane2+ #x3002)
+(defconstant +gl-clip-plane3+ #x3003)
+(defconstant +gl-clip-plane4+ #x3004)
+(defconstant +gl-clip-plane5+ #x3005)
+(defconstant +gl-coeff+ #x0a00)
+(defconstant +gl-color+ #x1800)
+(defconstant +gl-color-array+ #x8076)
+(defconstant +gl-color-array-buffer-binding+ #x8898)
+(defconstant +gl-color-array-pointer+ #x8090)
+(defconstant +gl-color-array-size+ #x8081)
+(defconstant +gl-color-array-stride+ #x8083)
+(defconstant +gl-color-array-type+ #x8082)
+(defconstant +gl-color-buffer-bit+ #x00004000)
+(defconstant +gl-color-clear-value+ #x0c22)
+(defconstant +gl-color-index+ #x1900)
+(defconstant +gl-color-indexes+ #x1603)
+(defconstant +gl-color-logic-op+ #x0bf2)
+(defconstant +gl-color-material+ #x0b57)
+(defconstant +gl-color-material-face+ #x0b55)
+(defconstant +gl-color-material-parameter+ #x0b56)
+(defconstant +gl-color-matrix+ #x80b1)
+(defconstant +gl-color-matrix-stack-depth+ #x80b2)
+(defconstant +gl-color-table+ #x80d0)
+(defconstant +gl-color-table-alpha-size+ #x80dd)
+(defconstant +gl-color-table-bias+ #x80d7)
+(defconstant +gl-color-table-blue-size+ #x80dc)
+(defconstant +gl-color-table-format+ #x80d8)
+(defconstant +gl-color-table-green-size+ #x80db)
+(defconstant +gl-color-table-intensity-size+ #x80df)
+(defconstant +gl-color-table-luminance-size+ #x80de)
+(defconstant +gl-color-table-red-size+ #x80da)
+(defconstant +gl-color-table-scale+ #x80d6)
+(defconstant +gl-color-table-width+ #x80d9)
+(defconstant +gl-color-writemask+ #x0c23)
+(defconstant +gl-combine+ #x8570)
+(defconstant +gl-combine-alpha+ #x8572)
+(defconstant +gl-combine-rgb+ #x8571)
+(defconstant +gl-compile+ #x1300)
+(defconstant +gl-compile-and-execute+ #x1301)
+(defconstant +gl-compile-status+ #x8b81)
+(defconstant +gl-compressed-sluminance+ #x8c4a)
+(defconstant +gl-compressed-sluminance-alpha+ #x8c4b)
+(defconstant +gl-compressed-srgb+ #x8c48)
+(defconstant +gl-compressed-srgb-alpha+ #x8c49)
+(defconstant +gl-constant+ #x8576)
+(defconstant +gl-constant-alpha+ #x8003)
+(defconstant +gl-constant-attenuation+ #x1207)
+(defconstant +gl-constant-border+ #x8151)
+(defconstant +gl-constant-color+ #x8001)
+(defconstant +gl-convolution-1d+ #x8010)
+(defconstant +gl-convolution-2d+ #x8011)
+(defconstant +gl-convolution-border-color+ #x8154)
+(defconstant +gl-convolution-border-mode+ #x8013)
+(defconstant +gl-convolution-filter-bias+ #x8015)
+(defconstant +gl-convolution-filter-scale+ #x8014)
+(defconstant +gl-convolution-format+ #x8017)
+(defconstant +gl-convolution-height+ #x8019)
+(defconstant +gl-convolution-width+ #x8018)
+(defconstant +gl-coord-replace+ #x8862)
+(defconstant +gl-copy+ #x1503)
+(defconstant +gl-copy-inverted+ #x150c)
+(defconstant +gl-copy-pixel-token+ #x0706)
+(defconstant +gl-cull-face+ #x0b44)
+(defconstant +gl-cull-face-mode+ #x0b45)
+(defconstant +gl-current-bit+ #x00000001)
+(defconstant +gl-current-color+ #x0b00)
+(defconstant +gl-current-fog-coord+ #x8453)
+(defconstant +gl-current-index+ #x0b01)
+(defconstant +gl-current-normal+ #x0b02)
+(defconstant +gl-current-program+ #x8b8d)
+(defconstant +gl-current-query+ #x8865)
+(defconstant +gl-current-raster-color+ #x0b04)
+(defconstant +gl-current-raster-distance+ #x0b09)
+(defconstant +gl-current-raster-index+ #x0b05)
+(defconstant +gl-current-raster-position+ #x0b07)
+(defconstant +gl-current-raster-position-valid+ #x0b08)
+(defconstant +gl-current-raster-secondary-color+ #x845f)
+(defconstant +gl-current-raster-texture-coords+ #x0b06)
+(defconstant +gl-current-texture-coords+ #x0b03)
+(defconstant +gl-current-vertex-attrib+ #x8626)
+(defconstant +gl-cw+ #x0900)
+(defconstant +gl-decal+ #x2101)
+(defconstant +gl-decr+ #x1e03)
+(defconstant +gl-delete-status+ #x8b80)
+(defconstant +gl-depth+ #x1801)
+(defconstant +gl-depth-bias+ #x0d1f)
+(defconstant +gl-depth-bits+ #x0d56)
+(defconstant +gl-depth-buffer-bit+ #x00000100)
+(defconstant +gl-depth-clear-value+ #x0b73)
+(defconstant +gl-depth-component+ #x1902)
+(defconstant +gl-depth-func+ #x0b74)
+(defconstant +gl-depth-range+ #x0b70)
+(defconstant +gl-depth-scale+ #x0d1e)
+(defconstant +gl-depth-test+ #x0b71)
+(defconstant +gl-depth-writemask+ #x0b72)
+(defconstant +gl-diffuse+ #x1201)
+(defconstant +gl-dither+ #x0bd0)
+(defconstant +gl-domain+ #x0a02)
+(defconstant +gl-dont-care+ #x1100)
+(defconstant +gl-double+ #x140a)
+(defconstant +gl-doublebuffer+ #x0c32)
+(defconstant +gl-draw-buffer+ #x0c01)
+(defconstant +gl-draw-buffer0+ #x8825)
+(defconstant +gl-draw-buffer1+ #x8826)
+(defconstant +gl-draw-buffer10+ #x882f)
+(defconstant +gl-draw-buffer11+ #x8830)
+(defconstant +gl-draw-buffer12+ #x8831)
+(defconstant +gl-draw-buffer13+ #x8832)
+(defconstant +gl-draw-buffer14+ #x8833)
+(defconstant +gl-draw-buffer15+ #x8834)
+(defconstant +gl-draw-buffer2+ #x8827)
+(defconstant +gl-draw-buffer3+ #x8828)
+(defconstant +gl-draw-buffer4+ #x8829)
+(defconstant +gl-draw-buffer5+ #x882a)
+(defconstant +gl-draw-buffer6+ #x882b)
+(defconstant +gl-draw-buffer7+ #x882c)
+(defconstant +gl-draw-buffer8+ #x882d)
+(defconstant +gl-draw-buffer9+ #x882e)
+(defconstant +gl-draw-pixel-token+ #x0705)
+(defconstant +gl-dst-alpha+ #x0304)
+(defconstant +gl-dst-color+ #x0306)
+(defconstant +gl-dynamic-copy+ #x88ea)
+(defconstant +gl-dynamic-draw+ #x88e8)
+(defconstant +gl-dynamic-read+ #x88e9)
+(defconstant +gl-edge-flag+ #x0b43)
+(defconstant +gl-edge-flag-array+ #x8079)
+(defconstant +gl-edge-flag-array-buffer-binding+ #x889b)
+(defconstant +gl-edge-flag-array-pointer+ #x8093)
+(defconstant +gl-edge-flag-array-stride+ #x808c)
+(defconstant +gl-element-array-buffer+ #x8893)
+(defconstant +gl-element-array-buffer-binding+ #x8895)
+(defconstant +gl-emission+ #x1600)
+(defconstant +gl-enable-bit+ #x00002000)
+(defconstant +gl-equiv+ #x1509)
+(defconstant +gl-eval-bit+ #x00010000)
+(defconstant +gl-exp+ #x0800)
+(defconstant +gl-exp2+ #x0801)
+(defconstant +gl-extensions+ #x1f03)
+(defconstant +gl-eye-linear+ #x2400)
+(defconstant +gl-eye-plane+ #x2502)
+(defconstant +gl-false+ 0)
+(defconstant +gl-fastest+ #x1101)
+(defconstant +gl-feedback+ #x1c01)
+(defconstant +gl-feedback-buffer-pointer+ #x0df0)
+(defconstant +gl-feedback-buffer-size+ #x0df1)
+(defconstant +gl-feedback-buffer-type+ #x0df2)
+(defconstant +gl-fill+ #x1b02)
+(defconstant +gl-flat+ #x1d00)
+(defconstant +gl-float+ #x1406)
+(defconstant +gl-float-mat2+ #x8b5a)
+(defconstant +gl-float-mat2x3+ #x8b65)
+(defconstant +gl-float-mat2x4+ #x8b66)
+(defconstant +gl-float-mat3+ #x8b5b)
+(defconstant +gl-float-mat3x2+ #x8b67)
+(defconstant +gl-float-mat3x4+ #x8b68)
+(defconstant +gl-float-mat4+ #x8b5c)
+(defconstant +gl-float-mat4x2+ #x8b69)
+(defconstant +gl-float-mat4x3+ #x8b6a)
+(defconstant +gl-float-vec2+ #x8b50)
+(defconstant +gl-float-vec3+ #x8b51)
+(defconstant +gl-float-vec4+ #x8b52)
+(defconstant +gl-fog+ #x0b60)
+(defconstant +gl-fog-bit+ #x00000080)
+(defconstant +gl-fog-color+ #x0b66)
+(defconstant +gl-fog-coord+ #x8451)
+(defconstant +gl-fog-coord-array+ #x8457)
+(defconstant +gl-fog-coord-array-buffer-binding+ #x889d)
+(defconstant +gl-fog-coord-array-pointer+ #x8456)
+(defconstant +gl-fog-coord-array-stride+ #x8455)
+(defconstant +gl-fog-coord-array-type+ #x8454)
+(defconstant +gl-fog-coord-src+ #x8450)
+(defconstant +gl-fog-density+ #x0b62)
+(defconstant +gl-fog-end+ #x0b64)
+(defconstant +gl-fog-hint+ #x0c54)
+(defconstant +gl-fog-index+ #x0b61)
+(defconstant +gl-fog-mode+ #x0b65)
+(defconstant +gl-fog-start+ #x0b63)
+(defconstant +gl-fragment-depth+ #x8452)
+(defconstant +gl-fragment-shader+ #x8b30)
+(defconstant +gl-fragment-shader-derivative-hint+ #x8b8b)
+(defconstant +gl-front+ #x0404)
+(defconstant +gl-front-and-back+ #x0408)
+(defconstant +gl-front-face+ #x0b46)
+(defconstant +gl-front-left+ #x0400)
+(defconstant +gl-front-right+ #x0401)
+(defconstant +gl-func-add+ #x8006)
+(defconstant +gl-func-reverse-subtract+ #x800b)
+(defconstant +gl-func-subtract+ #x800a)
+(defconstant +gl-green+ #x1904)
+(defconstant +gl-green-bias+ #x0d19)
+(defconstant +gl-green-bits+ #x0d53)
+(defconstant +gl-green-scale+ #x0d18)
+(defconstant +gl-hint-bit+ #x00008000)
+(defconstant +gl-histogram+ #x8024)
+(defconstant +gl-histogram-alpha-size+ #x802b)
+(defconstant +gl-histogram-blue-size+ #x802a)
+(defconstant +gl-histogram-format+ #x8027)
+(defconstant +gl-histogram-green-size+ #x8029)
+(defconstant +gl-histogram-luminance-size+ #x802c)
+(defconstant +gl-histogram-red-size+ #x8028)
+(defconstant +gl-histogram-sink+ #x802d)
+(defconstant +gl-histogram-width+ #x8026)
+(defconstant +gl-incr+ #x1e02)
+(defconstant +gl-index-array+ #x8077)
+(defconstant +gl-index-array-buffer-binding+ #x8899)
+(defconstant +gl-index-array-pointer+ #x8091)
+(defconstant +gl-index-array-stride+ #x8086)
+(defconstant +gl-index-array-type+ #x8085)
+(defconstant +gl-index-bits+ #x0d51)
+(defconstant +gl-index-clear-value+ #x0c20)
+(defconstant +gl-index-logic-op+ #x0bf1)
+(defconstant +gl-index-mode+ #x0c30)
+(defconstant +gl-index-offset+ #x0d13)
+(defconstant +gl-index-shift+ #x0d12)
+(defconstant +gl-index-writemask+ #x0c21)
+(defconstant +gl-info-log-length+ #x8b84)
+(defconstant +gl-int+ #x1404)
+(defconstant +gl-intensity+ #x8049)
+(defconstant +gl-intensity12+ #x804c)
+(defconstant +gl-intensity16+ #x804d)
+(defconstant +gl-intensity4+ #x804a)
+(defconstant +gl-intensity8+ #x804b)
+(defconstant +gl-interpolate+ #x8575)
+(defconstant +gl-int-vec2+ #x8b53)
+(defconstant +gl-int-vec3+ #x8b54)
+(defconstant +gl-int-vec4+ #x8b55)
+(defconstant +gl-invalid-enum+ #x0500)
+(defconstant +gl-invalid-operation+ #x0502)
+(defconstant +gl-invalid-value+ #x0501)
+(defconstant +gl-invert+ #x150a)
+(defconstant +gl-keep+ #x1e00)
+(defconstant +gl-left+ #x0406)
+(defconstant +gl-light0+ #x4000)
+(defconstant +gl-light1+ #x4001)
+(defconstant +gl-light2+ #x4002)
+(defconstant +gl-light3+ #x4003)
+(defconstant +gl-light4+ #x4004)
+(defconstant +gl-light5+ #x4005)
+(defconstant +gl-light6+ #x4006)
+(defconstant +gl-light7+ #x4007)
+(defconstant +gl-lighting+ #x0b50)
+(defconstant +gl-lighting-bit+ #x00000040)
+(defconstant +gl-light-model-ambient+ #x0b53)
+(defconstant +gl-light-model-color-control+ #x81f8)
+(defconstant +gl-light-model-local-viewer+ #x0b51)
+(defconstant +gl-light-model-two-side+ #x0b52)
+(defconstant +gl-line+ #x1b01)
+(defconstant +gl-linear+ #x2601)
+(defconstant +gl-linear-attenuation+ #x1208)
+(defconstant +gl-linear-mipmap-linear+ #x2703)
+(defconstant +gl-linear-mipmap-nearest+ #x2701)
+(defconstant +gl-lines+ #x0001)
+(defconstant +gl-line-bit+ #x00000004)
+(defconstant +gl-line-loop+ #x0002)
+(defconstant +gl-line-reset-token+ #x0707)
+(defconstant +gl-line-smooth+ #x0b20)
+(defconstant +gl-line-smooth-hint+ #x0c52)
+(defconstant +gl-line-stipple+ #x0b24)
+(defconstant +gl-line-stipple-pattern+ #x0b25)
+(defconstant +gl-line-stipple-repeat+ #x0b26)
+(defconstant +gl-line-strip+ #x0003)
+(defconstant +gl-line-token+ #x0702)
+(defconstant +gl-line-width+ #x0b21)
+(defconstant +gl-line-width-granularity+ #x0b23)
+(defconstant +gl-line-width-range+ #x0b22)
+(defconstant +gl-link-status+ #x8b82)
+(defconstant +gl-list-base+ #x0b32)
+(defconstant +gl-list-bit+ #x00020000)
+(defconstant +gl-list-index+ #x0b33)
+(defconstant +gl-list-mode+ #x0b30)
+(defconstant +gl-logic-op-mode+ #x0bf0)
+(defconstant +gl-lower-left+ #x8ca1)
+(defconstant +gl-luminance+ #x1909)
+(defconstant +gl-luminance12+ #x8041)
+(defconstant +gl-luminance12-alpha12+ #x8047)
+(defconstant +gl-luminance12-alpha4+ #x8046)
+(defconstant +gl-luminance16+ #x8042)
+(defconstant +gl-luminance16-alpha16+ #x8048)
+(defconstant +gl-luminance4+ #x803f)
+(defconstant +gl-luminance4-alpha4+ #x8043)
+(defconstant +gl-luminance6-alpha2+ #x8044)
+(defconstant +gl-luminance8+ #x8040)
+(defconstant +gl-luminance8-alpha8+ #x8045)
+(defconstant +gl-luminance-alpha+ #x190a)
+(defconstant +gl-map1-color-4+ #x0d90)
+(defconstant +gl-map1-grid-domain+ #x0dd0)
+(defconstant +gl-map1-grid-segments+ #x0dd1)
+(defconstant +gl-map1-index+ #x0d91)
+(defconstant +gl-map1-normal+ #x0d92)
+(defconstant +gl-map1-texture-coord-1+ #x0d93)
+(defconstant +gl-map1-texture-coord-2+ #x0d94)
+(defconstant +gl-map1-texture-coord-3+ #x0d95)
+(defconstant +gl-map1-texture-coord-4+ #x0d96)
+(defconstant +gl-map1-vertex-3+ #x0d97)
+(defconstant +gl-map1-vertex-4+ #x0d98)
+(defconstant +gl-map2-color-4+ #x0db0)
+(defconstant +gl-map2-grid-domain+ #x0dd2)
+(defconstant +gl-map2-grid-segments+ #x0dd3)
+(defconstant +gl-map2-index+ #x0db1)
+(defconstant +gl-map2-normal+ #x0db2)
+(defconstant +gl-map2-texture-coord-1+ #x0db3)
+(defconstant +gl-map2-texture-coord-2+ #x0db4)
+(defconstant +gl-map2-texture-coord-3+ #x0db5)
+(defconstant +gl-map2-texture-coord-4+ #x0db6)
+(defconstant +gl-map2-vertex-3+ #x0db7)
+(defconstant +gl-map2-vertex-4+ #x0db8)
+(defconstant +gl-map-color+ #x0d10)
+(defconstant +gl-map-stencil+ #x0d11)
+(defconstant +gl-matrix-mode+ #x0ba0)
+(defconstant +gl-max+ #x8008)
+(defconstant +gl-max-3d-texture-size+ #x8073)
+(defconstant +gl-max-attrib-stack-depth+ #x0d35)
+(defconstant +gl-max-client-attrib-stack-depth+ #x0d3b)
+(defconstant +gl-max-clip-planes+ #x0d32)
+(defconstant +gl-max-color-matrix-stack-depth+ #x80b3)
+(defconstant +gl-max-combined-texture-image-units+ #x8b4d)
+(defconstant +gl-max-convolution-height+ #x801b)
+(defconstant +gl-max-convolution-width+ #x801a)
+(defconstant +gl-max-draw-buffers+ #x8824)
+(defconstant +gl-max-elements-indices+ #x80e9)
+(defconstant +gl-max-elements-vertices+ #x80e8)
+(defconstant +gl-max-eval-order+ #x0d30)
+(defconstant +gl-max-fragment-uniform-components+ #x8b49)
+(defconstant +gl-max-lights+ #x0d31)
+(defconstant +gl-max-list-nesting+ #x0b31)
+(defconstant +gl-max-modelview-stack-depth+ #x0d36)
+(defconstant +gl-max-name-stack-depth+ #x0d37)
+(defconstant +gl-max-pixel-map-table+ #x0d34)
+(defconstant +gl-max-projection-stack-depth+ #x0d38)
+(defconstant +gl-max-texture-coords+ #x8871)
+(defconstant +gl-max-texture-image-units+ #x8872)
+(defconstant +gl-max-texture-size+ #x0d33)
+(defconstant +gl-max-texture-stack-depth+ #x0d39)
+(defconstant +gl-max-texture-units+ #x84e2)
+(defconstant +gl-max-varying-floats+ #x8b4b)
+(defconstant +gl-max-vertex-attribs+ #x8869)
+(defconstant +gl-max-vertex-texture-image-units+ #x8b4c)
+(defconstant +gl-max-vertex-uniform-components+ #x8b4a)
+(defconstant +gl-max-viewport-dims+ #x0d3a)
+(defconstant +gl-min+ #x8007)
+(defconstant +gl-minmax+ #x802e)
+(defconstant +gl-minmax-format+ #x802f)
+(defconstant +gl-minmax-sink+ #x8030)
+(defconstant +gl-modelview+ #x1700)
+(defconstant +gl-modelview-matrix+ #x0ba6)
+(defconstant +gl-modelview-stack-depth+ #x0ba3)
+(defconstant +gl-modulate+ #x2100)
+(defconstant +gl-n3f-v3f+ #x2a25)
+(defconstant +gl-name-stack-depth+ #x0d70)
+(defconstant +gl-nand+ #x150e)
+(defconstant +gl-nearest+ #x2600)
+(defconstant +gl-nearest-mipmap-linear+ #x2702)
+(defconstant +gl-nearest-mipmap-nearest+ #x2700)
+(defconstant +gl-nicest+ #x1102)
+(defconstant +gl-none+ 0)
+(defconstant +gl-noop+ #x1505)
+(defconstant +gl-nor+ #x1508)
+(defconstant +gl-normalize+ #x0ba1)
+(defconstant +gl-normal-array+ #x8075)
+(defconstant +gl-normal-array-buffer-binding+ #x8897)
+(defconstant +gl-normal-array-pointer+ #x808f)
+(defconstant +gl-normal-array-stride+ #x807f)
+(defconstant +gl-normal-array-type+ #x807e)
+(defconstant +gl-no-error+ 0)
+(defconstant +gl-object-linear+ #x2401)
+(defconstant +gl-object-plane+ #x2501)
+(defconstant +gl-one+ 1)
+(defconstant +gl-one-minus-constant-alpha+ #x8004)
+(defconstant +gl-one-minus-constant-color+ #x8002)
+(defconstant +gl-one-minus-dst-alpha+ #x0305)
+(defconstant +gl-one-minus-dst-color+ #x0307)
+(defconstant +gl-one-minus-src-alpha+ #x0303)
+(defconstant +gl-one-minus-src-color+ #x0301)
+(defconstant +gl-or+ #x1507)
+(defconstant +gl-order+ #x0a01)
+(defconstant +gl-or-inverted+ #x150d)
+(defconstant +gl-or-reverse+ #x150b)
+(defconstant +gl-out-of-memory+ #x0505)
+(defconstant +gl-pack-alignment+ #x0d05)
+(defconstant +gl-pack-image-height+ #x806c)
+(defconstant +gl-pack-lsb-first+ #x0d01)
+(defconstant +gl-pack-row-length+ #x0d02)
+(defconstant +gl-pack-skip-images+ #x806b)
+(defconstant +gl-pack-skip-pixels+ #x0d04)
+(defconstant +gl-pack-skip-rows+ #x0d03)
+(defconstant +gl-pack-swap-bytes+ #x0d00)
+(defconstant +gl-pass-through-token+ #x0700)
+(defconstant +gl-perspective-correction-hint+ #x0c50)
+(defconstant +gl-pixel-map-a-to-a+ #x0c79)
+(defconstant +gl-pixel-map-a-to-a-size+ #x0cb9)
+(defconstant +gl-pixel-map-b-to-b+ #x0c78)
+(defconstant +gl-pixel-map-b-to-b-size+ #x0cb8)
+(defconstant +gl-pixel-map-g-to-g+ #x0c77)
+(defconstant +gl-pixel-map-g-to-g-size+ #x0cb7)
+(defconstant +gl-pixel-map-i-to-a+ #x0c75)
+(defconstant +gl-pixel-map-i-to-a-size+ #x0cb5)
+(defconstant +gl-pixel-map-i-to-b+ #x0c74)
+(defconstant +gl-pixel-map-i-to-b-size+ #x0cb4)
+(defconstant +gl-pixel-map-i-to-g+ #x0c73)
+(defconstant +gl-pixel-map-i-to-g-size+ #x0cb3)
+(defconstant +gl-pixel-map-i-to-i+ #x0c70)
+(defconstant +gl-pixel-map-i-to-i-size+ #x0cb0)
+(defconstant +gl-pixel-map-i-to-r+ #x0c72)
+(defconstant +gl-pixel-map-i-to-r-size+ #x0cb2)
+(defconstant +gl-pixel-map-r-to-r+ #x0c76)
+(defconstant +gl-pixel-map-r-to-r-size+ #x0cb6)
+(defconstant +gl-pixel-map-s-to-s+ #x0c71)
+(defconstant +gl-pixel-map-s-to-s-size+ #x0cb1)
+(defconstant +gl-pixel-mode-bit+ #x00000020)
+(defconstant +gl-pixel-pack-buffer+ #x88eb)
+(defconstant +gl-pixel-pack-buffer-binding+ #x88ed)
+(defconstant +gl-pixel-unpack-buffer+ #x88ec)
+(defconstant +gl-pixel-unpack-buffer-binding+ #x88ef)
+(defconstant +gl-point+ #x1b00)
+(defconstant +gl-points+ #x0000)
+(defconstant +gl-point-bit+ #x00000002)
+(defconstant +gl-point-size+ #x0b11)
+(defconstant +gl-point-size-granularity+ #x0b13)
+(defconstant +gl-point-size-range+ #x0b12)
+(defconstant +gl-point-smooth+ #x0b10)
+(defconstant +gl-point-smooth-hint+ #x0c51)
+(defconstant +gl-point-sprite+ #x8861)
+(defconstant +gl-point-sprite-coord-origin+ #x8ca0)
+(defconstant +gl-point-token+ #x0701)
+(defconstant +gl-polygon+ #x0009)
+(defconstant +gl-polygon-bit+ #x00000008)
+(defconstant +gl-polygon-mode+ #x0b40)
+(defconstant +gl-polygon-offset-factor+ #x8038)
+(defconstant +gl-polygon-offset-fill+ #x8037)
+(defconstant +gl-polygon-offset-line+ #x2a02)
+(defconstant +gl-polygon-offset-point+ #x2a01)
+(defconstant +gl-polygon-offset-units+ #x2a00)
+(defconstant +gl-polygon-smooth+ #x0b41)
+(defconstant +gl-polygon-smooth-hint+ #x0c53)
+(defconstant +gl-polygon-stipple+ #x0b42)
+(defconstant +gl-polygon-stipple-bit+ #x00000010)
+(defconstant +gl-polygon-token+ #x0703)
+(defconstant +gl-position+ #x1203)
+(defconstant +gl-post-color-matrix-alpha-bias+ #x80bb)
+(defconstant +gl-post-color-matrix-alpha-scale+ #x80b7)
+(defconstant +gl-post-color-matrix-blue-bias+ #x80ba)
+(defconstant +gl-post-color-matrix-blue-scale+ #x80b6)
+(defconstant +gl-post-color-matrix-color-table+ #x80d2)
+(defconstant +gl-post-color-matrix-green-bias+ #x80b9)
+(defconstant +gl-post-color-matrix-green-scale+ #x80b5)
+(defconstant +gl-post-color-matrix-red-bias+ #x80b8)
+(defconstant +gl-post-color-matrix-red-scale+ #x80b4)
+(defconstant +gl-post-convolution-alpha-bias+ #x8023)
+(defconstant +gl-post-convolution-alpha-scale+ #x801f)
+(defconstant +gl-post-convolution-blue-bias+ #x8022)
+(defconstant +gl-post-convolution-blue-scale+ #x801e)
+(defconstant +gl-post-convolution-color-table+ #x80d1)
+(defconstant +gl-post-convolution-green-bias+ #x8021)
+(defconstant +gl-post-convolution-green-scale+ #x801d)
+(defconstant +gl-post-convolution-red-bias+ #x8020)
+(defconstant +gl-post-convolution-red-scale+ #x801c)
+(defconstant +gl-previous+ #x8578)
+(defconstant +gl-primary-color+ #x8577)
+(defconstant +gl-projection+ #x1701)
+(defconstant +gl-projection-matrix+ #x0ba7)
+(defconstant +gl-projection-stack-depth+ #x0ba4)
+(defconstant +gl-proxy-color-table+ #x80d3)
+(defconstant +gl-proxy-histogram+ #x8025)
+(defconstant +gl-proxy-post-color-matrix-color-table+ #x80d5)
+(defconstant +gl-proxy-post-convolution-color-table+ #x80d4)
+(defconstant +gl-proxy-texture-1d+ #x8063)
+(defconstant +gl-proxy-texture-2d+ #x8064)
+(defconstant +gl-proxy-texture-3d+ #x8070)
+(defconstant +gl-q+ #x2003)
+(defconstant +gl-quadratic-attenuation+ #x1209)
+(defconstant +gl-quads+ #x0007)
+(defconstant +gl-quad-strip+ #x0008)
+(defconstant +gl-query-counter-bits+ #x8864)
+(defconstant +gl-query-result+ #x8866)
+(defconstant +gl-query-result-available+ #x8867)
+(defconstant +gl-r+ #x2002)
+(defconstant +gl-r3-g3-b2+ #x2a10)
+(defconstant +gl-read-buffer+ #x0c02)
+(defconstant +gl-read-only+ #x88b8)
+(defconstant +gl-read-write+ #x88ba)
+(defconstant +gl-red+ #x1903)
+(defconstant +gl-reduce+ #x8016)
+(defconstant +gl-red-bias+ #x0d15)
+(defconstant +gl-red-bits+ #x0d52)
+(defconstant +gl-red-scale+ #x0d14)
+(defconstant +gl-render+ #x1c00)
+(defconstant +gl-renderer+ #x1f01)
+(defconstant +gl-render-mode+ #x0c40)
+(defconstant +gl-repeat+ #x2901)
+(defconstant +gl-replace+ #x1e01)
+(defconstant +gl-replicate-border+ #x8153)
+(defconstant +gl-rescale-normal+ #x803a)
+(defconstant +gl-rgb+ #x1907)
+(defconstant +gl-rgb10+ #x8052)
+(defconstant +gl-rgb10-a2+ #x8059)
+(defconstant +gl-rgb12+ #x8053)
+(defconstant +gl-rgb16+ #x8054)
+(defconstant +gl-rgb4+ #x804f)
+(defconstant +gl-rgb5+ #x8050)
+(defconstant +gl-rgb5-a1+ #x8057)
+(defconstant +gl-rgb8+ #x8051)
+(defconstant +gl-rgba+ #x1908)
+(defconstant +gl-rgba12+ #x805a)
+(defconstant +gl-rgba16+ #x805b)
+(defconstant +gl-rgba2+ #x8055)
+(defconstant +gl-rgba4+ #x8056)
+(defconstant +gl-rgba8+ #x8058)
+(defconstant +gl-rgba-mode+ #x0c31)
+(defconstant +gl-rgb-scale+ #x8573)
+(defconstant +gl-right+ #x0407)
+(defconstant +gl-s+ #x2000)
+(defconstant +gl-sampler-1d+ #x8b5d)
+(defconstant +gl-sampler-1d-shadow+ #x8b61)
+(defconstant +gl-sampler-2d+ #x8b5e)
+(defconstant +gl-sampler-2d-shadow+ #x8b62)
+(defconstant +gl-sampler-3d+ #x8b5f)
+(defconstant +gl-sampler-cube+ #x8b60)
+(defconstant +gl-samples-passed+ #x8914)
+(defconstant +gl-scissor-bit+ #x00080000)
+(defconstant +gl-scissor-box+ #x0c10)
+(defconstant +gl-scissor-test+ #x0c11)
+(defconstant +gl-secondary-color-array-buffer-binding+ #x889c)
+(defconstant +gl-select+ #x1c02)
+(defconstant +gl-selection-buffer-pointer+ #x0df3)
+(defconstant +gl-selection-buffer-size+ #x0df4)
+(defconstant +gl-separable-2d+ #x8012)
+(defconstant +gl-separate-specular-color+ #x81fa)
+(defconstant +gl-set+ #x150f)
+(defconstant +gl-shader-source-length+ #x8b88)
+(defconstant +gl-shader-type+ #x8b4f)
+(defconstant +gl-shade-model+ #x0b54)
+(defconstant +gl-shading-language-version+ #x8b8c)
+(defconstant +gl-shininess+ #x1601)
+(defconstant +gl-short+ #x1402)
+(defconstant +gl-single-color+ #x81f9)
+(defconstant +gl-sluminance+ #x8c46)
+(defconstant +gl-sluminance8+ #x8c47)
+(defconstant +gl-sluminance8-alpha8+ #x8c45)
+(defconstant +gl-sluminance-alpha+ #x8c44)
+(defconstant +gl-smooth+ #x1d01)
+(defconstant +gl-smooth-line-width-granularity+ #x0b23)
+(defconstant +gl-smooth-line-width-range+ #x0b22)
+(defconstant +gl-smooth-point-size-granularity+ #x0b13)
+(defconstant +gl-smooth-point-size-range+ #x0b12)
+(defconstant +gl-specular+ #x1202)
+(defconstant +gl-sphere-map+ #x2402)
+(defconstant +gl-spot-cutoff+ #x1206)
+(defconstant +gl-spot-direction+ #x1204)
+(defconstant +gl-spot-exponent+ #x1205)
+(defconstant +gl-src0-alpha+ #x8588)
+(defconstant +gl-src0-rgb+ #x8580)
+(defconstant +gl-src1-alpha+ #x8589)
+(defconstant +gl-src1-rgb+ #x8581)
+(defconstant +gl-src2-alpha+ #x858a)
+(defconstant +gl-src2-rgb+ #x8582)
+(defconstant +gl-src-alpha+ #x0302)
+(defconstant +gl-src-alpha-saturate+ #x0308)
+(defconstant +gl-src-color+ #x0300)
+(defconstant +gl-srgb+ #x8c40)
+(defconstant +gl-srgb8+ #x8c41)
+(defconstant +gl-srgb8-alpha8+ #x8c43)
+(defconstant +gl-srgb-alpha+ #x8c42)
+(defconstant +gl-stack-overflow+ #x0503)
+(defconstant +gl-stack-underflow+ #x0504)
+(defconstant +gl-static-copy+ #x88e6)
+(defconstant +gl-static-draw+ #x88e4)
+(defconstant +gl-static-read+ #x88e5)
+(defconstant +gl-stencil+ #x1802)
+(defconstant +gl-stencil-back-fail+ #x8801)
+(defconstant +gl-stencil-back-func+ #x8800)
+(defconstant +gl-stencil-back-pass-depth-fail+ #x8802)
+(defconstant +gl-stencil-back-pass-depth-pass+ #x8803)
+(defconstant +gl-stencil-back-ref+ #x8ca3)
+(defconstant +gl-stencil-back-value-mask+ #x8ca4)
+(defconstant +gl-stencil-back-writemask+ #x8ca5)
+(defconstant +gl-stencil-bits+ #x0d57)
+(defconstant +gl-stencil-buffer-bit+ #x00000400)
+(defconstant +gl-stencil-clear-value+ #x0b91)
+(defconstant +gl-stencil-fail+ #x0b94)
+(defconstant +gl-stencil-func+ #x0b92)
+(defconstant +gl-stencil-index+ #x1901)
+(defconstant +gl-stencil-pass-depth-fail+ #x0b95)
+(defconstant +gl-stencil-pass-depth-pass+ #x0b96)
+(defconstant +gl-stencil-ref+ #x0b97)
+(defconstant +gl-stencil-test+ #x0b90)
+(defconstant +gl-stencil-value-mask+ #x0b93)
+(defconstant +gl-stencil-writemask+ #x0b98)
+(defconstant +gl-stereo+ #x0c33)
+(defconstant +gl-stream-copy+ #x88e2)
+(defconstant +gl-stream-draw+ #x88e0)
+(defconstant +gl-stream-read+ #x88e1)
+(defconstant +gl-subpixel-bits+ #x0d50)
+(defconstant +gl-subtract+ #x84e7)
+(defconstant +gl-t+ #x2001)
+(defconstant +gl-t2f-c3f-v3f+ #x2a2a)
+(defconstant +gl-t2f-c4f-n3f-v3f+ #x2a2c)
+(defconstant +gl-t2f-c4ub-v3f+ #x2a29)
+(defconstant +gl-t2f-n3f-v3f+ #x2a2b)
+(defconstant +gl-t2f-v3f+ #x2a27)
+(defconstant +gl-t4f-c4f-n3f-v4f+ #x2a2d)
+(defconstant +gl-t4f-v4f+ #x2a28)
+(defconstant +gl-table-too-large+ #x8031)
+(defconstant +gl-texture+ #x1702)
+(defconstant +gl-texture0+ #x84c0)
+(defconstant +gl-texture1+ #x84c1)
+(defconstant +gl-texture10+ #x84ca)
+(defconstant +gl-texture11+ #x84cb)
+(defconstant +gl-texture12+ #x84cc)
+(defconstant +gl-texture13+ #x84cd)
+(defconstant +gl-texture14+ #x84ce)
+(defconstant +gl-texture15+ #x84cf)
+(defconstant +gl-texture16+ #x84d0)
+(defconstant +gl-texture17+ #x84d1)
+(defconstant +gl-texture18+ #x84d2)
+(defconstant +gl-texture19+ #x84d3)
+(defconstant +gl-texture2+ #x84c2)
+(defconstant +gl-texture20+ #x84d4)
+(defconstant +gl-texture21+ #x84d5)
+(defconstant +gl-texture22+ #x84d6)
+(defconstant +gl-texture23+ #x84d7)
+(defconstant +gl-texture24+ #x84d8)
+(defconstant +gl-texture25+ #x84d9)
+(defconstant +gl-texture26+ #x84da)
+(defconstant +gl-texture27+ #x84db)
+(defconstant +gl-texture28+ #x84dc)
+(defconstant +gl-texture29+ #x84dd)
+(defconstant +gl-texture3+ #x84c3)
+(defconstant +gl-texture30+ #x84de)
+(defconstant +gl-texture31+ #x84df)
+(defconstant +gl-texture4+ #x84c4)
+(defconstant +gl-texture5+ #x84c5)
+(defconstant +gl-texture6+ #x84c6)
+(defconstant +gl-texture7+ #x84c7)
+(defconstant +gl-texture8+ #x84c8)
+(defconstant +gl-texture9+ #x84c9)
+(defconstant +gl-texture-1d+ #x0de0)
+(defconstant +gl-texture-2d+ #x0de1)
+(defconstant +gl-texture-3d+ #x806f)
+(defconstant +gl-texture-alpha-size+ #x805f)
+(defconstant +gl-texture-base-level+ #x813c)
+(defconstant +gl-texture-binding-1d+ #x8068)
+(defconstant +gl-texture-binding-2d+ #x8069)
+(defconstant +gl-texture-binding-3d+ #x806a)
+(defconstant +gl-texture-bit+ #x00040000)
+(defconstant +gl-texture-blue-size+ #x805e)
+(defconstant +gl-texture-border+ #x1005)
+(defconstant +gl-texture-border-color+ #x1004)
+(defconstant +gl-texture-coord-array+ #x8078)
+(defconstant +gl-texture-coord-array-buffer-binding+ #x889a)
+(defconstant +gl-texture-coord-array-pointer+ #x8092)
+(defconstant +gl-texture-coord-array-size+ #x8088)
+(defconstant +gl-texture-coord-array-stride+ #x808a)
+(defconstant +gl-texture-coord-array-type+ #x8089)
+(defconstant +gl-texture-depth+ #x8071)
+(defconstant +gl-texture-env+ #x2300)
+(defconstant +gl-texture-env-color+ #x2201)
+(defconstant +gl-texture-env-mode+ #x2200)
+(defconstant +gl-texture-gen-mode+ #x2500)
+(defconstant +gl-texture-gen-q+ #x0c63)
+(defconstant +gl-texture-gen-r+ #x0c62)
+(defconstant +gl-texture-gen-s+ #x0c60)
+(defconstant +gl-texture-gen-t+ #x0c61)
+(defconstant +gl-texture-green-size+ #x805d)
+(defconstant +gl-texture-height+ #x1001)
+(defconstant +gl-texture-intensity-size+ #x8061)
+(defconstant +gl-texture-internal-format+ #x1003)
+(defconstant +gl-texture-luminance-size+ #x8060)
+(defconstant +gl-texture-mag-filter+ #x2800)
+(defconstant +gl-texture-matrix+ #x0ba8)
+(defconstant +gl-texture-max-level+ #x813d)
+(defconstant +gl-texture-max-lod+ #x813b)
+(defconstant +gl-texture-min-filter+ #x2801)
+(defconstant +gl-texture-min-lod+ #x813a)
+(defconstant +gl-texture-priority+ #x8066)
+(defconstant +gl-texture-red-size+ #x805c)
+(defconstant +gl-texture-resident+ #x8067)
+(defconstant +gl-texture-stack-depth+ #x0ba5)
+(defconstant +gl-texture-width+ #x1000)
+(defconstant +gl-texture-wrap-r+ #x8072)
+(defconstant +gl-texture-wrap-s+ #x2802)
+(defconstant +gl-texture-wrap-t+ #x2803)
+(defconstant +gl-transform-bit+ #x00001000)
+(defconstant +gl-triangles+ #x0004)
+(defconstant +gl-triangle-fan+ #x0006)
+(defconstant +gl-triangle-strip+ #x0005)
+(defconstant +gl-true+ 1)
+(defconstant +gl-unpack-alignment+ #x0cf5)
+(defconstant +gl-unpack-image-height+ #x806e)
+(defconstant +gl-unpack-lsb-first+ #x0cf1)
+(defconstant +gl-unpack-row-length+ #x0cf2)
+(defconstant +gl-unpack-skip-images+ #x806d)
+(defconstant +gl-unpack-skip-pixels+ #x0cf4)
+(defconstant +gl-unpack-skip-rows+ #x0cf3)
+(defconstant +gl-unpack-swap-bytes+ #x0cf0)
+(defconstant +gl-unsigned-byte+ #x1401)
+(defconstant +gl-unsigned-byte-2-3-3-rev+ #x8362)
+(defconstant +gl-unsigned-byte-3-3-2+ #x8032)
+(defconstant +gl-unsigned-int+ #x1405)
+(defconstant +gl-unsigned-int-10-10-10-2+ #x8036)
+(defconstant +gl-unsigned-int-2-10-10-10-rev+ #x8368)
+(defconstant +gl-unsigned-int-8-8-8-8+ #x8035)
+(defconstant +gl-unsigned-int-8-8-8-8-rev+ #x8367)
+(defconstant +gl-unsigned-short+ #x1403)
+(defconstant +gl-unsigned-short-1-5-5-5-rev+ #x8366)
+(defconstant +gl-unsigned-short-4-4-4-4+ #x8033)
+(defconstant +gl-unsigned-short-4-4-4-4-rev+ #x8365)
+(defconstant +gl-unsigned-short-5-5-5-1+ #x8034)
+(defconstant +gl-unsigned-short-5-6-5+ #x8363)
+(defconstant +gl-unsigned-short-5-6-5-rev+ #x8364)
+(defconstant +gl-upper-left+ #x8ca2)
+(defconstant +gl-v2f+ #x2a20)
+(defconstant +gl-v3f+ #x2a21)
+(defconstant +gl-validate-status+ #x8b83)
+(defconstant +gl-vendor+ #x1f00)
+(defconstant +gl-version+ #x1f02)
+(defconstant +gl-vertex-array+ #x8074)
+(defconstant +gl-vertex-array-buffer-binding+ #x8896)
+(defconstant +gl-vertex-array-pointer+ #x808e)
+(defconstant +gl-vertex-array-size+ #x807a)
+(defconstant +gl-vertex-array-stride+ #x807c)
+(defconstant +gl-vertex-array-type+ #x807b)
+(defconstant +gl-vertex-attrib-array-buffer-binding+ #x889f)
+(defconstant +gl-vertex-attrib-array-enabled+ #x8622)
+(defconstant +gl-vertex-attrib-array-normalized+ #x886a)
+(defconstant +gl-vertex-attrib-array-pointer+ #x8645)
+(defconstant +gl-vertex-attrib-array-size+ #x8623)
+(defconstant +gl-vertex-attrib-array-stride+ #x8624)
+(defconstant +gl-vertex-attrib-array-type+ #x8625)
+(defconstant +gl-vertex-program-point-size+ #x8642)
+(defconstant +gl-vertex-program-two-side+ #x8643)
+(defconstant +gl-vertex-shader+ #x8b31)
+(defconstant +gl-viewport+ #x0ba2)
+(defconstant +gl-viewport-bit+ #x00000800)
+(defconstant +gl-weight-array-buffer-binding+ #x889e)
+(defconstant +gl-write-only+ #x88b9)
+(defconstant +gl-xor+ #x1506)
+(defconstant +gl-zero+ 0)
+(defconstant +gl-zoom-x+ #x0d16)
+(defconstant +gl-zoom-y+ #x0d17)
 
 ;;; functions
 (define-foreign-function (gl-accum "glAccum")

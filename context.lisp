@@ -20,11 +20,22 @@
 (defpackage :opengl-context
   (:use :cl :fli :capi)
   (:export
+   #:with-opengl-context
+
+   ;; context methods
    #:opengl-context-prepare
    #:opengl-context-present
    #:opengl-context-release))
 
 (in-package :opengl-context)
+
+(defmacro with-opengl-context ((var context) &body body)
+  "Prepare, render, and present to a context."
+  `(let ((,var ,context))
+     (opengl-context-prepare ,var)
+     (unwind-protect
+         (progn ,@body)
+       (opengl-context-present ,var))))
 
 (defclass opengl-context ()
   ((pane :initarg :pane :reader opengl-context-pane))
