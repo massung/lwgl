@@ -21,23 +21,24 @@
   (:use :cl :fli :opengl :opengl-context :opengl-pane)
   (:export
    #:opengl-texture
-   #:opengl-texture-context
-   #:opengl-texture-free
    #:opengl-texture-image
    #:opengl-texture-width
-   #:opengl-texture-height))
+   #:opengl-texture-height
+
+   ;; loading and freeing textures
+   #:load-texture
+   #:free-texture))
 
 (in-package :opengl-texture)
 
 (defclass opengl-texture ()
   ((texture :initarg :texture :reader opengl-texture)
-   (context :initarg :context :reader opengl-texture-context)
    (image   :initarg :image   :reader opengl-texture-image)
    (width   :initarg :width   :reader opengl-texture-width)
    (height  :initarg :height  :reader opengl-texture-height))
   (:documentation "An object representing an OpenGL texture resource for a specific context."))
 
-(defmethod load-texture ((pane opengl-pane) image &key (filter +gl-linear+))
+(defmethod load-texture ((pane opengl-pane) image &key (min-filter +gl-linear+) (mag-filter +gl-linear+))
   "Load an image and create an OpenGL texture resource."
   (lw:when-let (image (gp:load-image pane image :editable :with-alpha))
     (let ((access (gp:make-image-access pane image)))
@@ -49,7 +50,7 @@
 
         ;; create a memory buffer to write the image data into for OpenGL
         (with-dynamic-foreign-objects ((tex :unsigned-int :nelems 1)
-                                       (data :unsigned-byte :nelems (* w h 4)))
+                                       (buf :unsigned-byte :nelems (* w h 4)))
           (dotimes (y (gp:image-access-height access))
             (dotimes (x (gp:image-access-width access))
               (let* ((p (gp:image-access-pixel access x y))
@@ -60,41 +61,43 @@
                      (a (color:color-alpha c)))
 
                 ;; copy the pixel data into the buffer
-                (setf (dereference data :index (+ (* y w 4) (* x 4) 0)) (truncate (* r 255))
-                      (dereference data :index (+ (* y w 4) (* x 4) 1)) (truncate (* g 255))
-                      (dereference data :index (+ (* y w 4) (* x 4) 2)) (truncate (* b 255))
-                      (dereference data :index (+ (* y w 4) (* x 4) 3)) (truncate (* a 255))))))
+                (setf (dereference buf :index (+ (* y w 4) (* x 4) 0)) (truncate (* r 255))
+                      (dereference buf :index (+ (* y w 4) (* x 4) 1)) (truncate (* g 255))
+                      (dereference buf :index (+ (* y w 4) (* x 4) 2)) (truncate (* b 255))
+                      (dereference buf :index (+ (* y w 4) (* x 4) 3)) (truncate (* a 255))))))
 
           ;; create the texture resource
-          (with-opengl-context (c (opengl-pane-context pane))
-            (gl-gen-textures 1 tex)
+          (gl-gen-textures 1 tex)
 
-            ;; bind the texture to what will be created
-            (gl-bind-texture +gl-texture-2d+ (dereference tex))
+          ;; bind the texture to what will be created
+          (gl-bind-texture +gl-texture-2d+ (dereference tex))
 
-            ;; pixel format options
-            (gl-pixel-storei +gl-unpack-alignment+ 1)
+          ;; pixel format options
+          (gl-pixel-storei +gl-unpack-alignment+ 1)
 
-            ;; texture parameters
-            (gl-tex-parameteri +gl-texture-2d+ +gl-texture-min-filter+ filter)
-            (gl-tex-parameteri +gl-texture-2d+ +gl-texture-mag-filter+ filter)
-            
-            ;; copy the pixel data into the texture
-            (gl-tex-image2d +gl-texture-2d+ 0 +gl-rgba+ w h 0 +gl-rgba+ +gl-unsigned-byte+ data)
+          ;; texture parameters
+          (gl-tex-parameteri +gl-texture-2d+ +gl-texture-min-filter+ min-filter)
+          (gl-tex-parameteri +gl-texture-2d+ +gl-texture-mag-filter+ mag-filter)
+          
+          ;; copy the pixel data into the texture
+          (gl-tex-image2d +gl-texture-2d+ 0 +gl-rgba+ w h 0 +gl-rgba+ +gl-unsigned-byte+ buf)
+          
+          ;; return the opengl resource
+          (make-instance 'opengl-texture
+                         :image image
+                         :width w
+                         :height h
+                         :texture (dereference tex)))))))
 
-            ;; return the opengl resource
-            (make-instance 'opengl-texture
-                           :image image
-                           :context c
-                           :width w
-                           :height h
-                           :texture (dereference tex))))))))
-
-(defmethod opengl-texture-free ((texture opengl-texture))
+(defmethod free-texture ((pane opengl-pane) (texture opengl-texture))
   "Release the memory used by a texture."
-  (with-opengl-context (c (opengl-texture-context texture))
-    (with-dynamic-foreign-objects ((tex :unsigned-int :initial-element (opengl-texture texture)))
-      (gl-delete-textures 1 tex)))
+  (with-slots (image texture)
+      texture
+    (with-dynamic-foreign-objects ((tex :unsigned-int :initial-element texture))
+      (gl-delete-textures 1 tex))
 
-  ;; clear the resource data
-  (setf (slot-value texture 'texture) 0))
+    ;; free the underlying image as well
+    (gp:free-image pane image)
+
+    ;; clear members
+    (setf image nil texture 0)))

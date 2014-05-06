@@ -29,14 +29,20 @@
 (defclass sample-opengl-pane (opengl-pane)
   ((logo :initform 0))
   (:default-initargs
-   :render-callback 'render-logo))
+   :prepare-callback 'prepare-sample-pane
+   :release-callback 'release-sample-pane
+   :render-callback 'render-sample-pane))
 
-(defmethod opengl-pane:create-opengl-pane :after ((pane sample-opengl-pane))
+(defmethod prepare-sample-pane ((pane sample-opengl-pane))
   "Load the Lisp logo into a texture."
   (setf (slot-value pane 'logo) (load-texture pane *logo-pathname*)))
 
-(defmethod render-logo ((pane sample-opengl-pane))
-  "Render the logo."
+(defmethod release-sample-pane ((pane sample-opengl-pane))
+  "Free the logo texture."
+  (free-texture pane (slot-value pane 'logo)))
+
+(defmethod render-sample-pane ((pane sample-opengl-pane))
+  "Render the logo to the viewport."
   (with-slots (logo)
       pane
     (let* ((i (opengl-texture-image logo))
