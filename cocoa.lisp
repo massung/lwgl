@@ -95,6 +95,7 @@
   (when (objc:null-objc-pointer-p (objc:invoke (cocoa-opengl-context context) "view"))
     (let ((rep (slot-value (opengl-context-pane context) 'capi-internals:representation)))
       (objc:invoke (cocoa-opengl-context context) "setView:" (slot-value rep 'capi-cocoa-library::main-view))))
+  (objc:invoke (cocoa-opengl-context context) "update")
   (objc:invoke (cocoa-opengl-context context) "makeCurrentContext"))
 
 (defmethod opengl-context-present ((context cocoa-opengl-context))

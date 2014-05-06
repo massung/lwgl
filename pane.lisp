@@ -18,7 +18,7 @@
 ;;;;
 
 (defpackage :opengl-pane
-  (:use :cl :capi :opengl)
+  (:use :cl :capi :opengl :opengl-context)
   (:export
    #:opengl-pane
    #:opengl-pane-context
@@ -60,12 +60,12 @@
 
 (defmethod destroy-opengl-pane ((pane opengl-pane))
   "Free the render context."
-  (opengl-context:opengl-context-release (opengl-pane-context pane)))
+  (opengl-context-release (opengl-pane-context pane)))
 
 (defmethod display-opengl-pane ((pane opengl-pane) &rest bounds)
   "Prepare, render, and present."
   (declare (ignore bounds))
-  (opengl-context:with-opengl-context (context (opengl-pane-context pane))
+  (with-opengl-context (context (opengl-pane-context pane))
     (unwind-protect
         (progn
           (lw:when-let (prepare-callback (opengl-pane-prepare-callback pane))
