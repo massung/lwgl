@@ -38,7 +38,7 @@
    (height  :initarg :height  :reader opengl-texture-height))
   (:documentation "An object representing an OpenGL texture resource for a specific context."))
 
-(defmethod load-texture ((pane opengl-pane) image &key (min-filter +gl-linear+) (mag-filter +gl-linear+))
+(defmethod load-texture ((pane opengl-pane) image &key (level 0) (min-filter +gl-linear+) (mag-filter +gl-linear+))
   "Load an image and create an OpenGL texture resource."
   (lw:when-let (image (gp:load-image pane image :editable :with-alpha))
     (let ((access (gp:make-image-access pane image)))
@@ -80,7 +80,7 @@
           (gl-tex-parameteri +gl-texture-2d+ +gl-texture-mag-filter+ mag-filter)
           
           ;; copy the pixel data into the texture
-          (gl-tex-image2d +gl-texture-2d+ 0 +gl-rgba+ w h 0 +gl-rgba+ +gl-unsigned-byte+ buf)
+          (gl-tex-image2d +gl-texture-2d+ level +gl-rgba+ w h 0 +gl-rgba+ +gl-unsigned-byte+ buf)
           
           ;; return the opengl resource
           (make-instance 'opengl-texture
