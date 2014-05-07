@@ -47,7 +47,7 @@
     :accessor opengl-pane-prepare-callback)
    (release-callback
     :initarg :release-callback
-    :initform 'release-opengl-pane
+    :initform nil
     :accessor opengl-pane-release-callback)
    (render-callback
     :initarg :render-callback
