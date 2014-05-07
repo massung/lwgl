@@ -28,7 +28,7 @@ You should almost never need to call these functions yourself as they are called
 
 Wrapping the `opengl-context` object is a CAPI pane: `opengl-pane`, a subclass of `output-pane`.
 
-![The opengl-pane in action](https://raw.github.com/massung/lwgl/master/example/screenshot.png)
+![The opengl-pane in action](https://raw.github.com/massung/lwgl/master/examples/screenshot.png)
 
 The `opengl-pane` class has the following initargs that allow you to override the default behaviors:
 
