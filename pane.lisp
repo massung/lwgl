@@ -90,8 +90,12 @@
 (defmethod destroy-opengl-pane progn ((pane opengl-pane))
   "Free the render context and any timer process."
   (when-let (release-callback (opengl-pane-release-callback pane))
-    (funcall release-callback pane))
-  (opengl-context-release (opengl-pane-context pane)))
+    (with-opengl-context (c (opengl-pane-context pane) :present nil)
+      (funcall release-callback pane)))
+  (opengl-context-release (opengl-pane-context pane))
+
+  ;; clear the context so that with-opengl-context bodies will fail to execute
+  (setf (opengl-pane-context pane) nil))
 
 (defmethod resize-opengl-pane progn ((pane opengl-pane) x y width height)
   "Reshapes the render context."
@@ -124,4 +128,4 @@
 
 (defmethod post-redisplay ((pane opengl-pane))
   "Signals that the pane should redraw."
-  (apply-in-pane-process pane #'gp:invalidate-rectangle pane))
+  (apply-in-pane-process pane #'display-opengl-pane pane 0 0 0 0))

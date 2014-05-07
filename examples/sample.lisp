@@ -27,7 +27,9 @@
   (defparameter *logo-pathname* (merge-pathnames #p"logo.png" *compile-file-pathname*)))
 
 (defclass sample-opengl-pane (opengl-pane)
-  ((logo :initform 0))
+  ((logo :initform 0)
+   (angle :initform 0)
+   (timer :initform nil))
   (:default-initargs
    :prepare-callback 'prepare-sample-pane
    :release-callback 'release-sample-pane
@@ -35,15 +37,27 @@
 
 (defmethod prepare-sample-pane ((pane sample-opengl-pane))
   "Load the Lisp logo into a texture."
-  (setf (slot-value pane 'logo) (load-texture pane *logo-pathname*)))
+  (with-slots (logo angle timer)
+      pane
+    (flet ((spin-logo ()
+             (incf angle 1)
+             (post-redisplay pane)))
+      (setf logo (load-texture pane *logo-pathname*)
+            timer (mp:make-timer #'spin-logo))
+
+      ;; start the periodic timer
+      (mp:schedule-timer-relative-milliseconds timer 30 30))))
 
 (defmethod release-sample-pane ((pane sample-opengl-pane))
   "Free the logo texture."
-  (free-texture pane (slot-value pane 'logo)))
+  (with-slots (logo timer)
+      pane
+    (free-texture pane logo)
+    (mp:unschedule-timer timer)))
 
 (defmethod render-sample-pane ((pane sample-opengl-pane))
   "Render the logo to the viewport."
-  (with-slots (logo)
+  (with-slots (logo angle)
       pane
     (let* ((i (opengl-texture-image logo))
            (w (gp:image-width i))
@@ -56,6 +70,7 @@
     (gl-enable +gl-texture-2d+)
     (gl-matrix-mode +gl-modelview+)
     (gl-load-identity)
+    (gl-rotatef angle 0 0 1)
     (gl-bind-texture +gl-texture-2d+ (opengl-texture logo))
     (gl-begin +gl-quads+)
     (gl-tex-coord2f 0 0)

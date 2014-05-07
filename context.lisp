@@ -32,7 +32,7 @@
 
 (defmacro with-opengl-context ((var context &key (present t)) &body body)
   "Prepare, render, and present to a context."
-  `(let ((,var ,context))
+  `(when-let (,var ,context)
      (opengl-context-prepare ,var)
      (unwind-protect
          (progn ,@body)
