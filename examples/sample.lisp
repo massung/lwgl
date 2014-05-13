@@ -21,39 +21,34 @@
   (use-package :capi)
   (use-package :opengl)
   (use-package :opengl-pane)
+  (use-package :opengl-glut-pane)
   (use-package :opengl-texture))
 
 (eval-when (:compile-toplevel :load-toplevel)
   (defparameter *logo-pathname* (merge-pathnames #p"logo.png" *compile-file-pathname*)))
 
-(defclass sample-opengl-pane (opengl-pane)
-  ((logo :initform 0)
-   (angle :initform 0)
-   (timer :initform nil))
+(defclass sample-opengl-pane (glut-pane)
+  ((angle :initform 0)
+   (logo  :initform nil))
   (:default-initargs
+   :timer-delay 1/60
+   :timer-callback 'spin-sample-pane
    :prepare-callback 'prepare-sample-pane
    :release-callback 'release-sample-pane
    :render-callback 'render-sample-pane))
 
 (defmethod prepare-sample-pane ((pane sample-opengl-pane))
   "Load the Lisp logo into a texture."
-  (with-slots (logo angle timer)
-      pane
-    (flet ((spin-logo ()
-             (incf angle 1)
-             (post-redisplay pane)))
-      (setf logo (load-texture pane *logo-pathname*)
-            timer (mp:make-timer #'spin-logo))
-
-      ;; start the periodic timer
-      (mp:schedule-timer-relative-milliseconds timer 30 30))))
+  (setf (slot-value pane 'logo) (load-texture pane *logo-pathname*)))
 
 (defmethod release-sample-pane ((pane sample-opengl-pane))
   "Free the logo texture."
-  (with-slots (logo timer)
-      pane
-    (free-texture pane logo)
-    (mp:unschedule-timer timer)))
+  (free-texture pane (slot-value pane 'logo)))
+
+(defmethod spin-sample-pane ((pane sample-opengl-pane) delta-time)
+  "Spin the logo counter-clockwise."
+  (incf (slot-value pane 'angle) (* 180.0 delta-time))
+  (post-redisplay pane))
 
 (defmethod render-sample-pane ((pane sample-opengl-pane))
   "Render the logo to the viewport."

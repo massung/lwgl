@@ -41,6 +41,9 @@
   ((context
     :initform nil
     :accessor opengl-pane-context)
+   (display-dirty
+    :initform t
+    :accessor opengl-pane-dirty-p)
    (prepare-callback
     :initarg :prepare-callback
     :initform 'prepare-opengl-pane
@@ -92,6 +95,8 @@
   (when-let (release-callback (opengl-pane-release-callback pane))
     (with-opengl-context (c (opengl-pane-context pane) :present nil)
       (funcall release-callback pane)))
+
+  ;; free the context
   (opengl-context-release (opengl-pane-context pane))
 
   ;; clear the context so that with-opengl-context bodies will fail to execute
@@ -108,11 +113,12 @@
 (defmethod display-opengl-pane progn ((pane opengl-pane) x y width height)
   "Prepare, render, and present."
   (declare (ignore x y width height))
-  (with-opengl-context (context (opengl-pane-context pane))
-    (unwind-protect
-        (when-let (render-callback (opengl-pane-render-callback pane))
-          (funcall render-callback pane))
-      (gl-flush))))
+  (when (sys:compare-and-swap (slot-value pane 'display-dirty) t nil)
+    (with-opengl-context (context (opengl-pane-context pane))
+      (unwind-protect
+          (when-let (render-callback (opengl-pane-render-callback pane))
+            (funcall render-callback pane))
+        (gl-flush)))))
 
 (defmethod reshape-opengl-pane ((pane opengl-pane) width height)
   "Update the viewport size for the render context."
@@ -128,4 +134,5 @@
 
 (defmethod post-redisplay ((pane opengl-pane))
   "Signals that the pane should redraw."
-  (apply-in-pane-process pane #'display-opengl-pane pane 0 0 0 0))
+  (when (sys:compare-and-swap (slot-value pane 'display-dirty) nil t)
+    (apply-in-pane-process-if-alive pane #'gp:invalidate-rectangle pane)))
