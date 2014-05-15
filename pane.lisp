@@ -87,13 +87,13 @@
                              #+cocoa (make-instance 'opengl-context::cocoa-opengl-context :pane pane)
                              #+mswindows (make-instance 'opengl-context::win32-opengl-context :pane pane)))
               (prepare-callback (opengl-pane-prepare-callback pane)))
-    (with-opengl-context (c context :present nil)
+    (with-opengl-context (context)
       (funcall prepare-callback pane))))
 
 (defmethod destroy-opengl-pane progn ((pane opengl-pane))
   "Free the render context and any timer process."
   (when-let (release-callback (opengl-pane-release-callback pane))
-    (with-opengl-context (c (opengl-pane-context pane) :present nil)
+    (with-opengl-context ((opengl-pane-context pane))
       (funcall release-callback pane)))
 
   ;; free the context
@@ -106,7 +106,7 @@
   "Reshapes the render context."
   (declare (ignore x y))
   (when-let (reshape-callback (opengl-pane-reshape-callback pane))
-    (with-opengl-context (c (opengl-pane-context pane) :present nil)
+    (with-opengl-context ((opengl-pane-context pane))
       (funcall reshape-callback pane width height)))
   (post-redisplay pane))
 
@@ -114,7 +114,7 @@
   "Prepare, render, and present."
   (declare (ignore x y width height))
   (when (sys:compare-and-swap (slot-value pane 'display-dirty) t nil)
-    (with-opengl-context (context (opengl-pane-context pane))
+    (with-opengl-context ((opengl-pane-context pane) :present t)
       (unwind-protect
           (when-let (render-callback (opengl-pane-render-callback pane))
             (funcall render-callback pane))

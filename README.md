@@ -21,8 +21,9 @@ For platform independence, there is a root class for rendering: `opengl-context`
 	
 You should almost never need to call these functions yourself as they are called for you in most cases. However, if you'd like to render directly to an `opengl-context` that you've created, you need to use them. Additionally, there is the `with-opengl-context` macro that does this for you safely.
 
-	(with-opengl-context (c (get-my-context))
-	  (gl-clear +gl-color-buffer-bit+))
+	with-opengl-context ((context &key present) &body body)
+	
+The `:present` argument defaults to `nil`. If it is `t`, then when `body` finishes executing `opengl-context-present` will be called.
 
 # The `:opengl-pane` Package
 
@@ -67,20 +68,54 @@ If you have need to subclass `opengl-pane` and would like to override/extend the
 	;; called when the pane needs to be redrawn
 	(defgeneric display-opengl-pane (pane x y w h)
 	  (:method-combination progn :most-specific-last)))
+	  
+# The `:opengl-glut-pane` Package
+
+Subclassing `opengl-pane` is `glut-pane`. The `glut-pane` is an attempt at exposing much of the [`GLUT`](http://www.opengl.org/resources/libraries/glut/) system as possible within a simple CAPI pane.
+
+In addition to all the other `opengl-pane` callbacks, it also implements the following callbacks:
+
+**:keyboard-callback** *gesture-spec pressed-p x y*
+
+> Called whenever a key is pressed or released.
+
+**:mouse-callback**
+
+> Called whenever a mouse button is pressed.
+
+**:motion-callback** *x y*
+
+> Called whenever the mouse moves within the `glut-pane`.
+
+**:timer-callback** *pane delta-time*
+
+This is a callback function that is periodically called. How often it is called is determined by `:timer-delay`. If `:timer-delay` is `nil` then the timer is unscheduled. The `delta-time` parameter is in seconds.
+
+All the callbacks and the `:timer-delay` are all `setf`able methods:
+
+	glut-pane-keyboard-callback
+	glut-pane-mouse-callback
+	glut-pane-motion-callback
+	glut-pane-timer-callback
+	glut-pane-timer-delay
 
 # The `:opengl-texture` Package
 
 Once you have an `opengl-pane`, you can use `load-texture` to create `opengl-texture` objects from images.
 
-	(load-texture pane image &key min-filter mag-filter)
+	(load-texture pane image &key level min-filter mag-filter)
 
 *pane*
 
-> An `opengl-pane` object. The pane's context should be current, meaning that this function should be called from a `prepare-callback` or from within a `with-opengl-context` body.
+> An `opengl-pane` object. The pane's context should be current, meaning that this function should be called from within and `opengl-pane` callback or the body of a `with-opengl-context`.
 
 *image*
 
 > This can be any value accepted by [`load-image`](http://www.lispworks.com/documentation/lw61/CAPRM/html/capiref-592.htm#marker-1019790).
+
+*level*
+
+> This is the mipmap level of the image. The default is 0.
 
 *min-filter*
 

@@ -30,14 +30,15 @@
 
 (in-package :opengl-context)
 
-(defmacro with-opengl-context ((var context &key (present t)) &body body)
+(defmacro with-opengl-context ((context &key present) &body body)
   "Prepare, render, and present to a context."
-  `(when-let (,var ,context)
-     (opengl-context-prepare ,var)
-     (unwind-protect
-         (progn ,@body)
-       (when ,present
-         (opengl-context-present ,var)))))
+  (let ((var (gensym)))
+    `(when-let (,var ,context)
+       (opengl-context-prepare ,var)
+       (unwind-protect
+           (progn ,@body)
+         (when ,present
+           (opengl-context-present ,var))))))
 
 (defclass opengl-context ()
   ((pane :initarg :pane :reader opengl-context-pane))
