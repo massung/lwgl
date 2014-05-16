@@ -21,33 +21,46 @@
   (use-package :capi)
   (use-package :opengl)
   (use-package :opengl-pane)
-  (use-package :opengl-glut-pane)
   (use-package :opengl-texture))
 
 (eval-when (:compile-toplevel :load-toplevel)
   (defparameter *logo-pathname* (merge-pathnames #p"logo.png" *compile-file-pathname*)))
 
-(defclass sample-opengl-pane (glut-pane)
+(defclass sample-opengl-pane (opengl-pane)
   ((angle :initform 0)
-   (logo  :initform nil))
+   (logo  :initform nil)
+   (timer :initform nil)
+   (time  :initform nil))
   (:default-initargs
-   :timer-delay 1/60
-   :timer-callback 'spin-sample-pane
    :prepare-callback 'prepare-sample-pane
    :release-callback 'release-sample-pane
    :render-callback 'render-sample-pane))
 
 (defmethod prepare-sample-pane ((pane sample-opengl-pane))
   "Load the Lisp logo into a texture."
-  (setf (slot-value pane 'logo) (load-texture pane *logo-pathname*)))
+  (with-slots (logo timer time)
+      pane
+    (setf logo (load-texture pane *logo-pathname*)
+          timer (mp:make-timer 'spin-sample-pane pane)
+          time (get-internal-real-time))
+
+    ;; start up a periodic timer
+    (mp:schedule-timer timer 1/60 1/60)))
 
 (defmethod release-sample-pane ((pane sample-opengl-pane))
   "Free the logo texture."
-  (free-texture pane (slot-value pane 'logo)))
+  (with-slots (logo timer)
+      pane
+    (free-texture pane logo)
+    (mp:unschedule-timer timer)))
 
-(defmethod spin-sample-pane ((pane sample-opengl-pane) delta-time)
+(defmethod spin-sample-pane ((pane sample-opengl-pane))
   "Spin the logo counter-clockwise."
-  (incf (slot-value pane 'angle) (* 180.0 delta-time))
+  (with-slots (angle time)
+      pane
+    (let ((now (get-internal-real-time)))
+      (incf angle (* 180.0 (/ (- now time) internal-time-units-per-second)))
+      (setf time now)))
   (post-redisplay pane))
 
 (defmethod render-sample-pane ((pane sample-opengl-pane))
@@ -60,7 +73,7 @@
            (u (/ w (opengl-texture-width logo)))
            (v (/ h (opengl-texture-height logo)))
            (a (/ w h)))
-    (gl-clear-color 0.3 0.3 0.3 0)
+    (gl-clear-color 0.3 0.1 0.6 0)
     (gl-clear +gl-color-buffer-bit+)
     (gl-enable +gl-texture-2d+)
     (gl-enable +gl-blend+)
