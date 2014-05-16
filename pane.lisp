@@ -63,6 +63,7 @@
   (:default-initargs
    :visible-border nil
    :draw-with-buffer nil
+   :draw-background-p nil
    :create-callback 'create-opengl-pane
    :destroy-callback 'destroy-opengl-pane
    :resize-callback 'resize-opengl-pane
