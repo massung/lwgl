@@ -51,7 +51,7 @@
   "Free the logo texture."
   (with-slots (logo timer)
       pane
-    (free-texture pane logo)
+    (free-texture logo)
     (mp:unschedule-timer timer)))
 
 (defmethod spin-sample-pane ((pane sample-opengl-pane))
@@ -67,9 +67,8 @@
   "Render the logo to the viewport."
   (with-slots (logo angle)
       pane
-    (let* ((i (opengl-texture-image logo))
-           (w (gp:image-width i))
-           (h (gp:image-height i))
+    (let* ((w (opengl-texture-org-width logo))
+           (h (opengl-texture-org-height logo))
            (u (/ w (opengl-texture-width logo)))
            (v (/ h (opengl-texture-height logo)))
            (a (/ w h)))
@@ -81,7 +80,7 @@
     (gl-matrix-mode +gl-modelview+)
     (gl-load-identity)
     (gl-rotatef angle 0 0 1)
-    (gl-bind-texture +gl-texture-2d+ (opengl-texture logo))
+    (gl-bind-texture +gl-texture-2d+ (opengl-texture-handle logo))
     (gl-begin +gl-quads+)
     (gl-tex-coord2f 0 0)
     (gl-vertex2f -0.5 (/ 0.5 a))
