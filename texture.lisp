@@ -43,7 +43,7 @@
   (:documentation "An object representing an OpenGL texture resource for a specific context."))
 
 (defun make-texture (pixel-data width height &key (level 0) (min-filter +gl-linear+) (mag-filter +gl-linear+))
-  "Load an image and create an OpenGL texture resource."
+  "Retrieve pixel data and create an OpenGL texture resource from it."
   (let ((w (expt 2 (ceiling (log width 2))))
         (h (expt 2 (ceiling (log height 2)))))
 
@@ -85,24 +85,26 @@
                      :height h
                      :handle (dereference tex)))))
 
-(defun load-texture (pane image &rest texture-args &key &allow-other-keys)
+(defun load-texture (port image &rest texture-args &key &allow-other-keys)
   "Load an image, then create a texture for it."
-  (lw:when-let (image (gp:load-image pane image :editable :with-alpha))
-    (let ((access (gp:make-image-access pane image)))
-      (gp:image-access-transfer-from-image access)
+  (lw:when-let (image (gp:load-image port image :editable :with-alpha))
+    (unwind-protect
+        (let ((access (gp:make-image-access port image)))
+          (gp:image-access-transfer-from-image access)
 
-      ;; pixel data generator function
-      (flet ((pixel-data (x y)
-               (let ((c (color:unconvert-color pane (gp:image-access-pixel access x y))))
-                 (list (truncate (* (color:color-red c) 255))
-                       (truncate (* (color:color-green c) 255))
-                       (truncate (* (color:color-blue c) 255))
-                       (truncate (* (color:color-alpha c) 255))))))
+          ;; pixel data generator function
+          (flet ((pixel-data (x y)
+                   (let ((c (color:unconvert-color port (gp:image-access-pixel access x y))))
+                     (list (truncate (* (color:color-red c) 255))
+                           (truncate (* (color:color-green c) 255))
+                           (truncate (* (color:color-blue c) 255))
+                           (truncate (* (color:color-alpha c) 255))))))
 
-        ;; create the texture
-        (let ((w (gp:image-access-width access))
-              (h (gp:image-access-height access)))
-          (apply #'make-texture #'pixel-data w h texture-args))))))
+            ;; create the texture
+            (let ((w (gp:image-access-width access))
+                  (h (gp:image-access-height access)))
+              (apply #'make-texture #'pixel-data w h texture-args))))
+      (gp:free-image port image))))
 
 (defun free-texture (texture)
   "Release the memory used by a texture."
