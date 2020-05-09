@@ -23,9 +23,9 @@
   ((hrc :initform nil :accessor win32-opengl-context))
   (:documentation "Win32 OpenGL render context."))
 
-(define-c-typedef HGLRC :unsigned-long)
-(define-c-typedef HWND :unsigned-long)
-(define-c-typedef HDC :unsigned-long)
+(define-c-typedef HGLRC :uintptr)
+(define-c-typedef HWND :uintptr)
+(define-c-typedef HDC :uintptr)
 (define-c-typedef BOOL :boolean)
 
 ;;; pixel types
