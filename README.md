@@ -97,7 +97,7 @@ Once you have an `opengl-pane`, you can use `load-texture` to create `opengl-tex
 
 Once loaded, you can access the `opengl-texture` resource for use with `gl-bind-texture`.
 
-	(gl-bind-text +gl-texture-2d+ (opengl-texture tex))
+	(gl-bind-texture +gl-texture-2d+ (opengl-texture tex))
 
 When you are done with the texture, use `free-texture` to release it from memory.
 
